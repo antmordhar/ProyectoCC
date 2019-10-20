@@ -25,7 +25,7 @@ Su arquitectura se corresponderia con la siguiente **imagen**:
 La arquitectura esta basada en una aquitectura **dirigida por eventos**. Los microservicios se comunicarán entre ellos a traves del **EventStore** y con el exterior a traves del **ApiGateway**
 
 * Como **lenguajes** para la creación de microservicios se usara **Java** junto con los frameworks **Spring Boot** y **Spring Cloud**. 
-* Para el manejador de eventos se usara **Kafka**.
+* Para el manejador de eventos se usara **Apache Kafka**.
 * Para las bases de datos se usara **MongoDB**.
 * Y por último se usara **Json** para el envio de información en las comuniciones.
 
