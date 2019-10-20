@@ -1,6 +1,3 @@
----
-layout: default
----
 # Proyecto
 ## Gestión Restaurante
 
@@ -16,7 +13,7 @@ Se contaran con 3 **microservicios** los cuales podrán ser accedidos a traves d
     * Para avisar de que una comanda ya ha sido atendida se podrá usar la **ApiGateway** y mandar un comunicado a todos los camareros.
 
 Su arquitectura se corresponderia con la siguiente **imagen**:
-![Arquitectura](/assets/images/MicroservicesArchitecture.png)
+![Arquitectura](_site/assets/images/MicroservicesArchitecture.png)
 
 La arquitectura esta basada en una aquitectura **dirigida por eventos**. Los microservicios se comunicarán entre ellos a traves del **EventStore** y con el exterior a traves del **ApiGateway**
 

@@ -1,6 +1,3 @@
----
-layout: default
----
 # Cloud Computing
 ## Anonio Morales de Haro
 
