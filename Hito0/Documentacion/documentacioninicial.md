@@ -1,7 +1,7 @@
 # Proyecto
 ## Gestión Restaurante
 
-Se contaran con 3 **microservicios** los cuales podrán ser accedidos a traves del **ApiGatewway**: 
+Se contaran con 3 **microservicios** los cuales podrán ser accedidos a traves del **ApiGateway**: 
 * **Mesas:**  Este servicio podrá ser usado a traves de la **ApiGateway** y se le debera pasar la comanda en forma de Json. Las mesas serán las encargadas de enviar esta comanda a **Cocina**.Además, también tendrán un control de los pedidos de los clientes en una base de datos.
 * **Cocina:** Este microservicio podrá ser usado a traves de la **ApiGateway** de dos maneras.
     * Para solicitar el Menu, que será devuelto en forma de Json.
