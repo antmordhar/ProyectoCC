@@ -33,9 +33,11 @@ Un **caso de uso** sería:
 Finalmente se deja abierta la **conexión a otros servicios**, como un procesador de pagos,  para gestionar los pagos que se guardaron en la mesa.
 
 Como **lenguajes**: 
-* Para la creación de microservicios se usara **Java** junto con los frameworks **Spring Boot** y **Spring Cloud**. 
-* Para el manejador de eventos se usara **Kafka**.
-* Para las bases de datos se usara **MongoDB**.
+* Para la creación de microservicios se usará **Java** junto con los frameworks **Spring Boot** y **Spring Cloud**. 
+* Para el manejador de eventos se usará **Apache Kafka**.
+* Para la configuración distribuida se usará **Apache ZooKeeper**
+* Para las bases de datos se usará **MongoDB**.
+* Para la comunicación con el **ApiGateway** se usarán peticiones **HTTP**.
 * Y por último se usara **Json** para el envio de información en las comuniciones.
 
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)
