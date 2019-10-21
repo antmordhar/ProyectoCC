@@ -35,7 +35,7 @@ Finalmente se deja abierta la **conexión a otros servicios**, como un procesado
 Como **lenguajes**: 
 * Para la creación de microservicios se usará **Java** junto con los frameworks **Spring Boot** y **Spring Cloud**. 
 * Para el manejador de eventos se usará **Apache Kafka**.
-* Para la configuración distribuida se usará **Apache ZooKeeper**
+* Para la configuración distribuida se usará **Apache ZooKeeper**.
 * Para las bases de datos se usará **MongoDB**.
 * Para la comunicación con el **ApiGateway** se usarán peticiones **HTTP**.
 * Y por último se usara **Json** para el envio de información en las comuniciones.
