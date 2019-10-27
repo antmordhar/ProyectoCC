@@ -1,7 +1,7 @@
 # Proyecto
 ## Gestión Restaurante
 
-[Ir a arquitectura](https://antmordhar.github.io/ProyectoCC/Hito0/Documentacion/arquitectura.md)
+[Ir a arquitectura](https://antmordhar.github.io/ProyectoCC/Hito0/Documentacion/arquitectura)
 
 **Tecnologías** que se van a usar:
 
