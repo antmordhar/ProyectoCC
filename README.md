@@ -24,7 +24,7 @@ Para la configuración distribuida se usará **Apache ZooKeeper**.
 >**Zookeeper** se usara para la configuración distribuida. Se ha elegido este frente a otros como etcd3 por que está escrito en java y posee una API fácil de usar para la coordinacion de servicios distribuidos.
 
 Para las bases de datos se usará **MongoDB**.
-> Esto es por que es una base de datos no relacional y se estructura como un **JSON** por lo que facilitará las tareas de los servicios al trabajar con las bases de datos.
+> Esto es por que es una base de datos no relacional y se estructura como un **JSON** por lo que facilitará las tareas de los servicios al trabajar con las bases de datos y enviar mensajes entre los servicios.
 
 Para la comunicación con el **ApiGateway** se usarán peticiones **HTTP**.
 >Es una solución simple para comunicarse con nuestro conjunto de microservicios ya sea desde la parte cliente o desde otros microservicios.
