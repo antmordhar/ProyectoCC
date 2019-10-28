@@ -5,6 +5,12 @@
 
 **Tecnologías** que se van a usar:
 
+Como Ide se Usará **Eclipse EE**
+> El **Ide Eclipse** nos da bastante compativilidad con **Java** y **Maven**. Esto nos facilitará las tareas de creación de directorios y control de dependencias de nuestro proyecto.
+
+Para el control de las dependencias de nuestro proyecto, como anteriormente se ha dicho, se usará **Maven**
+> Maven nos ayudara con la gestión de las dependencias de nuestro proyecto. Esto se realizará gracias al pom.xml que contiene una lista de recursos y configuraciones que necesita nuestro proyecto. Este fichero se ejecuta instalando por completo todas las dependencias necesarias para el proyecto.
+
 Para la creación de microservicios se usará **Java**.
 >Esta elección se ha hecho pensando que java es un lenguaje con una gran cantidad de usuarios y que tiene una gran cantidad de recursos y librerias. Ademas, java permite ejecutarse independientemente de la plataforma que haya por debajo.
 
