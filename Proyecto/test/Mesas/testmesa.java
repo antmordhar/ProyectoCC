@@ -1,6 +1,6 @@
 package Mesas;
 
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
