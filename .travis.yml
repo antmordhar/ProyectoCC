@@ -6,6 +6,5 @@ jdk:
 os:
   - linux
 before_install: cd Proyecto
-install: ant deps
 script: 
-  ant test
+  mvn test -B
