@@ -6,5 +6,6 @@ jdk:
 os:
   - linux
 install: ant deps
+before_script: cd Proyecto
 script: 
   ant test
