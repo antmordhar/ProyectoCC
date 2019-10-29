@@ -5,3 +5,4 @@ jdk:
   - oraclejdk9
 os:
   - linux
+script: ant build
