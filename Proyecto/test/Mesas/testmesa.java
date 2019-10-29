@@ -14,7 +14,8 @@ public class testmesa {
 	@Test
 	public void testConstruction() throws JSONException {
 		mesatest= new mesa();
-		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
+		int nummesa=mesatest.getNummesa();
+		assertEquals("ID mesa Correcto",nummesa,mesatest.getNummesa());
 		
 		int nummesatest=mesatest.getNummesa();
 		JSONArray Jtest = new JSONArray();
@@ -24,7 +25,8 @@ public class testmesa {
 	@Test
 	public void testGetNummesa() {
 		mesatest= new mesa();
-		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
+		int nummesa=mesatest.getNummesa();
+		assertEquals("ID mesa Correcto",nummesa,mesatest.getNummesa());
 	}
 	@Test
 	public void testGetPedido() throws JSONException {
