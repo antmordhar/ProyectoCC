@@ -5,7 +5,7 @@ jdk:
   - oraclejdk9
 os:
   - linux
+before_install: cd Proyecto
 install: ant deps
-before_script: cd ./Proyecto
 script: 
   ant test
