@@ -2,7 +2,6 @@ language: java
 sudo: false
 dist: trusty
 jdk:
-  - oraclejdk8
   - oraclejdk9
 os:
   - linux
