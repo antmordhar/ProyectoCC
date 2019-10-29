@@ -1,5 +1,5 @@
 # Proyecto
-## Gestión Restaurante
+## Gestión Restaurante [![Build Status](https://travis-ci.org/antmordhar/ProyectoCC.svg?branch=master)](https://travis-ci.org/antmordhar/ProyectoCC)
 
 [Ir a Arquitectura](https://antmordhar.github.io/ProyectoCC/Hito0/Documentacion/arquitectura)
 
