@@ -1,6 +1,7 @@
 package Mesas;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +16,7 @@ public class testmesa {
 	public void testConstruction() throws JSONException {
 		mesatest= new mesa();
 		int nummesa=mesatest.getNummesa();
-		assertEquals("ID mesa Correcto",nummesa,mesatest.getNummesa());
+		assertEquals("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
 		
 		int nummesatest=mesatest.getNummesa();
 		JSONArray Jtest = new JSONArray();
@@ -26,7 +27,7 @@ public class testmesa {
 	public void testGetNummesa() {
 		mesatest= new mesa();
 		int nummesa=mesatest.getNummesa();
-		assertEquals("ID mesa Correcto",nummesa,mesatest.getNummesa());
+		assertEquals("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
 	}
 	@Test
 	public void testGetPedido() throws JSONException {
