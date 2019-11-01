@@ -1,7 +1,6 @@
 # Gestión Restaurante [![Build Status](https://travis-ci.org/antmordhar/ProyectoCC.svg?branch=master)](https://travis-ci.org/antmordhar/ProyectoCC)
 
 ## Arquitectura
----
 La idea básica de este microservicio es ayudar a la gestión de las comandas en un restaurante.
 Para ello se van a crear 3 **microservicios**:
 
@@ -16,7 +15,7 @@ Para ello se van a crear 3 **microservicios**:
 * **Camareros:** Su objetivo es **recibir los avisos** de las comandas que salen de **Cocina**. Para avisar de que una comanda ya ha sido atendida se podrá usar la ApiGateway y **mandar un aviso** a todos los **camareros**.
 
 Su **arquitectura** se correspondería con la siguiente **imagen**:
-![Arquitectura](./Hito0/MicroservicesArchitecture.png)
+![Arquitectura](./Hito0/Documentacion/MicroservicesArchitecture.png)
 
 La arquitectura esta basada en una arquitectura **dirigida por eventos**. Los microservicios se comunicarán entre ellos a través del **EventStore** y con el exterior a traves del **ApiGateway**
 
@@ -34,7 +33,7 @@ Un **caso de uso** sería:
 Finalmente se deja abierta la **conexión a otros servicios**, como un procesador de pagos,  para gestionar los pagos que se guardaron en la mesa.
 
 ## **Tecnologías** que se van a usar:
----
+
 ### Para la creación de microservicios se usará **Java**.
 >Esta elección se ha hecho pensando que java es un lenguaje con una gran cantidad de usuarios y que tiene una gran cantidad de recursos y librerias.
 
