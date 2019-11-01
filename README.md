@@ -15,7 +15,7 @@ Para ello se van a crear 3 **microservicios**:
 * **Camareros:** Su objetivo es **recibir los avisos** de las comandas que salen de **Cocina**. Para avisar de que una comanda ya ha sido atendida se podrá usar la ApiGateway y **mandar un aviso** a todos los **camareros**.
 
 Su **arquitectura** se correspondería con la siguiente **imagen**:
-![Arquitectura](./Hito0/Documentacion/MicroservicesArchitecture.png)
+![Arquitectura](./Documentacion/MicroservicesArchitecture.png)
 
 La arquitectura esta basada en una arquitectura **dirigida por eventos**. Los microservicios se comunicarán entre ellos a través del **EventStore** y con el exterior a traves del **ApiGateway**
 
