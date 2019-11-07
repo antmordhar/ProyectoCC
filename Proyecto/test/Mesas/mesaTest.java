@@ -12,7 +12,7 @@ import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 
-public class testmesa {
+public class mesaTest {
 	private mesa mesatest;
 	
 	@Before
@@ -21,7 +21,7 @@ public class testmesa {
 	}
 
 	@Test
-	public void testConstruction() throws JSONException {
+	public void testmesa() throws JSONException {
 		int nummesa=mesatest.getNummesa();
 		assertThat("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
 		
