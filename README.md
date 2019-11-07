@@ -1,4 +1,4 @@
-# Gestión Restaurante [![Build Status](https://travis-ci.org/antmordhar/ProyectoCC.svg?branch=master)](https://travis-ci.org/antmordhar/ProyectoCC)
+# Gestión Restaurante [![Build Status](https://travis-ci.org/antmordhar/ProyectoCC.svg?branch=master)](https://travis-ci.org/antmordhar/ProyectoCC)[![codecov](https://codecov.io/gh/antmordhar/ProyectoCC/branch/master/graph/badge.svg)](https://codecov.io/gh/antmordhar/ProyectoCC)
 
 ## Arquitectura
 La idea básica de este microservicio es ayudar a la gestión de las comandas en un restaurante.
