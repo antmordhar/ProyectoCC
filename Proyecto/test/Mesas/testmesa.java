@@ -1,22 +1,29 @@
 package Mesas;
 
+
+import org.junit.Before;
+import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 
 public class testmesa {
 	private mesa mesatest;
+	
+	@Before
+	public void setup(){
+		mesatest=new mesa();
+	}
+
 	@Test
 	public void testConstruction() throws JSONException {
-		mesatest= new mesa();
 		int nummesa=mesatest.getNummesa();
-		assertEquals("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
+		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
 		
 		int nummesatest=mesatest.getNummesa();
 		JSONArray Jtest = new JSONArray();
@@ -25,20 +32,17 @@ public class testmesa {
 	}
 	@Test
 	public void testGetNummesa() {
-		mesatest= new mesa();
 		int nummesa=mesatest.getNummesa();
-		assertEquals("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
+		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
 	}
 	@Test
 	public void testGetPedido() throws JSONException {
-		mesatest= new mesa();
 		JSONArray Jtest = new JSONArray();
 		Jtest.put(mesatest.getNummesa());
 		JSONAssert.assertEquals(Jtest,mesatest.getPedido(),  JSONCompareMode.LENIENT);
 	}
 	@Test
 	public void testaniadirPlato() throws JSONException {
-		mesatest= new mesa();
 		mesatest.aniadirPlato("PolloFrito", 5, 2);
 		JSONArray Jtest = new JSONArray();
 		Jtest.put(mesatest.getNummesa());
