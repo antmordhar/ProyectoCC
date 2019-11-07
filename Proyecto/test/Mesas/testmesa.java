@@ -23,7 +23,7 @@ public class testmesa {
 	@Test
 	public void testConstruction() throws JSONException {
 		int nummesa=mesatest.getNummesa();
-		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
+		assertThat("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
 		
 		int nummesatest=mesatest.getNummesa();
 		JSONArray Jtest = new JSONArray();
@@ -33,7 +33,7 @@ public class testmesa {
 	@Test
 	public void testGetNummesa() {
 		int nummesa=mesatest.getNummesa();
-		assertNotEquals("ID mesa Correcto",0,mesatest.getNummesa());
+		assertThat("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
 	}
 	@Test
 	public void testGetPedido() throws JSONException {
