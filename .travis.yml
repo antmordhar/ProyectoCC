@@ -1,9 +1,28 @@
+#Lenguaje que estamos probando
 language: java
+#JDKs sobre los que probaremos los test
+jdk:
+  - openjdk6
+  - openjdk7
+  - openjdk8
+  - openjdk9
+  - openjdk10
+  - openjdk11
+  - openjdk12
+  - openjdk13
+#Usa la distribucion de ubuntu Trusty Tahr
 dist: trusty
+#No se hara nada en sudo
 sudo: false
+#Pasamos a la carpeta del proyecto
 before_install: cd Proyecto
+#Script que se correra
 script:
+  #Se eliminan archivos de build anteriores y se empaqueta de nuevo
  - mvn clean package
+  #Se pasan los tes de cobertura
  - mvn cobertura:cobertura
-after_success:
+#Que se hace cuando se consigue pasar los tests
+ after_success:
+  #Se envian los resultados de los tests de cobertura a CodeCov
   - bash <(curl -s https://codecov.io/bash)
