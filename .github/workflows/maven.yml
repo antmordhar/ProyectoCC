@@ -5,13 +5,14 @@ on: [push]
 jobs:
   build:
     #Correran en la última distro de ubuntu
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}    
     strategy:
       #Se haran 8 en paralelo
       max-parallel: 8
       matrix:
         #Se testearan las siguientes versiones de Open JDK
         JDK: [6,7,8,9,10,11,12,13]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       # Usamos la action checkout@1
@@ -26,6 +27,6 @@ jobs:
     - name: Build with Maven
       #Empaqueta con maven y corre los tests unitarios y de cobertura
       run: |
-          cd Proyecto
+          cd ./Proyecto
           mvn clean package
           mvn cobertura:cobertura
