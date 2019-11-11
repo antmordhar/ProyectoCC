@@ -26,7 +26,7 @@ testlocal:
 testexterno:
 	#Nos movemos a la carpeta del proyecto
 	#Corremos los test de Junit y covertura
-	mvn clean package && mvn cobertura:cobertura
+	cd ./Proyecto && mvn clean package && mvn cobertura:cobertura
 		
 # Limpiar el directorio de las carpetas y ficheros que se generan
 # tras la ejecución:
