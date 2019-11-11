@@ -61,7 +61,7 @@ Para la integracion continua se usara **Travis-CI** y **GitHub Actions**.
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
-* **GitHub-Actions**: Por otro lado la herramienta actions nos proporciona una manera fácil de realizar tests a nuestro proyecto sin necesidad de tener que depender de software de terceros. Este test se encargara de comprobar el funcionamiento del proyecto en la distro más actual de Ubuntu. Ejecuta los test para las versión del Open JDK del 6 al 13.
+* **GitHub-Actions**: Por otro lado la herramienta actions nos proporciona una manera fácil de realizar tests a nuestro proyecto sin necesidad de tener que depender de software de terceros. Este test se encargara de comprobar el funcionamiento del proyecto en Ubuntu, Windows y Mac-Os. Ejecuta los test para las versión del Open JDK del 6 al 13.
 
 Para mas información ver [maven.yml](https://github.com/antmordhar/ProyectoCC/edit/master/.github/workflows/maven.yml)
 
