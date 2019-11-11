@@ -26,5 +26,6 @@ jobs:
     - name: Build with Maven
       #Empaqueta con maven y corre los tests unitarios y de cobertura
       run: |
+          cd Proyecto
           mvn clean package
           mvn cobertura:cobertura
