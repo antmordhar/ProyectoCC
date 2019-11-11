@@ -1,6 +1,9 @@
 language: java
+dist: trusty
 sudo: false
 before_install: cd Proyecto
-script: "mvn cobertura:cobertura"
+script:
+ - mvn clean package
+ - mvn cobertura:cobertura
 after_success:
   - bash <(curl -s https://codecov.io/bash)
