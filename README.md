@@ -39,7 +39,7 @@ Este comando instalará maven,openjdk-8-jdk y las dependencias del proyecto. Des
 
 Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los test unitarios.
 
->make test
+>make testlocal
 
 Corre los test unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
 
@@ -47,6 +47,10 @@ Los test unitarios están desarrollados con **JUnit**. Maven usa **SureFire** pa
 Por otra parte los test de cobertura del código se pasan con **cobertura**. Tras pasarse los tests se podran ver los resultados en:
 * **Unitarios**: /Proyecto/target/surefire-reports/ 
 * **Cobertura**: /Proyecto/target/site 
+
+>make testexterno
+
+Test preparados para correr en herramientas de integración externas
   
 >make clean
 
