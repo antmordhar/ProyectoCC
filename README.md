@@ -20,7 +20,7 @@ Para ello se van a crear 3 **microservicios**:
 Para ver una descripción extendida de la **arquitectura** y las **tecnologías** que se van a usar pulse [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/arquitectura).
 
 ---
-## Prerequisitos
+## Prerrequisitos
 
 Para el correcto funcionamiento del proyecto sera necesario tener:
 
@@ -39,14 +39,14 @@ Este comando instalará maven,openjdk-8-jdk y las dependencias del proyecto. Des
 
 >make install
 
-Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los test unitarios.
+Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los tests unitarios.
 
 >make test
 
-Corre los test unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
+Corre los tests unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
 
 Los test unitarios están desarrollados con **JUnit**. Maven usa **SureFire** para generar el reporte final de pasar los tests.
-Por otra parte los test de cobertura del código se pasan con **cobertura**. Tras pasarse los tests se podran ver los resultados en:
+Por otra parte los tests de cobertura del código se pasan con **cobertura**. Tras pasarse los tests se podran ver los resultados en:
 * **Unitarios**: /Proyecto/target/surefire-reports/ 
 * **Cobertura**: /Proyecto/target/site 
 
@@ -60,11 +60,11 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 
 Para la integracion continua se usara **Travis-CI** y **GitHub-Actions**.
 
-* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para  Open JDK 7 y 8 en la distro que se usa es la trusty. Y finalmente envia los datos del test de cobertura a **CodeCov**
+* **Travis-CI** : Pasa los tests unitarios y de cobertura al Proyecto. Ejecuta los tests para Open JDK 7 y 8 en la distro que se usa es la trusty. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
-* **GitHub-Actions** : Permite la rapida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los test para las versiones del Open JDK 7 y 8 para las ultimas versiones de Windows, Linux y Mac-OS.
+* **GitHub-Actions** : Permite la rápida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los tests para las versiones del Open JDK 7 y 8 para las ultimas versiones de Windows, Linux y Mac-OS.
 
 Para más información vea [maven.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.github/workflows/maven.yml)
 
