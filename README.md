@@ -62,7 +62,7 @@ Para la integracion continua se usara **Travis-CI** y **GitHub-Actions**.
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
-* **GitHub-Actions** : Permite la rapida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los test para las versiones del Open JDK de la 6 a la 13. Y correra los tests para Windows, Linux y Mac-OS. 
+* **GitHub-Actions** : Permite la rapida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los test para las versiones del Open JDK de la 6 a la 13 para Windows, Linux y Mac-OS.
 
 Para más información vea [maven.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.github/workflows/maven.yml)
 
