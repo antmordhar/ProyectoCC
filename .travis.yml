@@ -17,12 +17,12 @@ sudo: false
 #Pasamos a la carpeta del proyecto
 before_install: cd Proyecto
 #Script que se correra
+#Se eliminan archivos de build anteriores y se empaqueta de nuevo
+#Se pasan los tes de cobertura
 script:
-  #Se eliminan archivos de build anteriores y se empaqueta de nuevo
  - mvn clean package
-  #Se pasan los tes de cobertura
  - mvn cobertura:cobertura
 #Que se hace cuando se consigue pasar los tests
+#Se envian los resultados de los tests de cobertura a CodeCov
  after_success:
-  #Se envian los resultados de los tests de cobertura a CodeCov
   - bash <(curl -s https://codecov.io/bash)
