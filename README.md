@@ -52,6 +52,7 @@ Por otra parte los test de cobertura del código se pasan con **cobertura**. Tra
 
 Limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target
 
+Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/blob/master/Makefile)
 
 ## Integración continua
 

@@ -19,7 +19,7 @@ install:
 test:
 	#Nos movemos a la carpeta del proyecto
 	#Corremos los test de Junit y covertura
-	#Para esto es necesario estar con el jdk8 o inferior
+	#Para esto es necesario estar con el jdk8 o inferior e indicarselo a maven
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && cd ./Proyecto && mvn clean package && mvn cobertura:cobertura
 
 # Limpiar el directorio de las carpetas y ficheros que se generan
