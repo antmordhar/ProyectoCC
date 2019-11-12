@@ -1,22 +1,21 @@
---- 
-#Despues de correr los scripts enviarlos a codecov
-after_success: 
-  - "bash <(curl -s https://codecov.io/bash)"
-#Antes de correr los proyectos va a la carpeta Proyecto que es donde se encuentra el pom.xml
-before_install: "cd Proyecto"
-#Ssa la distro xenial
-dist: trusty
+#Usa lenguaje Java
+language: java
 #Usa OpenJDK7 y 8
 jdk: 
   - openjdk7
   - openjdk8
-#Usa lenguaje Java
-language: java
+#Usa la distro xenial
+dist: trusty
+#No hacer el proceso con sudo
+sudo: false
+#Antes de correr los proyectos va a la carpeta Proyecto que es donde se encuentra el pom.xml
+before_install: "cd Proyecto"
 #Script a realizar
 #Limpia los archivos de builds anteriores y reempaqueta
 #Despues corre los test de cobertura
 script: 
   - "mvn clean package"
   - "mvn cobertura:cobertura"
-#No hacer el proceso con sudo
-sudo: false
+#Despues de correr los scripts enviarlos a codecov
+after_success: 
+  - "bash <(curl -s https://codecov.io/bash)"
