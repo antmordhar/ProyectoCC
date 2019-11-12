@@ -29,7 +29,7 @@ Para el correcto funcionamiento del proyecto sera necesario tener:
   
 ## Herramienta de construcción
 
-Como herramienta de construcción se ha usado MakeFile.Se han configurado 4 Objetivos:
+Como herramienta de construcción se ha usado MakeFile. Se han configurado 4 Objetivos:
 
 >make firstinstall
 
@@ -57,7 +57,7 @@ Limpia las dependencias y archivos creados por builds anteriores en la carpeta /
 
 Para la integracion continua se usara **Travis-CI**.
 
-* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para las versiones del Open JDK 7 y 8. La distro que se usa es la Trusty Tahr. Y finalmente envia los datos del test de cobertura a **CodeCov**
+* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para las versiones del Open JDK 7 y 8. La distro que se usa es la Xenial. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
