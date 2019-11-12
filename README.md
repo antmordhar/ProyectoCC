@@ -39,7 +39,7 @@ Este comando instalará maven,openjdk-8-jdk y las dependencias del proyecto. Des
 
 Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los test unitarios.
 
->make testlocal
+>make test
 
 Corre los test unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
 
@@ -48,10 +48,6 @@ Por otra parte los test de cobertura del código se pasan con **cobertura**. Tra
 * **Unitarios**: /Proyecto/target/surefire-reports/ 
 * **Cobertura**: /Proyecto/target/site 
 
->make testexterno
-
-Test preparados para correr en herramientas de integración externas
-  
 >make clean
 
 Limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target
@@ -59,14 +55,11 @@ Limpia las dependencias y archivos creados por builds anteriores en la carpeta /
 
 ## Integración continua
 
-Para la integracion continua se usara **Travis-CI** y **GitHub Actions**.
+Para la integracion continua se usara **Travis-CI** y ****.
 
 * **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para las versiones del Open JDK del 6 al 13. La distro que se usa es la Trusty Tahr. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
-* **GitHub-Actions**: Por otro lado la herramienta actions nos proporciona una manera fácil de realizar tests a nuestro proyecto sin necesidad de tener que depender de software de terceros. Este test se encargara de comprobar el funcionamiento del proyecto en Ubuntu, Windows y Mac-Os. Ejecuta los test para las versión del Open JDK del 6 al 13.
-
-Para mas información ver [maven.yml](https://github.com/antmordhar/ProyectoCC/edit/master/.github/workflows/maven.yml)
 
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)
