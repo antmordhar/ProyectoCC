@@ -2,16 +2,10 @@
 after_success: 
   - "bash <(curl -s https://codecov.io/bash)"
 before_install: "cd Proyecto"
-dist: trusty
+dist: xenial
 jdk: 
-  - openjdk6
   - openjdk7
   - openjdk8
-  - openjdk9
-  - openjdk10
-  - openjdk11
-  - openjdk12
-  - openjdk13
 language: java
 script: 
   - "mvn clean package"
