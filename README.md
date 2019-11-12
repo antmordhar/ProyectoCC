@@ -24,7 +24,7 @@ Para ver una descripción extendida de la **arquitectura** y las **tecnologías*
 
 Para el correcto funcionamiento del proyecto sera necesario tener:
 
-* **OpenJDK 8**
+* **OpenJDK 7** y **OpenJDK 8**
 * **Maven**
   
 ## Herramienta de construcción
@@ -58,7 +58,7 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 
 Para la integracion continua se usara **Travis-CI** y **GitHub-Actions**.
 
-* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para  Open JDK 8 y la distro que se usa es la Xenial. Y finalmente envia los datos del test de cobertura a **CodeCov**
+* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para  Open JDK 7 y 8 en la distro que se usa es la trusty. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 

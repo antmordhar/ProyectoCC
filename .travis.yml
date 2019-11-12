@@ -5,9 +5,10 @@ after_success:
 #Antes de correr los proyectos va a la carpeta Proyecto que es donde se encuentra el pom.xml
 before_install: "cd Proyecto"
 #Ssa la distro xenial
-dist: xenial
-#Usa OpenJDK8
+dist: trusty
+#Usa OpenJDK7 y 8
 jdk: 
+  - openjdk7
   - openjdk8
 #Usa lenguaje Java
 language: java

@@ -1,25 +1,35 @@
 name: Java CI
-
+#Cuando se haga un push
 on: [push]
 
 jobs:
   build:
     strategy:
-      
       matrix:
+        #Para las últimas versionde de windows,macos y windows
         platform: [ubuntu-latest, macos-latest, windows-latest]
+        #Para las versiones del JDK 7 y 8
         JDK: [7,8]
     
+    #Corre en todas las plataformas de la matriz
     runs-on: ${{ matrix.platform }}
     
     steps:
     - uses: actions/checkout@v1
+    #Le indicamos el nombre del paso
     - name: Set up JDK ${{ matrix.JDK }}
       uses: actions/setup-java@v1
       with:
+        #Corre en todos los JDK quele hemos indicado
         java-version: ${{ matrix.JDK }}
+      #Le indicamos el nombre del paso
     - name: Build with Maven
+      #Va a proyecto
+      #Limpia los archivos de builds antiguas y lo empaqueta de nuevo instalando las dependencias.
+      #Se corren los tests
+      #Se corren los test de covertura
       run: |
        cd ./Proyecto;
        mvn clean package --file pom.xml;
+       mvn test --file pom.xml;
        mvn cobertura:cobertura --file pom.xml;
