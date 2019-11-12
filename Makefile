@@ -20,7 +20,6 @@ test:
 	#Nos movemos a la carpeta del proyecto
 	#Corremos los test de Junit y covertura
 	#Para esto es necesario estar con el jdk8 o inferior
-	#Cambiar 8 por 7 si tienes la version 7 del JDK
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && cd ./Proyecto && mvn clean package && mvn cobertura:cobertura
 
 # Limpiar el directorio de las carpetas y ficheros que se generan

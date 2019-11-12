@@ -24,7 +24,7 @@ Para ver una descripción extendida de la **arquitectura** y las **tecnologías*
 
 Para el correcto funcionamiento del proyecto sera necesario tener:
 
-* **OpenJDK 7** o **OpenJDK 8**
+* **OpenJDK 8**
 * **Maven**
   
 ## Herramienta de construcción
