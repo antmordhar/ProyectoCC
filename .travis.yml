@@ -2,7 +2,7 @@
 after_success: 
   - "bash <(curl -s https://codecov.io/bash)"
 before_install: "cd Proyecto"
-dist: bionic
+dist: xenial
 jdk: 
   - openjdk8
 language: java
