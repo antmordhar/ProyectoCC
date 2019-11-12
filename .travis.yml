@@ -1,12 +1,19 @@
 --- 
+#Despues de correr los scripts enviarlos a codecov
 after_success: 
   - "bash <(curl -s https://codecov.io/bash)"
+#Antes de correr los proyectos ir a la carpeta Proyecto
 before_install: "cd Proyecto"
+#usar la distribucion xenial
 dist: xenial
+#usar OpenJDK8
 jdk: 
   - openjdk8
+#Usar lenguaje Java
 language: java
+#Script a realizar
 script: 
   - "mvn clean package"
   - "mvn cobertura:cobertura"
+#no hacerlo con sudo
 sudo: false
