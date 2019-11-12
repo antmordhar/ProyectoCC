@@ -29,6 +29,8 @@ Para el correcto funcionamiento del proyecto sera necesario tener:
   
 ## Herramienta de construcción
 
+> buildtool: Makefile
+
 Como herramienta de construcción se ha usado MakeFile. Se han configurado 4 Objetivos:
 
 >make firstinstall
