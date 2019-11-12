@@ -55,11 +55,15 @@ Limpia las dependencias y archivos creados por builds anteriores en la carpeta /
 
 ## Integración continua
 
-Para la integracion continua se usara **Travis-CI**.
+Para la integracion continua se usara **Travis-CI** y **GitHub-Actions**.
 
-* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para las versiones del Open JDK 7 y 8. La distro que se usa es la Xenial. Y finalmente envia los datos del test de cobertura a **CodeCov**
+* **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para  Open JDK 8 y la distro que se usa es la Xenial. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
+
+* **GitHub-Actions** : Permite la rapida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los test para las versiones del Open JDK de la 6 a la 13. Y correra los tests para Windows, Linux y Mac-OS. 
+
+Para más información vea [maven.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.github/workflows/maven.yml)
 
 
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)
