@@ -55,7 +55,7 @@ Limpia las dependencias y archivos creados por builds anteriores en la carpeta /
 
 ## Integración continua
 
-Para la integracion continua se usara **Travis-CI** y ****.
+Para la integracion continua se usara **Travis-CI**.
 
 * **Travis-CI** : Pasa los test unitarios y de cobertura al Proyecto. Ejecuta los test para las versiones del Open JDK del 6 al 13. La distro que se usa es la Trusty Tahr. Y finalmente envia los datos del test de cobertura a **CodeCov**
 
