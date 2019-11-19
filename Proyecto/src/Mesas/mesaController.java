@@ -18,7 +18,7 @@ import Mesas.plato;
 
 @RestController
 public class mesaController {
-    int idcount=0;
+    private int idcount=0;
     private List<mesa> mesas=new ArrayList<mesa>();
 
     @GetMapping(value= "/verpedido/{id}")
@@ -40,5 +40,8 @@ public class mesaController {
     @DeleteMapping(value= "/borrapedido/{id}")
     public void deletePedido(@PathVariable(value= "id") int id){
         mesas.get(id).limpiarPlatos();
+    }
+    public int getIdCount(){
+        return idcount;
     }
 }

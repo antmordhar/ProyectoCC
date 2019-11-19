@@ -4,10 +4,10 @@ public class plato{
 
     private int idmesa;
     private String nombre;
-    private float precio;
+    private double precio;
     private int cantidad;
 
-    public plato(int idmesa,String nombre,float precio,int cantidad){
+    public plato(int idmesa,String nombre,double precio,int cantidad){
         this.idmesa=idmesa;
         this.nombre=nombre;
         this.precio=precio;
@@ -22,7 +22,7 @@ public class plato{
     public String getNombre(){
         return this.nombre;
     }
-    public float getPrecio(){
+    public double getPrecio(){
         return this.precio;
     }
     public int getCantidad(){
@@ -35,7 +35,7 @@ public class plato{
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-    public void setPrecio(float precio){
+    public void setPrecio(double precio){
         this.precio=precio;
     }
     public void setCantidad(int cantidad){

@@ -22,7 +22,7 @@ public class mesa {
 		return this.pedido;
 	}
 	
-	public void aniadirPlato(String nombre,float precio,int cantidad) throws JSONException {
+	public void aniadirPlato(String nombre,double precio,int cantidad) throws JSONException {
 		JSONObject nuevoped = new JSONObject();
 		nuevoped.put("Plato", nombre);
 		nuevoped.put("Precio", precio);
