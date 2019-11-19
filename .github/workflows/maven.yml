@@ -8,8 +8,8 @@ jobs:
       matrix:
         #Para las últimas versionde de windows,macos y windows
         platform: [ubuntu-latest, macos-latest, windows-latest]
-        #Para las versiones del JDK 7 y 8
-        JDK: [7,8]
+        #Para las versiones del JDK 8
+        JDK: [8]
     
     #Corre en todas las plataformas de la matriz
     runs-on: ${{ matrix.platform }}

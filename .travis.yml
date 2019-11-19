@@ -1,8 +1,7 @@
 #Usa lenguaje Java
 language: java
-#Usa OpenJDK7 y 8
+#Usa OpenJDK 8
 jdk: 
-  - openjdk7
   - openjdk8
 #Usa la distro xenial
 dist: trusty

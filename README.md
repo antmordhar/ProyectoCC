@@ -26,7 +26,7 @@ Para ver una descripción extendida de la **arquitectura** y las **tecnologías*
 
 Para el correcto funcionamiento del proyecto sera necesario tener:
 
-* **OpenJDK 7** y **OpenJDK 8**
+* **OpenJDK 8**
 * **Maven**
   
 ## Herramienta de construcción
@@ -66,7 +66,7 @@ Para la integracion continua se usara **Travis-CI** y **GitHub-Actions**.
 
 Para más información vea [.travis.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.travis.yml)
 
-* **GitHub-Actions** : Permite la rápida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los tests para las versiones del Open JDK 7 y 8 para las ultimas versiones de Windows, Linux y Mac-OS.
+* **GitHub-Actions** : Permite la rápida configuración de test de integración sin necesidad de software de terceros. En nuestro caso estará pasando los tests para las versiones del Open JDK 8 para las ultimas versiones de Windows, Linux y Mac-OS.
 
 Para más información vea [maven.yml](https://github.com/antmordhar/ProyectoCC/blob/master/.github/workflows/maven.yml)
 
