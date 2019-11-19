@@ -6,12 +6,11 @@ import org.json.JSONObject;
 
 public class mesa {
 
-	private int  nummesa;
+	private final int  nummesa;
 	JSONArray pedido;
 	 
-	@SuppressWarnings("deprecation")
-	public mesa() {
-		this.nummesa=(int)(Math.random() * 50 + 1);;
+	public mesa(int id) {
+		this.nummesa=id;
 		pedido = new JSONArray();
 		pedido.put(new Integer(this.nummesa));
 	 }
@@ -25,11 +24,13 @@ public class mesa {
 	
 	public void aniadirPlato(String nombre,float precio,int cantidad) throws JSONException {
 		JSONObject nuevoped = new JSONObject();
-		nuevoped.put("plato", nombre);
-		nuevoped.put("precio", precio);
+		nuevoped.put("Plato", nombre);
+		nuevoped.put("Precio", precio);
 		nuevoped.put("Cantidad", cantidad);
 		pedido.put(nuevoped);
 		
 	}
+
+	//Falta limpiar pedido por implementar
 	
 }

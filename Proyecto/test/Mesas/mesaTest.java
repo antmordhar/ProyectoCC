@@ -17,13 +17,12 @@ public class mesaTest {
 	
 	@Before
 	public void setup(){
-		mesatest=new mesa();
+		mesatest=new mesa(0);
 	}
 
 	@Test
 	public void testmesa() throws JSONException {
-		int nummesa=mesatest.getNummesa();
-		assertThat("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
+		assertThat("ID mesa Correcto",0,is(mesatest.getNummesa()));
 		
 		int nummesatest=mesatest.getNummesa();
 		JSONArray Jtest = new JSONArray();
@@ -32,8 +31,7 @@ public class mesaTest {
 	}
 	@Test
 	public void testGetNummesa() {
-		int nummesa=mesatest.getNummesa();
-		assertThat("ID mesa Correcto",0,is(not(mesatest.getNummesa())));
+		assertThat("ID mesa Correcto",0,is(mesatest.getNummesa()));
 	}
 	@Test
 	public void testGetPedido() throws JSONException {
@@ -47,8 +45,8 @@ public class mesaTest {
 		JSONArray Jtest = new JSONArray();
 		Jtest.put(mesatest.getNummesa());
 		JSONObject nuevoped = new JSONObject();
-		nuevoped.put("plato", "PolloFrito");
-		nuevoped.put("precio", 5);
+		nuevoped.put("Clato", "PolloFrito");
+		nuevoped.put("Precio", 5);
 		nuevoped.put("Cantidad", 2);
 		Jtest.put(nuevoped);
 		JSONAssert.assertEquals(Jtest,mesatest.getPedido(),  JSONCompareMode.LENIENT);
