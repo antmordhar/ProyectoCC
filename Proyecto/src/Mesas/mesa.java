@@ -31,6 +31,9 @@ public class mesa {
 		
 	}
 
-	//Falta limpiar pedido por implementar
+	public void limpiarPlatos(){
+		pedido = new JSONArray();
+		pedido.put(new Integer(this.nummesa));
+	}
 	
 }
