@@ -45,7 +45,7 @@ public class mesaTest {
 		JSONArray Jtest = new JSONArray();
 		Jtest.put(mesatest.getNummesa());
 		JSONObject nuevoped = new JSONObject();
-		nuevoped.put("Clato", "PolloFrito");
+		nuevoped.put("Plato", "PolloFrito");
 		nuevoped.put("Precio", 5);
 		nuevoped.put("Cantidad", 2);
 		Jtest.put(nuevoped);
