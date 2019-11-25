@@ -26,16 +26,14 @@ public class mesaController {
         return mesas.get(id).getPedido().toString();
     }
     @PostMapping(value= "/hacerpedido")
-    public ResponseEntity<String> postPedido(@RequestBody plato pedido) throws JSONException { 
+    public void postPedido(@RequestBody plato pedido) throws JSONException { 
         mesas.get(pedido.getIDmesa()).aniadirPlato(pedido.getNombre(),pedido.getPrecio(),pedido.getCantidad());
-        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @PostMapping(value= "/crearmesa")
-    public ResponseEntity<String> crearMesa() throws JSONException { 
+    public void crearMesa() throws JSONException { 
         mesa mesa = new mesa(idcount);
         mesas.add(mesa);
         idcount++;
-        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @DeleteMapping(value= "/borrapedido/{id}")
     public void deletePedido(@PathVariable(value= "id") int id){
