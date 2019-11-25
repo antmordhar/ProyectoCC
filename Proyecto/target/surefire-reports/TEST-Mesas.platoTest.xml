@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="Mesas.platoTest" time="0.006" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="Mesas.platoTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+11-post-Ubuntu-1ubuntu218.04.3"/>
@@ -61,12 +61,12 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Mesas.platoTest" name="testplato" time="0.005"/>
+  <testcase classname="Mesas.platoTest" name="testplato" time="0.004"/>
   <testcase classname="Mesas.platoTest" name="testsetPrecio" time="0"/>
   <testcase classname="Mesas.platoTest" name="testsetCantidad" time="0"/>
   <testcase classname="Mesas.platoTest" name="testSetIDmesa" time="0"/>
   <testcase classname="Mesas.platoTest" name="testSetNombre" time="0"/>
-  <testcase classname="Mesas.platoTest" name="testGetIDmesa" time="0.001"/>
+  <testcase classname="Mesas.platoTest" name="testGetIDmesa" time="0"/>
   <testcase classname="Mesas.platoTest" name="testGetCantidad" time="0"/>
   <testcase classname="Mesas.platoTest" name="testGetNombre" time="0"/>
   <testcase classname="Mesas.platoTest" name="testGetPrecio" time="0"/>

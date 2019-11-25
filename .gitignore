@@ -2,3 +2,7 @@
 .vscode/
 .sts4-cache/
 bin/
+.classpath
+.project
+.settings/
+target/
