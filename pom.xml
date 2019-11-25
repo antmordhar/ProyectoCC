@@ -4,4 +4,7 @@
     <artifactId>RestauranProjectParent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>Proyecto/pom.xml</module>
+    </modules>
 </project>
