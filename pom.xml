@@ -7,4 +7,16 @@
     <modules>
         <module>Proyecto/pom.xml</module>
     </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <configuration>
+                    <repository>antmordhar/restaurantproject</repository>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
