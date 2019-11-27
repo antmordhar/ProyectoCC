@@ -9,7 +9,9 @@ RUN mvn clean package
 
 VOLUME /tmp
 
-COPY /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=0 "/Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" app.jar
+
+EXPOSE 8080
 #Ejecutamos el jar de nuestro proyecto.
 #ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /tmp/Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar
 CMD [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
