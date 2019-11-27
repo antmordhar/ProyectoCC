@@ -1,5 +1,3 @@
-#Desde una imagen con OpenJdk8
-FROM openjdk:8-jdk-alpine
 #Desde una imagen con maven
 FROM maven AS MAVEN_TOOL_CHAIN
 #Copiamos los pom.xml y el src
