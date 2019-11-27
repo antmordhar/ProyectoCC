@@ -5,4 +5,4 @@ build:
        target: builder
     web: Dockerfile
 run:
-  web: java -jar -Dserver.port=$PORT ./Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar
+  web: java -jar -Dserver.port=$PORT ./tmp/Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar
