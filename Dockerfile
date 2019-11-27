@@ -4,11 +4,13 @@ FROM adoptopenjdk/maven-openjdk8
 COPY ./pom.xml /
 COPY ./Proyecto/src /Proyecto/src
 COPY ./Proyecto/pom.xml /Proyecto
+RUN ls -l ./Proyecto/
+RUN ls -l ./
 #Ejecutamos el comando para empaquetar nuestro proyecto
 RUN mvn clean package
-
 #VOLUME /tmp
 
+RUN ls -l ./Proyecto/target/
 COPY ./Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
