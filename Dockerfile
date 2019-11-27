@@ -7,9 +7,9 @@ COPY ./Proyecto/pom.xml /Proyecto
 #Ejecutamos el comando para empaquetar nuestro proyecto
 RUN mvn clean package
 
-VOLUME /tmp
+#VOLUME /tmp
 
-COPY --from=0 "/Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" app.jar
+COPY ./Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 #Ejecutamos el jar de nuestro proyecto.
