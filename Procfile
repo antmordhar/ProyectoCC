@@ -1,1 +1,0 @@
-web: java -jar -Dserver.port=$PORT ./Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar
