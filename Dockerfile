@@ -11,4 +11,4 @@ RUN mvn clean package
 EXPOSE 8080
 #Ejecutamos el jar de nuestro proyecto.
 #ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /tmp/Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar
-CMD [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" ]
+CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=$PORT -Djava.security.egd=file:/dev/./urandom -jar /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" ]
