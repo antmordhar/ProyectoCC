@@ -1,5 +1,5 @@
 #Desde una imagen con maven
-FROM maven AS MAVEN_TOOL_CHAIN
+FROM maven AS builder
 #Copiamos los pom.xml y el src
 COPY ./pom.xml /tmp/
 COPY ./Proyecto/src /tmp/Proyecto/src
