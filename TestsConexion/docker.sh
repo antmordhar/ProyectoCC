@@ -1,6 +1,5 @@
 docker pull antmordhar/restaurantproject
 docker run --rm -p 8080 -d antmordhar/restaurantproject:latest
-echo $PORT
 
 curl \
   --header "Content-type: application/json" \
