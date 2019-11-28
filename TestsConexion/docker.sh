@@ -1,4 +1,5 @@
 docker pull antmordhar/restaurantproject
+export PORT=8080
 docker run --rm -p 8080 -d antmordhar/restaurantproject:latest
 
 curl \
