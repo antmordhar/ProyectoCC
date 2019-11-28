@@ -12,14 +12,12 @@ COPY Proyecto/src /Proyecto/src
 COPY Proyecto/pom.xml /Proyecto
 #Ejecutamos el comando para empaquetar nuestro proyecto y generar el jar
 RUN mvn clean package
-#Solo para testeo, alojamos la imagen en el 8080
-EXPOSE 8080
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
 #Se debe especificar -Dserver.port=$PORT para que heroku encuentre el puerto
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
 #Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor
-CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=$PORT -Djava.security.egd=file:/dev/./urandom -jar /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" ]
+CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=8080 -Djava.security.egd=file:/dev/./urandom -jar /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" ]
 
 #Información sacada de https://docs.docker.com/get-started/
 #Información sacada de https://docs.docker.com/engine/reference/builder/
