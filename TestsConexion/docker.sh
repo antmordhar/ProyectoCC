@@ -1,4 +1,5 @@
-docker pull antmordhar/restaurantproject
+cd ../
+mvn clean package dockerfile:build
 
 docker run --rm -p 8080:8080 -d antmordhar/restaurantproject:latest
 
