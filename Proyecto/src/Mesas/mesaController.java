@@ -1,8 +1,5 @@
 package Mesas;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.json.JSONException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,33 +8,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import Mesas.mesa;
+import Mesas.mesas;
 import Mesas.plato;
 
+//Decimos que es un controlador REST
 @RestController
 public class mesaController {
-    private int idcount=0;
-    private List<mesa> mesas=new ArrayList<mesa>();
+    private final mesas mismesas = new mesas();
 
-    @GetMapping(value= "/verpedido/{id}")
-    public String getPedido(@PathVariable(value= "id") int id) {
-        return mesas.get(id).getPedido().toString();
+    // Le especificamos que path llamara a esta funcion
+    // Value id quiere decir que leera esa variable de la url
+    @GetMapping(value = "/verpedido/{id}")
+    public String getPedido(@PathVariable(value = "id") final int id) {
+        return mismesas.getPedido(id);
     }
-    @PostMapping(value= "/hacerpedido")
-    public void postPedido(@RequestBody plato pedido) throws JSONException { 
-        mesas.get(pedido.getIDmesa()).aniadirPlato(pedido.getNombre(),pedido.getPrecio(),pedido.getCantidad());
+
+    // Le especificamos que path llamara a esta funcion
+    // Request body hara que busque como cuerpo de la peticion un JSON con las
+    // variables que tenga la clase plato
+    @PostMapping(value = "/hacerpedido")
+    public void postPedido(@RequestBody final plato pedido) throws JSONException {
+        mismesas.hacerPedido(pedido);
     }
+    //Le especificamos que path llamara a esta funcion
     @PostMapping(value= "/crearmesa")
-    public void crearMesa() throws JSONException { 
-        mesa mesa = new mesa(idcount);
-        mesas.add(mesa);
-        idcount++;
+    public void crearMesa(){ 
+        mismesas.crearMesa();
     }
+    //Le especificamos que path llamara a esta funcion
+    //Value id quiere decir que leera esa variable de la url
     @DeleteMapping(value= "/borrapedido/{id}")
-    public void deletePedido(@PathVariable(value= "id") int id){
-        mesas.get(id).limpiarPlatos();
-    }
-    public int getIdCount(){
-        return idcount;
+    public void deletePedido(@PathVariable(value= "id") final int id){
+        mismesas.borrarPedido(id);
     }
 }

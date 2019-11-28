@@ -9,6 +9,7 @@
     </modules>
     <build>
         <plugins>
+            <!--Plugin para trabajar con docker,dockerfile:build crea el contenedor-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>

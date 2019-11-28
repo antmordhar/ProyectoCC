@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 
+//Clase de Test para mesa
 public class mesaTest {
 	private mesa mesatest;
 	

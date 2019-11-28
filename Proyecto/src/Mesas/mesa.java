@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+//Clase que almacena los pedidos de una mesa
 public class mesa {
 
 	private final int  nummesa;

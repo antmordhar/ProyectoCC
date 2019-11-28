@@ -1,5 +1,6 @@
 package Mesas;
 
+//Clase que servira como base para el cuerpo de nuestros JSON en la peticion hacerpedido
 public class plato{
 
     private int idmesa;

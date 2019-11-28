@@ -15,22 +15,23 @@ import org.springframework.http.MediaType;
 
 import static org.junit.Assert.*;
 
-import org.json.JSONException;
 
 import static org.hamcrest.CoreMatchers.*;
 
 import Mesas.mesaController;
-import Mesas.plato;
 
+//Le decimos que al correr este tes arranque la aplicacion para poder hacer las consultas
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class mesaControllerTest {
     
+    //El puerto en el que corre nuestra test
     @LocalServerPort
     private int port;
     
     private mesaController controllerTest;
 
+    //Variable para poder hacer peticiones REST
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -38,66 +39,40 @@ public class mesaControllerTest {
     public void setup() {
         controllerTest = new mesaController();
     }
-
-    @Test
-    public void testCrearMesa() throws JSONException {
-        controllerTest.crearMesa();
-        assertThat("IdCount cambiado",1,is(controllerTest.getIdCount()));
-        assertThat("Rellenado Correctamente","[0]",is(controllerTest.getPedido(0)));
-    }
-    @Test
-    public void testpostPedido() throws JSONException {
-        controllerTest.crearMesa();
-        plato platoAux = new plato(0,"PolloFrito", 1.2, 1);
-        controllerTest.postPedido(platoAux);
-        assertThat("Json rellenado correctamente","[0,{\"Cantidad\":1,\"Plato\":\"PolloFrito\",\"Precio\":1.2}]",is(controllerTest.getPedido(0)));
-    }
-    @Test
-    public void testGetPedido() throws JSONException {
-        controllerTest.crearMesa();
-        plato platoAux = new plato(0,"PolloFrito", 1.2, 1);
-        controllerTest.postPedido(platoAux);
-        assertThat("Se devuelve el Json esperado","[0,{\"Cantidad\":1,\"Plato\":\"PolloFrito\",\"Precio\":1.2}]",is(controllerTest.getPedido(0)));
-    }
-    @Test 
-    public void testDeletePedido() throws JSONException {
-        controllerTest.crearMesa();
-        plato platoAux = new plato(0,"PolloFrito", 1.2, 1);
-        controllerTest.postPedido(platoAux);
-        controllerTest.deletePedido(0);
-        assertThat("Borrado Correctamente","[0]",is(controllerTest.getPedido(0)));
-    }
-    @Test
-    public void testGetIdCount() throws JSONException {
-        controllerTest.crearMesa();
-        assertThat("Numero de Mesas correcto",1,is(controllerTest.getIdCount()));
-    }
+    //Test para las conexiones en local de la app
     @Test
     public void testConetions() throws Exception {
 
+        //Creamos un objeto headers que servira para especificar los headers de nuestras peticiones
         HttpHeaders headers = new HttpHeaders();
+        //Le decimos que estara tratando con un JSON
         headers.setContentType(MediaType.APPLICATION_JSON);
 
+        //Creamos un objeto HTTP entity y lo inicializamos con los headers
         HttpEntity<String> request = 
         new HttpEntity<String>("", headers);
 
+        //Realizamos el post para crear mesa y comprobamos que la salida es la correcta
         this.restTemplate.postForObject("http://localhost:" + port + "/crearmesa",request,
                 String.class);
 
         assertThat("Crea la mesa por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
                     ,is("[0]"));
 
+        //Cambiamo la request y le ponemos como contenido el json que queremos que lea la app
         request = 
                 new HttpEntity<String>("{\"idmesa\":0,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
+        //Realizamos el post y comprobamos que la salida es la correcta
         this.restTemplate.postForObject("http://localhost:" + port + "/hacerpedido",request,
             String.class);
 
         assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
         ,is("[0,{\"Cantidad\":1,\"Plato\":\"plato0\",\"Precio\":1.4}]"));
         
+        //Hacemos el delete y comprobamos que la salida es correcta
         this.restTemplate.delete("http://localhost:" + port + "/borrapedido/0");
-
+        
         assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
         ,is("[0]"));
     }
