@@ -37,3 +37,5 @@ Un **caso de uso** sería:
 >Las **mesas** usan la ApiGateway para pedir el menú. Tras esto, envían la comanda a través del ApiGateway. Tras esto se avisa a **cocina** y comienza a resolver la comanda. Una vez resulta la **cocina** usa la ApiGateway para generar un aviso a los **camareros**. El primer camarero libre usa la ApiGateway para avisar al resto de **camareros** de que ya se esta llevando la comanda y lleva la comanda a la **mesa** que la pidió.
 
 Finalmente se deja abierta la **conexión a otros servicios**, como un procesador de pagos,  para gestionar los pagos que se guardaron en la mesa.
+
+[Volver al Index](https://antmordhar.github.io/ProyectoCC/)
