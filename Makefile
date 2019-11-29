@@ -12,8 +12,10 @@ firstinstall:
 install:
 	#Limpiamos e Instalamos las dependencias con maven
 	mvn clean package
+#Limpia las dependencia de la build anterior y crea el docker
 creardocker:
 	mvm clean package dockerfile:build
+#Corre el docker
 correrdocker:
 	docker run --rm -p 8080:8080 -d antmordhar/restaurantproject:latest
 # Ejecutar los test unitarios y de cobertura

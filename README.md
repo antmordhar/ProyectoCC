@@ -95,17 +95,127 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 
 ---
 
-## Rest
+## Microservicio Mesas
+
+Se ha implementado un microservicio el cual tiene una API REST. Los comandos las peticiones que se le pueden hacer son las siguientes:
+
+* **GET: /verpedido/{id}**
+* **POST: /crearmesa**
+* **POST: /hacerpedido** 
+  * Para este comando es necesario pasarle un JSON como cuerpo con la siguiente structura:
+  ~~~ JSON
+  "{"idmesa":0,
+    "nombre":"plato0", 
+    "precio":1.4, 
+    "cantidad":1}"
+  ~~~
+* **DELETE: /borrapedido/{id}**
+
+El microservicio cuenta con 5 clases:
+  
+* **app** : Es el main de nuestro microservicio y la clase que lo ejecuta
+* **mesa** : Guarda los pedidos de una mesa
+* **mesas** : Guarda un conjunto de mesas. Servira luego para conectar la base de datos
+* **mesasController** : Hace de API REST. Tiene un objeto del tipo mesas.
+* **plato** : Sirve como estructura para leer el cuerpo de JSON para la petición de hacerpedido
+
+El microservicio está estructurado por capas como podemos ver en la siguiente imagen:
+
+![Arquitectura](./Documentacion/mesaservice.png)
+
+La capa de la API rest es la encargada de recibir las peticiones al microservicio y enviar desde este las respuestas pertinentes. Por otro lado es la capa de la Lógica de Negocio la que se encarga se encarga de las operaciones con los datos, crearlos, almacenarlos, procesarlos, etc.
 
 ---
 
 ## Docker
 
+El microservicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile). La url del mismo es la siguiente: https://hub.docker.com/repository/docker/antmordhar/restaurantproject .
+
+Como imagen base para la construccion de la imagen del servicio se ha usado: https://hub.docker.com/r/adoptopenjdk/maven-openjdk8/. En esa imagen se encuentra Maven y OpenJDK8 que son necesarios para la contrucción y ejecución del proyecto. 
+
+Frente a esta imagen se compararon 2 más:
+
+* https://hub.docker.com/r/rawmind/alpine-jdk8
+* https://hub.docker.com/_/maven
+
+Pero finalmente se decidio usar la anterior en funcion a su peso y su facilidad de utilización:
+
+![Comparativa](./Documentacion/comparativa.png)
+
+Como se puede ver el peso de Maven es demasiado elevado. Esto es por que contiene varias versiones de los JDK. Por otro lado OpenJDK8 Apline es mas liviana pero hay que instalarle Maven por lo que dificulta el proceso.
+
+Finalmente la imagen del servicio pesa lo siguiente:
+
+![Project](./Documentacion/project.png)
+
+Para construir la imagen podemos usar uno de los siguientes comandos:
+
+>make creardocker
+
+Limpia los archivos de la build anterior empaqueta y containeriza el proyecto.
+
+>mvn dockerfile:build
+
+Usando el plugin de spotify Maven puede crear también la imagen del proyecto.
+
+>docker build --rm -f "Dockerfile" -t antmordhar/restaurantproject:latest .
+
+La forma normal de hacerlo y la propuesta por la documentación de Docker.
+
+Para probar la imagen en local podemos uno de los siguientes comandos:
+
+> make correrdocker
+
+Comando acortado a traves del make
+
+> docker run --rm -p 8080:8080 -d antmordhar/restaurantproject:latest
+
+Comando completo propuesto por la documentación de Docker.
+
+Para comprobar que funciona de manera facil se puede ejecutar el comando:
+
+> make testcontenedor
+
+Que correra un script con un conjunto de pruebas.
+
+Además Docker Hub esta configurado para que cada vez que se haga un push a nuestro repositorio, si pasa los test de integración, se suba la imagen.
+
 ---
 
 ## Heroku
 
----
+La imagen del servicio esta subida a Heroku. La url de la misma es la siguiente: https://restauranprojectcc.herokuapp.com/
 
+Para comprobar si funciona puede seguir las instrucciones que se detallan en la sección Microservicio Mesas o simplemente correr el siguiente comando:
+
+> make testurl
+
+Que correra un conjunto de pruebas contra la url.
+
+Se ha elegido Heroku como PaaS(Platform as a Service) por su sencillez a la hora del despligue. También por la compatibilidad con Dockerfile y la facilidad de configuración de la ejecución de este a la hora del despligue. Y por último pero no menos importante por que nos da un margen de uso gratuito que nos permite hacer las pruebas que deseemos en el microservicio.
+
+Para realizar el despliegue la imagen a Heroku se ha configurado el archivo [heroku.yml](https://github.com/antmordhar/ProyectoCC/blob/master/heroku.yml). En el se especifica a Heroku que use el Dockerfile para construir la imagen para luego desplegarla.
+
+Al no crear un Procfile ni especificar un run en el heroku.yml heroku usara el comando CMD del dockerfile en sustitución de este.
+
+Finalmente, al igual que Docker Hub se ha configurado Heroku para que cada vez que se haga un push en el repositorio y pase los tests de integración se realice el proceso de despliegue. De esta forma todo se realiza de manera mas cómoda y automatizada.
+
+Si quisieramos replicar el proceso de manera manual el proceso tendriamos que instalar heroku-CLI.
+
+Luego ejecutar los siguientes instrucciones:
+
+> heroku create restauranprojectcc
+
+Crea una aplicación en heroku y añado un remote a git para poder pushear a heroku.
+
+> heroku stack:set container
+
+Esto le indicará a Heroku que se va a trabajar con contenedores Docker.
+
+>git push heroku master
+
+Finalmente se pushea a heroku en docde se construira y se desplegará la imagen de nuestro proyecto.
+
+---
 
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)
