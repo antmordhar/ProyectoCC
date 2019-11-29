@@ -16,6 +16,12 @@ import Mesas.plato;
 public class mesaController {
     private final mesas mismesas = new mesas();
 
+    // Mensaje por defecto de la aplicación
+    @GetMapping(value = "/")
+    public String helloWorld(@PathVariable(value = "id") final int id) {
+        return "Hello World!";
+    }
+
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
     @GetMapping(value = "/verpedido/{id}")
