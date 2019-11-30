@@ -18,7 +18,7 @@ public class mesaController {
 
     // Mensaje por defecto de la aplicación
     @GetMapping(value = "/")
-    public String helloWorld(@PathVariable(value = "id") final int id) {
+    public String helloWorld() {
         return "Hello World!";
     }
 
