@@ -49,47 +49,63 @@ Para el correcto funcionamiento del proyecto sera necesario tener:
   
 ## Herramienta de construcción
 
-> buildtool: Makefile
+buildtool: Makefile
 
 Pese a estar usando **Maven** como herramienta de construcción principal se ha decidido usar Makefile para acortar y simplificar el uso de los comandos de Maven. Se han configurado 8 Objetivos:
 
->make firstinstall
+~~~shell
+make firstinstall
+~~~
 
-Este comando instalará maven,openjdk-8-jdk y las dependencias del proyecto. Después pasará los tests unitarios.
+* Este comando instalará maven,openjdk-8-jdk y las dependencias del proyecto. Después pasará los tests unitarios.
 
->make install
+~~~shell
+make install
+~~~
 
-Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los tests unitarios.
+* Instalará solo las dependencias del proyecto y limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target. Tras esto pasara los tests unitarios.
 
->make creardocker
+~~~shell
+make creardocker
+~~~
 
-Ejecuta el comando para que se limpien los archivos creados por builds anteriores empaquete de nuevo la aplicación y cree la imagen del proyecto ejecutando el Dockerfile.
+* Ejecuta el comando para que se limpien los archivos creados por builds anteriores empaquete de nuevo la aplicación y cree la imagen del proyecto ejecutando el Dockerfile.
 
->make correrdocker
+~~~shell
+make correrdocker
+~~~
 
-Ejecuta el comando para que corra la imagen creada con docker localmente en el puerto 8080.
+* Ejecuta el comando para que corra la imagen creada con docker localmente en el puerto 8080.
 
->make test
+~~~shell
+make test
+~~~
 
-Corre los tests unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
+* Corre los tests unitarios y los de cobertura del código del proyecto. Si faltaran dependencias las instalará.
 
-Los test unitarios están desarrollados con **JUnit**. Maven usa **SureFire** para generar el reporte final de pasar los tests.
+* Los test unitarios están desarrollados con **JUnit**. Maven usa **SureFire** para generar el reporte final de pasar los tests.
 Por otra parte los tests de cobertura del código se pasan con **cobertura**. Tras pasarse los tests se podrán ver los resultados en:
 
-* **Unitarios**: /Proyecto/target/surefire-reports/
-* **Cobertura**: /Proyecto/target/site
+  * **Unitarios**: /Proyecto/target/surefire-reports/
+  * **Cobertura**: /Proyecto/target/site
+  
+~~~shell
+make testcontenedor
+~~~
 
->make testcontenedor
+* Corre un script que te crea el contenedor con el Dockerfiles y le realiza pruebas de conexión en local. Para más información sobre lo que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/docker.sh)
 
-Corre un script que te crea el contenedor con el Dockerfiles y le realiza pruebas de conexión en local. Para más información sobre lo que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/docker.sh)
+~~~shell
+make testurl
+~~~
 
->make testurl
+* Corre un script que hace hace las peticiones al servicio desplegado en Heroku. Para ver que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/heroku.sh)
 
-Corre un script que hace hace las peticiones al servicio desplegado en Heroku. Para ver que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/heroku.sh)
+~~~shell
+make clean
+~~~
 
->make clean
-
-Limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target
+* Limpia las dependencias y archivos creados por builds anteriores en la carpeta /Proyecto/target
 
 Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/blob/master/Makefile)
 
@@ -100,7 +116,9 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 Se ha implementado un microservicio el cual tiene una API REST. Los comandos las peticiones que se le pueden hacer son las siguientes:
 
 * **GET: /verpedido/{id}**
+  * Muestra los pedidos de una mesa
 * **POST: /crearmesa**
+  * Añade una nueva mesa y le asigne un ID
 * **POST: /hacerpedido**
   * Para este comando es necesario pasarle un JSON como cuerpo con la siguiente estructura:
 
@@ -111,7 +129,9 @@ Se ha implementado un microservicio el cual tiene una API REST. Los comandos las
     "cantidad":1}"
   ~~~
 
+  * Añade el pèdido a la mesa
 * **DELETE: /borrapedido/{id}**
+  * Borra todos los pedidos de una mesa
 
 El microservicio cuenta con 5 clases:
   
@@ -156,33 +176,45 @@ Finalmente la imagen del servicio pesa lo siguiente:
 
 Para construir la imagen podemos usar uno de los siguientes comandos:
 
->make creardocker
+~~~shell
+make creardocker
+~~~
 
-Limpia los archivos de la build anterior empaqueta y containeriza el proyecto.
+* Limpia los archivos de la build anterior empaqueta y containeriza el proyecto.
 
->mvn dockerfile:build
+~~~shell
+mvn dockerfile:build
+~~~
 
-Usando el plugin de spotify Maven puede crear también la imagen del proyecto.
+* Usando el plugin de spotify Maven puede crear también la imagen del proyecto.
 
->docker build --rm -f "Dockerfile" -t antmordhar/restaurantproject:latest .
+~~~shell
+docker build --rm -f "Dockerfile" -t <nombreImagen>:<etiqueta> .
+~~~
 
-La forma normal de hacerlo y la propuesta por la documentación de Docker.
+* La forma normal de hacerlo y la propuesta por la documentación de Docker. Por defecto la etiqueta que usa el latest.
 
 Para probar la imagen en local podemos usar uno de los siguientes comandos:
 
-> make correrdocker
+~~~shell
+make correrdocker
+~~~
 
-Comando acortado a través del make.
+* Comando acortado a través del make.
 
-> docker run --rm -p 8080:8080 -d antmordhar/restaurantproject:latest
+~~~shell
+docker run --rm -p <puerto>:<puerto> -d <nombreImagen>:<etiqueta>
+~~~
 
-Comando completo propuesto por la documentación de Docker.
+* Comando completo propuesto por la documentación de Docker.
 
 Para comprobar que funciona de manera fácil se puede ejecutar el comando:
 
-> make testcontenedor
+~~~shell
+make testcontenedor
+~~~
 
-Que correrá un script con un conjunto de pruebas.
+* Que correrá un script con un conjunto de pruebas.
 
 Además Docker Hub está configurado para que cada vez que se haga un push a nuestro repositorio, si pasa los tests de integración, se suba la imagen.
 
@@ -194,9 +226,11 @@ La imagen del servicio está subida a Heroku. La url de la misma es la siguiente
 
 Para comprobar si funciona puede seguir las instrucciones que se detallan en la sección Microservicio Mesas o simplemente correr el siguiente comando:
 
-> make testurl
+~~~shell
+make testurl
+~~~
 
-Que correrá un conjunto de pruebas contra la url.
+* Que correrá un conjunto de pruebas contra la url.
 
 Se ha elegido Heroku como PaaS(Platform as a Service) por su sencillez a la hora del despliegue. También por la compatibilidad con Dockerfile y la facilidad de configuración de la ejecución de este a la hora del despliegue. Y por último pero no menos importante por que nos da un margen de uso gratuito que nos permite hacer las pruebas que deseemos en el micro servicio.
 
@@ -210,17 +244,23 @@ Si quisieramos replicar el proceso de manera manual el proceso tendriamos que in
 
 Luego ejecutar los siguientes instrucciones:
 
-> heroku create restauranprojectcc
+~~~shell
+  heroku create <nombreAplicación>
+~~~
 
-Crea una aplicación en heroku y añado un remote a git para poder pushear a heroku.
+* Crea una aplicación en heroku y añado un remote a git para poder pushear a heroku.
 
-> heroku stack:set container
+~~~shell
+  heroku stack:set container
+~~~
 
-Esto le indicará a Heroku que se va a trabajar con contenedores Docker.
+* Esto le indicará a Heroku que se va a trabajar con contenedores Docker. El stack en Heroku es la imagen de sistema operativo que usa. Por defecto usa Heroku 18.
 
->git push heroku master
+~~~shell
+ git push heroku master
+~~~
 
-Finalmente se pushea a heroku en donde se construirá y se desplegará la imagen de nuestro proyecto.
+* Finalmente se pushea a heroku en donde se construirá y se desplegará la imagen de nuestro proyecto.
 
 ---
 

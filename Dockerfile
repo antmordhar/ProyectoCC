@@ -14,9 +14,10 @@ COPY Proyecto/pom.xml /Proyecto
 RUN mvn clean package
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
-#Se debe especificar -Dserver.port=$PORT para que heroku encuentre el puerto
+#Se debe especificar -Dserver.port=$PORT para que heroku asigne el puerto.
+#Heroku tiene por defecto una variable de entrono $PORT
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
-#Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor
+#Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor.
 CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=$PORT -Djava.security.egd=file:/dev/./urandom -jar /Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.jar" ]
 
 #Información sacada de https://docs.docker.com/get-started/
