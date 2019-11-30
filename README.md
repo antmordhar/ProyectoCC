@@ -49,9 +49,9 @@ Para el correcto funcionamiento del proyecto sera necesario tener:
   
 ## Herramienta de construcción
 
-> buildtool: Maven
+> buildtool: Makefile
 
-Pese a estar usando Maven como herramienta de construcción principal se ha decidido usar Makefile para acortar y simplificar el uso de los comandos de Maven. Se han configurado 8 Objetivos:
+Pese a estar usando **Maven** como herramienta de construcción principal se ha decidido usar Makefile para acortar y simplificar el uso de los comandos de Maven. Se han configurado 8 Objetivos:
 
 >make firstinstall
 
@@ -133,7 +133,7 @@ Por último la capa de Modelo de Datos contiene las estructuras que tomarán com
 
 ## Docker
 
-El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile). La url del mismo es la siguiente: 
+El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile). La url del mismo es la siguiente:
 
 Contenedor: https://hub.docker.com/repository/docker/antmordhar/restaurantproject .
 
