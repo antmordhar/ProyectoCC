@@ -14,7 +14,7 @@ install:
 	mvn clean package
 #Limpia las dependencia de la build anterior y crea el docker
 creardocker:
-	mvm clean package dockerfile:build
+	mvn clean package dockerfile:build
 #Corre el docker
 correrdocker:
 	docker run --rm -p 8080:8080 -d antmordhar/restaurantproject:latest
