@@ -113,7 +113,7 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 
 ## Micro Servicio Mesas
 
-Se ha implementado un microservicio el cual tiene una API REST. Los comandos las peticiones que se le pueden hacer son las siguientes:
+Se ha implementado un microservicio el cual tiene una API REST. Este servicio estará desplegado usando un servidor embebido de [Tomcat 7](https://spring.io/blog/2014/03/07/deploying-spring-boot-applications#embedded-web-server-deployment) que nos proporciona Spring Boot. Los comandos las peticiones que se le pueden hacer son las siguientes:
 
 * **GET: /verpedido/{id}**
   * Muestra los pedidos de una mesa
