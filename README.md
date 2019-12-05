@@ -157,18 +157,30 @@ El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/
 
 Contenedor: https://hub.docker.com/repository/docker/antmordhar/restaurantproject .
 
-Como imagen base para la construcción de la imagen del servicio se ha usado: https://hub.docker.com/r/adoptopenjdk/maven-openjdk8/. En esa imagen se encuentra Maven y OpenJDK8 que son necesarios para la construcción y ejecución del proyecto. 
+Como imagen base para la construcción de la imagen del servicio se ha usado: https://hub.docker.com/r/adoptopenjdk/maven-openjdk8/ . En esa imagen se encuentra Maven y OpenJDK8 que son necesarios para la construcción y ejecución del proyecto.
 
 Frente a esta imagen se compararon 2 más:
 
 * https://hub.docker.com/r/rawmind/alpine-jdk8
 * https://hub.docker.com/_/maven
 
-Pero finalmente se decidió usar la anterior en función a su peso y su facilidad de utilización:
+Los pesos de las imágenes son los siguientes:
 
 ![Comparativa](./Documentacion/comparativa.png)
 
-Como se puede ver el peso de Maven es demasiado elevado. Esto es por que contiene varias versiones de los JDK. Por otro lado OpenJDK8 Apline es más liviana pero hay que instalarle Maven por lo que dificulta el proceso.
+Como se puede ver el peso de Maven es demasiado elevado. Esto es por que contiene varias versiones de los JDK. Por otro lado OpenJDK8 Apline es más liviana pero hay que instalarle Maven por lo que dificulta el proceso. Por lo que se decidió usar alguna de las imagenes con maven instalado. Para decidirse se ha usado la herramienta [Apache HTTP server benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir el rendimiento de estas imágenes. Los resultados fueron los siguientes:
+
+* **Maven**:
+  * Tiempo de construcción: 8.519 s
+  * Tiempo en responder 10000 peticiones: 5.681 s
+  * Ratio de transeferencia: 249.24 Kbytes/sec
+  
+* **Maven-OpenJDK8**:
+  * Tiempo de construcción: 7.771 s
+  * Tiempo en responder 10000 peticiones: 5.059 s
+  * Ratio de transeferencia: 279.91 Kbytes/sec
+
+Como se puede ver, a parte de ser más liviano, Maven-OpenJDK8 nos da mejores tiempos en lo relativos a tiempo de construcción de la imagen, respuesta a las peticiones y en ratios de transferencia. Debido a esto, finalmente, se ha decidido Maven-OpenJDK8 como imagen base de nuestro servicio.
 
 Finalmente la imagen del servicio pesa lo siguiente:
 
