@@ -155,7 +155,7 @@ Por último la capa de Modelo de Datos contiene las estructuras que tomarán com
 
 El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile). La url del mismo es la siguiente:
 
-Contenedor: https://hub.docker.com/repository/docker/antmordhar/restaurantproject .
+Contenedor: https://hub.docker.com/r/antmordhar/restaurantproject .
 
 Como imagen base para la construcción de la imagen del servicio se ha usado: https://hub.docker.com/r/adoptopenjdk/maven-openjdk8/ . En esa imagen se encuentra Maven y OpenJDK8 que son necesarios para la construcción y ejecución del proyecto.
 
