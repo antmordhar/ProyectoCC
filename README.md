@@ -115,11 +115,11 @@ Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/b
 
 Se ha implementado un microservicio el cual tiene una API REST. Este servicio estará desplegado usando un servidor embebido de [Tomcat 7](https://spring.io/blog/2014/03/07/deploying-spring-boot-applications#embedded-web-server-deployment) que nos proporciona Spring Boot. Los comandos las peticiones que se le pueden hacer son las siguientes:
 
-* **GET: /verpedido/{id}**
+* **GET: /pedido/{id}**
   * Muestra los pedidos de una mesa
-* **POST: /crearmesa**
+* **POST: /mesa**
   * Añade una nueva mesa y le asigne un ID
-* **POST: /hacerpedido**
+* **POST: /pedido**
   * Para este comando es necesario pasarle un JSON como cuerpo con la siguiente estructura:
 
   ~~~ JSON
@@ -129,8 +129,8 @@ Se ha implementado un microservicio el cual tiene una API REST. Este servicio es
     "cantidad":1}"
   ~~~
 
-  * Añade el pèdido a la mesa
-* **DELETE: /borrapedido/{id}**
+  * Añade el pedido a la mesa
+* **DELETE: /pedido/{id}**
   * Borra todos los pedidos de una mesa
 
 El microservicio cuenta con 5 clases:
@@ -153,7 +153,7 @@ Por último la capa de Modelo de Datos contiene las estructuras que tomarán com
 
 ## Docker
 
-El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile). La url del mismo es la siguiente:
+El micro servicio ha sido containerizado con un [Dockerfile](https://github.com/antmordhar/ProyectoCC/blob/master/Dockerfile).Para ver la documentación vaya al dockerfile que se encuentra en el enlace anterior. La url del mismo es la siguiente:
 
 Contenedor: https://hub.docker.com/r/antmordhar/restaurantproject .
 

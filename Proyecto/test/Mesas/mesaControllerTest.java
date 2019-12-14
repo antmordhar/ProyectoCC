@@ -53,10 +53,10 @@ public class mesaControllerTest {
         new HttpEntity<String>("", headers);
 
         //Realizamos el post para crear mesa y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://localhost:" + port + "/crearmesa",request,
+        this.restTemplate.postForObject("http://localhost:" + port + "/mesa",request,
                 String.class);
 
-        assertThat("Crea la mesa por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
+        assertThat("Crea la mesa por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/0",String.class)
                     ,is("[0]"));
 
         //Cambiamo la request y le ponemos como contenido el json que queremos que lea la app
@@ -64,16 +64,16 @@ public class mesaControllerTest {
                 new HttpEntity<String>("{\"idmesa\":0,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
         //Realizamos el post y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://localhost:" + port + "/hacerpedido",request,
+        this.restTemplate.postForObject("http://localhost:" + port + "/pedido",request,
             String.class);
 
-        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
+        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/0",String.class)
         ,is("[0,{\"Cantidad\":1,\"Plato\":\"plato0\",\"Precio\":1.4}]"));
         
         //Hacemos el delete y comprobamos que la salida es correcta
-        this.restTemplate.delete("http://localhost:" + port + "/borrapedido/0");
+        this.restTemplate.delete("http://localhost:" + port + "/pedido/0");
         
-        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/verpedido/0",String.class)
+        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/0",String.class)
         ,is("[0]"));
     }
 }

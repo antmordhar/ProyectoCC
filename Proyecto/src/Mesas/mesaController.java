@@ -24,7 +24,7 @@ public class mesaController {
 
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
-    @GetMapping(value = "/verpedido/{id}")
+    @GetMapping(value = "/pedido/{id}")
     public String getPedido(@PathVariable(value = "id") final int id) {
         return mismesas.getPedido(id);
     }
@@ -32,18 +32,18 @@ public class mesaController {
     // Le especificamos que path llamara a esta funcion
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
-    @PostMapping(value = "/hacerpedido")
+    @PostMapping(value = "/pedido")
     public void postPedido(@RequestBody final plato pedido) throws JSONException {
         mismesas.hacerPedido(pedido);
     }
     //Le especificamos que path llamara a esta funcion
-    @PostMapping(value= "/crearmesa")
+    @PostMapping(value= "/mesa")
     public void crearMesa(){ 
         mismesas.crearMesa();
     }
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
-    @DeleteMapping(value= "/borrapedido/{id}")
+    @DeleteMapping(value= "/pedido/{id}")
     public void deletePedido(@PathVariable(value= "id") final int id){
         mismesas.borrarPedido(id);
     }
