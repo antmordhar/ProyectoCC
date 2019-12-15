@@ -5,6 +5,8 @@ firstinstall:
 	sudo apt install maven
 	#Instalar OpenJDK8. Cambiar al 7 si se prefiere esta version
 	sudo apt install openjdk-8-jdk
+	#Instalamos docker
+	sudo apt-get install docker-ce docker-ce-cli containerd.io
 	#Descargamos la imagen de mongo
 	docker pull mongo
 	#Limpiamos e Instalamos las dependencias con maven

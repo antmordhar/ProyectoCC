@@ -7,6 +7,9 @@ jdk:
 dist: trusty
 #No hacer el proceso con sudo
 sudo: false
+#Le indicamos que usaremos mongo
+services:
+  - mongodb
 #Antes de correr los proyectos va a la carpeta Proyecto que es donde se encuentra el pom.xml
 before_install: "cd Proyecto"
 #Script a realizar
