@@ -18,7 +18,7 @@ RUN mvn clean package && cp ./Proyecto/target/RestauranProject-0.0.1-SNAPSHOT.ja
 #Heroku tiene por defecto una variable de entrono $PORT
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
 #Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor.
-CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=$PORT -Djava.security.egd=file:/dev/./urandom -jar ./app.jar" ]
+CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=$PORT -Dspring.data.mongodb.uri=mongodb://mongo/test -Djava.security.egd=file:/dev/./urandom -jar ./app.jar" ]
 
 #Información sacada de https://docs.docker.com/get-started/
 #Información sacada de https://docs.docker.com/engine/reference/builder/

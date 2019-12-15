@@ -1,7 +1,14 @@
 package Mesas;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 //Clase que servira como base para el cuerpo de nuestros JSON en la peticion hacerpedido
+@Document(collection = "platos")
 public class plato{
+
+    @Id
+    private String id;
 
     private int idmesa;
     private String nombre;
@@ -41,5 +48,17 @@ public class plato{
     }
     public void setCantidad(int cantidad){
         this.cantidad=cantidad;
+    }
+
+    @Override
+    public String toString(){
+        String r = "";
+        
+        r +="idmesa: " + this.idmesa +
+            " Nombre: " + this.nombre +
+            " precio: " + this.precio + 
+            " cantidad: " + this.cantidad ;
+
+        return r ;
     }
 }

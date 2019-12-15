@@ -1,6 +1,7 @@
 package Mesas;
 
 import org.json.JSONException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,13 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import Mesas.mesas;
 import Mesas.plato;
 
 //Decimos que es un controlador REST
 @RestController
 public class mesaController {
-    private final mesas mismesas = new mesas();
+
+    //Aquí se realiza la inyección de dependencias
+    @Autowired
+    private platoRepository repository;
 
     // Mensaje por defecto de la aplicación
     @GetMapping(value = "/")
@@ -24,27 +27,23 @@ public class mesaController {
 
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
-    @GetMapping(value = "/pedido/{id}")
+    @GetMapping(value = "/pedido/get/{id}")
     public String getPedido(@PathVariable(value = "id") final int id) {
-        return mismesas.getPedido(id);
+        return repository.findByIdmesa(id).toString();
     }
 
     // Le especificamos que path llamara a esta funcion
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
-    @PostMapping(value = "/pedido")
+    @PostMapping(value = "/pedido/post")
     public void postPedido(@RequestBody final plato pedido) throws JSONException {
-        mismesas.hacerPedido(pedido);
+        repository.save(pedido);
     }
-    //Le especificamos que path llamara a esta funcion
-    @PostMapping(value= "/mesa")
-    public void crearMesa(){ 
-        mismesas.crearMesa();
-    }
+
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
-    @DeleteMapping(value= "/pedido/{id}")
+    @DeleteMapping(value= "/pedido/delete/{id}")
     public void deletePedido(@PathVariable(value= "id") final int id){
-        mismesas.borrarPedido(id);
+        repository.deletePlatoByIdmesa(id);
     }
 }

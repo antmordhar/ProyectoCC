@@ -1,0 +1,20 @@
+execution:
+    - executor: jmeter
+      concurrency: 10
+      #iterations: 1000
+      ramp-up: 10
+      hold-for: 60
+      scenario: LoadTest
+    
+scenarios:
+  LoadTest:
+    requests:
+    - url: http://localhost:8080/pedido/post
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://localhost:8080/pedido/get/96
+      method: GET
+    - url: http://localhost:8080/pedido/delete/96
+      method: DELETE
