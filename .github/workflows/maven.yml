@@ -6,8 +6,8 @@ jobs:
   build:
     strategy:
       matrix:
-        #Para las últimas versionde de windows y windows
-        platform: [ubuntu-latest,windows-latest]
+        #Para las últimas version de Ubuntu
+        platform: [ubuntu-latest]
         #Para las versiones del JDK 8
         JDK: [8]
         #Para las versiones de mongo
