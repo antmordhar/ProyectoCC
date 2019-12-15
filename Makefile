@@ -22,7 +22,7 @@ creardocker:
 #Corre el docker
 #Necesitas tener la imagen de mongodb
 correrdocker:
-	docker run -d -p 27000:27017 --name mongo mongo
+	docker run -d -p 27017:27017 --name mongo mongo
 	docker run -p 8080:8080 --name resturantproject --link=mongo antmordhar/restaurantproject
 # Ejecutar los test unitarios y de cobertura
 test:
