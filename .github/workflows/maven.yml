@@ -6,10 +6,12 @@ jobs:
   build:
     strategy:
       matrix:
-        #Para las últimas versionde de windows,macos y windows
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        #Para las últimas version de Ubuntu
+        platform: [ubuntu-latest]
         #Para las versiones del JDK 8
         JDK: [8]
+        #Para las versiones de mongo
+        mongodb-version: ["4.2"]
     
     #Corre en todas las plataformas de la matriz
     runs-on: ${{ matrix.platform }}
@@ -22,6 +24,10 @@ jobs:
       with:
         #Corre en todos los JDK quele hemos indicado
         java-version: ${{ matrix.JDK }}
+    - name: Launch MongoDB
+      uses: wbari/start-mongoDB@v0.2
+      with:
+        mongoDBVersion: ${{ matrix.mongodb-version }}
       #Le indicamos el nombre del paso
     - name: Build with Maven
       #Va a proyecto
