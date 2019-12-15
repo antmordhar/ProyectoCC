@@ -68,5 +68,8 @@ public class mesaControllerTest {
         
         assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/get/69",String.class)
         ,is("[]"));
+
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",String.class)
+        ,is("Hello World!"));
     }
 }
