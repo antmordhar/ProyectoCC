@@ -35,7 +35,7 @@ jobs:
       #Se corren los tests
       #Se corren los test de covertura
       run: |
-       make install
+       make install;
        java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &;
        cd ./Mesas;
        mvn clean package cobertura:cobertura --file pom.xml;
