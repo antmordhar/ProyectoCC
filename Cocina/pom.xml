@@ -54,7 +54,7 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
             <version>2.4.0</version>
-        </dependency>  
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>

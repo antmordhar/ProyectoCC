@@ -70,6 +70,7 @@ public class cocinaController {
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
          this.restTemplate.postForObject("http://camarero:" + port + "/camarero/post",request,String.class);
         }  
+        //System.getenv(HOST)
         return "OK";  
     }
 }

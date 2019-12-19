@@ -14,8 +14,6 @@ import org.springframework.http.MediaType;
 
 import static org.junit.Assert.*;
 
-
-
 import static org.hamcrest.CoreMatchers.*;
 
 //Le decimos que al correr este tes arranque la aplicacion para poder hacer las consultas
