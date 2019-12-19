@@ -68,9 +68,8 @@ public class cocinaController {
         for(plato plato:pedido){
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://camarero:" + port + "/camarero/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/post",request,String.class);
         }  
-        //System.getenv(HOST)
         return "OK";  
     }
 }

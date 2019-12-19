@@ -14,14 +14,25 @@ services:
 #Limpia los archivos de builds anteriores y reempaqueta
 #Despues corre los test de cobertura
 script: 
+  #Pruebo mesas
+  - "java -jar ./Cocina/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
   - "cd ./Mesas && mvn clean package cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
+  - "kill -9 $(sudo lsof -t -i:8081)"
   - "cd .."
+  #Pruebo cocina
+  - "java -jar ./Camarero/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
   - "cd ./Cocina && mvn clean package cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
+  - "kill -9 $(sudo lsof -t -i:8082)"
   - "cd .."
+  #Pruebo camarero
   - "cd ./Camarero && mvn clean package cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
   - "cd .."
+  #Pruebo Api
+  - "java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
+  - "java -jar ./Cocina/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
+  - "java -jar ./Camarero/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
   - "cd ./APIService && mvn clean package cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"

@@ -50,23 +50,32 @@ public class mesaControllerTest {
                 new HttpEntity<String>("{\"idmesa\":69,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
         //Realizamos el post y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://localhost:" + port + "/pedido/post",request,
+        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/pedido/post",request,
             String.class);
 
-        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/get/69",String.class)
+        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/pedido/get/69",String.class)
         ,is(not("[]")));
+        
+        //Prueba de SEND------------------------------------------------------------------------------------------------------------------------------
+
+        request = 
+        new HttpEntity<String>("", headers);
+
+        //Realizamos el post y comprobamos que la salida es la correcta
+         assertThat("Sendea Correctamente",this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/pedido/send/69",request,
+             String.class),is("OK"));
         
         //Prueba de DELETE------------------------------------------------------------------------------------------------------------------------------
         //Creamos el request
                 request = new HttpEntity<String>("", headers);
         //Hacemos el delete y comprobamos que la salida es correcta
-        this.restTemplate.delete("http://localhost:" + port + "/pedido/delete/69");
+        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/pedido/delete/69");
         
-        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://localhost:" + port + "/pedido/get/69",String.class)
+        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/pedido/get/69",String.class)
         ,is("[]"));
         
         //Prueba de HELLO------------------------------------------------------------------------------------------------------------------------------
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",String.class)
+        assertThat(this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/",String.class)
         ,is("Hello World!"));
     }
 }

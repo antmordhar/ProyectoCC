@@ -12,19 +12,40 @@ firstinstall:
 	
 #Instala las dependencias y testea
 install:
-	cd ./Mesas && mvn clean package
-	cd ./Cocina && 	mvn clean package
-	cd ./Camarero && mvn clean package
-	cd ./APIService && mvn clean package
+	cd ./Mesas && mvn clean package -DskipTests
+	cd ./Cocina && 	mvn clean package -DskipTests
+	cd ./Camarero && mvn clean package -DskipTests
+	cd ./APIService && mvn clean package -DskipTests
 
 # Ejecutar los test unitarios y de cobertura
-test:
-	#Corremos los test de Junit y covertura
-	#Para esto es necesario estar con el jdk8 o inferior e indicarselo a maven.
-	cd ./Mesas && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn clean package cobertura:cobertura 
-	cd ./Cocina && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn clean package cobertura:cobertura 
-	cd ./Camarero && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn clean package cobertura:cobertura 
-	cd ./APIService && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn clean package cobertura:cobertura 
+#Para esto es necesario estar con el jdk8 o inferior e indicarselo a maven.
+#Primero encendemos los servicios
+#Creamos las variables de entorno
+#Lanzamos los tests
+
+testmesa:
+	mongod --fork --syslog
+	nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	cd ./Mesas && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
+	killall mongod
+	
+testcocina:
+	mongod --fork --syslog
+	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
+	cd ./Cocina && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
+	killall mongod
+testcamarero:
+	mongod --fork --syslog
+	cd ./Camarero  && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
+	killall mongod
+
+testapi:
+	mongod --fork --syslog
+	java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
+	java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
+	cd ./APIService  && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
+	killall mongod
 
 #Limpia archivos de builds anteriores
 clean:

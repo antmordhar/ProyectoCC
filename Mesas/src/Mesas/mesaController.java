@@ -60,7 +60,7 @@ public class mesaController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     @PostMapping(value= "/pedido/send/{id}")
-    public void finishPedido(@PathVariable(value= "id") final int id){
+    public String finishPedido(@PathVariable(value= "id") final int id){
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -68,7 +68,8 @@ public class mesaController {
         for(plato plato:pedido){
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://cocina:" + port + "/cocina/post",request,String.class);
-        }        
+         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/post",request,String.class);
+        }  
+        return "OK"; 
     }
 }

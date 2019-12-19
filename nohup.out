@@ -1,0 +1,1192 @@
+Error: Unable to access jarfile /Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile /Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 21:42:46.323  INFO 2720 --- [           main] Mesas.app                                : Starting app on antmordhar-PE70-2QE with PID 2720 (/home/antmordhar/Practicas/ProyectoCC/Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:42:46.330  INFO 2720 --- [           main] Mesas.app                                : No active profile set, falling back to default profiles: default
+2019-12-19 21:42:47.562  INFO 2720 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:42:47.703  INFO 2720 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130ms. Found 1 repository interfaces.
+2019-12-19 21:42:48.951  INFO 2720 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 21:42:48.969  INFO 2720 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:42:48.970  INFO 2720 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:42:49.093  INFO 2720 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:42:49.094  INFO 2720 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2667 ms
+2019-12-19 21:42:49.804  INFO 2720 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:42:49.804  INFO 2720 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:42:49.974  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 21:42:49.984  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6349513}
+2019-12-19 21:42:49.987  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:42:50.050  WARN 2720 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:42:50.050  WARN 2720 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:42:50.142  WARN 2720 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:42:50.142  WARN 2720 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:42:50.801  INFO 2720 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:42:51.223  INFO 2720 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-19 21:42:51.234  INFO 2720 --- [           main] Mesas.app                                : Started app in 5.834 seconds (JVM running for 6.411)
+Error: Unable to access jarfile /Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile /Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 21:46:46.263  INFO 3362 --- [           main] Mesas.app                                : Starting app on antmordhar-PE70-2QE with PID 3362 (/home/antmordhar/Practicas/ProyectoCC/Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:46:46.270  INFO 3362 --- [           main] Mesas.app                                : No active profile set, falling back to default profiles: default
+2019-12-19 21:46:47.555  INFO 3362 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:46:47.695  INFO 3362 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126ms. Found 1 repository interfaces.
+2019-12-19 21:46:48.849  INFO 3362 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 21:46:48.884  INFO 3362 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:46:48.887  INFO 3362 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:46:49.042  INFO 3362 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:46:49.042  INFO 3362 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2677 ms
+2019-12-19 21:46:49.723  INFO 3362 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:46:49.723  INFO 3362 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:46:49.813  INFO 3362 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 21:46:49.821  INFO 3362 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4578061}
+2019-12-19 21:46:49.824  INFO 3362 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:46:49.912  WARN 3362 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:46:49.913  WARN 3362 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:46:50.020  WARN 3362 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:46:50.021  WARN 3362 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:46:50.039  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
+2019-12-19 21:46:50.698  INFO 3362 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:46:51.043  INFO 3362 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:46:51.070  INFO 3362 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:46:51.078 ERROR 3362 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-12-19 21:46:51.085  INFO 3362 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+Error: Unable to access jarfile /Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile /Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 21:47:37.839  INFO 3686 --- [           main] Mesas.app                                : Starting app on antmordhar-PE70-2QE with PID 3686 (/home/antmordhar/Practicas/ProyectoCC/Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:47:37.846  INFO 3686 --- [           main] Mesas.app                                : No active profile set, falling back to default profiles: default
+2019-12-19 21:47:38.864  INFO 3686 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:47:38.985  INFO 3686 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112ms. Found 1 repository interfaces.
+2019-12-19 21:47:39.964  INFO 3686 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 21:47:39.985  INFO 3686 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:47:39.986  INFO 3686 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:47:40.052  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1}] to localhost:27017
+2019-12-19 21:47:40.101  INFO 3686 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:47:40.101  INFO 3686 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2188 ms
+2019-12-19 21:47:40.822  INFO 3686 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:47:40.824  INFO 3686 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:47:41.028  INFO 3686 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-19 21:47:41.047  INFO 3686 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11421957}
+2019-12-19 21:47:41.052  INFO 3686 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:47:41.134  WARN 3686 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:47:41.135  WARN 3686 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:47:41.235  WARN 3686 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:47:41.236  WARN 3686 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:47:41.862  INFO 3686 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:47:42.216  INFO 3686 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:47:42.240  INFO 3686 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:47:42.243 ERROR 3686 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-12-19 21:47:42.247  INFO 3686 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 21:49:38.632  INFO 4004 --- [           main] Mesas.app                                : Starting app on antmordhar-PE70-2QE with PID 4004 (/home/antmordhar/Practicas/ProyectoCC/Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:49:38.657  INFO 4004 --- [           main] Mesas.app                                : No active profile set, falling back to default profiles: default
+2019-12-19 21:49:38.723  INFO 4008 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 4008 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:49:38.742  INFO 4008 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 21:49:40.085  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:1}] to localhost:27017
+2019-12-19 21:49:40.951  INFO 4004 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:49:40.969  INFO 4008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:49:41.162  INFO 4004 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196ms. Found 1 repository interfaces.
+2019-12-19 21:49:41.194  INFO 4008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 211ms. Found 1 repository interfaces.
+2019-12-19 21:49:42.805  INFO 4004 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 21:49:42.861  INFO 4004 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:49:42.866  INFO 4004 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:49:42.981  INFO 4008 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 21:49:43.016  INFO 4008 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:49:43.020  INFO 4008 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:49:43.041  INFO 4004 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:49:43.042  INFO 4004 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4170 ms
+2019-12-19 21:49:43.215  INFO 4008 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:49:43.217  INFO 4008 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4284 ms
+2019-12-19 21:49:43.857  INFO 4004 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:49:43.857  INFO 4004 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:49:43.910  INFO 4008 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:49:43.910  INFO 4008 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:49:44.083  INFO 4008 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+2019-12-19 21:49:44.080  INFO 4004 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+2019-12-19 21:49:44.105  INFO 4004 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8779746}
+2019-12-19 21:49:44.115  INFO 4008 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=23766112}
+2019-12-19 21:49:44.119  INFO 4004 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:49:44.125  INFO 4008 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:49:44.256  WARN 4004 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.259  WARN 4004 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.371  WARN 4008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.372  WARN 4008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.543  WARN 4004 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.546  WARN 4004 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.575  WARN 4008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:44.579  WARN 4008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:49:45.518  INFO 4004 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:49:45.722  INFO 4008 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:49:45.951  INFO 4004 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:49:45.979  INFO 4004 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:49:45.982 ERROR 4004 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-12-19 21:49:45.990  INFO 4004 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:49:46.104  INFO 4008 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:49:46.115  INFO 4008 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:49:46.117 ERROR 4008 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-12-19 21:49:46.120  INFO 4008 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:50:10.320  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 21:56:12.609  INFO 4654 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 4654 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:56:12.616  INFO 4654 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 21:56:12.777  INFO 4650 --- [           main] Mesas.app                                : Starting app on antmordhar-PE70-2QE with PID 4650 (/home/antmordhar/Practicas/ProyectoCC/Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 21:56:12.783  INFO 4650 --- [           main] Mesas.app                                : No active profile set, falling back to default profiles: default
+2019-12-19 21:56:14.616  INFO 4654 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:56:14.769  INFO 4650 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 21:56:14.844  INFO 4654 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210ms. Found 1 repository interfaces.
+2019-12-19 21:56:14.991  INFO 4650 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208ms. Found 1 repository interfaces.
+2019-12-19 21:56:16.415  INFO 4654 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 21:56:16.466  INFO 4654 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:56:16.476  INFO 4654 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:56:16.703  INFO 4654 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:56:16.704  INFO 4654 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3902 ms
+2019-12-19 21:56:17.137  INFO 4650 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 21:56:17.185  INFO 4650 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 21:56:17.190  INFO 4650 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 21:56:17.397  INFO 4650 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 21:56:17.397  INFO 4650 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4424 ms
+2019-12-19 21:56:17.829  INFO 4654 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:56:17.832  INFO 4654 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:56:18.053  INFO 4654 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-19 21:56:18.081  INFO 4654 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10514701}
+2019-12-19 21:56:18.105  INFO 4654 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:56:18.187  WARN 4654 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:18.188  WARN 4654 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:18.394  WARN 4654 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:18.395  WARN 4654 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:18.436  INFO 4650 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 21:56:18.438  INFO 4650 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 21:56:18.714  INFO 4650 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+2019-12-19 21:56:18.745  INFO 4650 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22823327}
+2019-12-19 21:56:18.748  INFO 4650 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 21:56:18.897  WARN 4650 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:18.898  WARN 4650 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:19.061  WARN 4650 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:19.064  WARN 4650 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 21:56:19.530  INFO 4654 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:56:20.148  INFO 4654 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:56:20.181  INFO 4654 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:56:20.185 ERROR 4654 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-12-19 21:56:20.189  INFO 4654 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:56:20.289  INFO 4650 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:56:20.373  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:42, serverValue:4}] to localhost:27017
+2019-12-19 21:56:20.376  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1732877}
+2019-12-19 21:56:20.677  INFO 4650 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 21:56:20.697  INFO 4650 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 21:56:20.701 ERROR 4650 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-12-19 21:56:20.707  INFO 4650 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 21:58:10.398  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:00:53.584  INFO 5292 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 5292 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:00:53.593  INFO 5292 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 22:00:54.870  INFO 5292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:00:55.008  INFO 5292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127ms. Found 1 repository interfaces.
+2019-12-19 22:00:56.285  INFO 5292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 22:00:56.310  INFO 5292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:00:56.310  INFO 5292 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:00:56.463  INFO 5292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:00:56.464  INFO 5292 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2769 ms
+2019-12-19 22:00:57.108  INFO 5292 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:00:57.110  INFO 5292 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:00:57.267  INFO 5292 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-19 22:00:57.286  INFO 5292 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7073177}
+2019-12-19 22:00:57.291  INFO 5292 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:00:57.396  WARN 5292 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:00:57.397  WARN 5292 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:00:57.522  WARN 5292 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:00:57.523  WARN 5292 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:00:58.340  INFO 5292 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:00:58.734  INFO 5292 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 22:00:58.752  INFO 5292 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 22:00:58.755 ERROR 5292 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-12-19 22:00:58.758  INFO 5292 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:01:00.424  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:60, serverValue:3}] to localhost:27017
+2019-12-19 22:01:00.425  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=935247}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:02:00.127  INFO 5539 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 5539 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:02:00.135  INFO 5539 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 22:02:00.453  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:61, serverValue:1}] to localhost:27017
+2019-12-19 22:02:01.482  INFO 5539 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:02:01.675  INFO 5539 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 179ms. Found 1 repository interfaces.
+2019-12-19 22:02:03.045  INFO 5539 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 22:02:03.068  INFO 5539 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:02:03.068  INFO 5539 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:02:03.185  INFO 5539 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:02:03.185  INFO 5539 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2957 ms
+2019-12-19 22:02:03.832  INFO 5539 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:02:03.833  INFO 5539 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:02:04.019  INFO 5539 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+2019-12-19 22:02:04.039  INFO 5539 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11943836}
+2019-12-19 22:02:04.044  INFO 5539 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:02:04.157  WARN 5539 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:02:04.158  WARN 5539 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:02:04.313  WARN 5539 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:02:04.314  WARN 5539 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:02:05.085  INFO 5539 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:02:05.377  INFO 5539 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 22:02:05.402  INFO 5539 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 22:02:05.407 ERROR 5539 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-12-19 22:02:05.412  INFO 5539 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+2019-12-19 22:05:40.489  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:62, serverValue:1}] to localhost:27017
+2019-12-19 22:11:50.731  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:242) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:171) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:303) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:38) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:180) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:124) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+2019-12-19 22:12:00.736  INFO 2720 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:63, serverValue:2}] to localhost:27017
+2019-12-19 22:12:00.737  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=963851}
+2019-12-19 22:12:50.745  INFO 2720 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:35:02.168  INFO 11222 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 11222 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:35:02.175  INFO 11222 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:35:03.480  INFO 11222 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:35:03.658  INFO 11222 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165ms. Found 1 repository interfaces.
+2019-12-19 22:35:05.110  INFO 11222 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:35:05.130  INFO 11222 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:35:05.130  INFO 11222 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:35:05.251  INFO 11222 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:35:05.252  INFO 11222 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2973 ms
+2019-12-19 22:35:06.022  INFO 11222 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:35:06.023  INFO 11222 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:35:06.212  INFO 11222 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:35:06.234  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12499693}
+2019-12-19 22:35:06.250  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:35:06.372  WARN 11222 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:35:06.372  WARN 11222 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:35:06.562  WARN 11222 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:35:06.563  WARN 11222 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:35:07.421  INFO 11222 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:35:07.800  INFO 11222 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 22:35:07.806  INFO 11222 --- [           main] Cocina.app                               : Started app in 6.427 seconds (JVM running for 7.062)
+2019-12-19 22:35:12.855  INFO 11222 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:35:12.856  INFO 11222 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:35:12.867  INFO 11222 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-12-19 22:35:13.045  INFO 11222 --- [nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2019-12-19 22:36:36.279  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:37:24.131  INFO 12008 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 12008 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:37:24.139  INFO 12008 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:37:25.588  INFO 12008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:37:25.715  INFO 12008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118ms. Found 1 repository interfaces.
+2019-12-19 22:37:26.296  INFO 11222 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:1}] to localhost:27017
+2019-12-19 22:37:26.299  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2226818}
+2019-12-19 22:37:27.034  INFO 12008 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:37:27.058  INFO 12008 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:37:27.059  INFO 12008 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:37:27.235  INFO 12008 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:37:27.235  INFO 12008 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2995 ms
+2019-12-19 22:37:27.957  INFO 12008 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:37:27.958  INFO 12008 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:37:28.154  INFO 12008 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-19 22:37:28.168  INFO 12008 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8805385}
+2019-12-19 22:37:28.172  INFO 12008 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:37:28.298  WARN 12008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:37:28.299  WARN 12008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:37:28.443  WARN 12008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:37:28.446  WARN 12008 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:37:29.265  INFO 12008 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:37:29.536  INFO 12008 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 22:37:29.551  INFO 12008 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 22:37:29.554 ERROR 12008 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2019-12-19 22:37:29.558  INFO 12008 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:37:34.538  INFO 11222 --- [nio-8081-exec-3] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:5}] to localhost:27017 because there was a socket exception raised on another connection from this pool.
+2019-12-19 22:37:34.542  INFO 11222 --- [nio-8081-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:6}] to localhost:27017
+2019-12-19 22:37:46.305  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:39:17.962  INFO 12460 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 12460 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:39:17.968  INFO 12460 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:39:19.398  INFO 12460 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:39:19.561  INFO 12460 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152ms. Found 1 repository interfaces.
+2019-12-19 22:39:20.912  INFO 12460 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:39:20.931  INFO 12460 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:39:20.932  INFO 12460 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:39:21.104  INFO 12460 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:39:21.105  INFO 12460 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3035 ms
+2019-12-19 22:39:21.742  INFO 12460 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:39:21.742  INFO 12460 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:39:21.876  INFO 12460 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:39:21.895  INFO 12460 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11576682}
+2019-12-19 22:39:21.899  INFO 12460 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:39:22.034  WARN 12460 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:39:22.034  WARN 12460 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:39:22.196  WARN 12460 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:39:22.197  WARN 12460 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:39:23.027  INFO 12460 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:39:23.457  INFO 12460 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 22:39:23.476  INFO 12460 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 22:39:23.479 ERROR 12460 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2019-12-19 22:39:23.483  INFO 12460 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:39:26.320  INFO 11222 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:20, serverValue:3}] to localhost:27017
+2019-12-19 22:39:26.322  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1303692}
+2019-12-19 22:39:28.221  INFO 11222 --- [nio-8081-exec-7] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:9, serverValue:6}] to localhost:27017 because there was a socket exception raised on another connection from this pool.
+2019-12-19 22:39:28.225  INFO 11222 --- [nio-8081-exec-7] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:21, serverValue:6}] to localhost:27017
+2019-12-19 22:39:46.328  INFO 11222 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:41:25.940  INFO 12927 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 12927 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:41:25.946  INFO 12927 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:41:27.317  INFO 12927 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:41:27.479  INFO 12927 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145ms. Found 1 repository interfaces.
+2019-12-19 22:41:28.958  INFO 12927 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:41:28.985  INFO 12927 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:41:28.986  INFO 12927 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:41:29.114  INFO 12927 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:41:29.115  INFO 12927 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3076 ms
+2019-12-19 22:41:29.796  INFO 12927 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:41:29.797  INFO 12927 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:41:29.947  INFO 12927 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:41:29.972  INFO 12927 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6806588}
+2019-12-19 22:41:29.985  INFO 12927 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:41:30.102  WARN 12927 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:41:30.103  WARN 12927 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:41:30.243  WARN 12927 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:41:30.247  WARN 12927 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:41:31.153  INFO 12927 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:41:31.598  INFO 12927 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 22:41:31.605  INFO 12927 --- [           main] Cocina.app                               : Started app in 6.376 seconds (JVM running for 6.944)
+2019-12-19 22:41:37.217  INFO 12927 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:41:37.218  INFO 12927 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:41:37.226  INFO 12927 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-12-19 22:41:37.382  INFO 12927 --- [nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2019-12-19 22:41:49.999  INFO 12927 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:43:52.324  INFO 13400 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 13400 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:43:52.328  INFO 13400 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:43:53.620  INFO 13400 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:43:53.765  INFO 13400 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133ms. Found 1 repository interfaces.
+2019-12-19 22:43:55.008  INFO 13400 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:43:55.037  INFO 13400 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:43:55.043  INFO 13400 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:43:55.200  INFO 13400 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:43:55.202  INFO 13400 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2761 ms
+2019-12-19 22:43:55.849  INFO 13400 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:43:55.851  INFO 13400 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:43:55.993  INFO 13400 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:43:56.017  INFO 13400 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=13493988}
+2019-12-19 22:43:56.021  INFO 13400 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:43:56.131  WARN 13400 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:43:56.131  WARN 13400 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:43:56.230  WARN 13400 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:43:56.230  WARN 13400 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:43:57.127  INFO 13400 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:43:57.628  INFO 13400 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 22:43:57.636  INFO 13400 --- [           main] Cocina.app                               : Started app in 6.046 seconds (JVM running for 6.631)
+2019-12-19 22:44:02.716  INFO 13400 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:44:02.716  INFO 13400 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:44:02.726  INFO 13400 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-12-19 22:44:02.876  INFO 13400 --- [nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2019-12-19 22:44:16.039  INFO 13400 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+2019-12-19 22:44:36.062  INFO 13400 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:1}] to localhost:27017
+2019-12-19 22:44:36.066  INFO 13400 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3647642}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:44:36.366  INFO 13806 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 13806 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:44:36.373  INFO 13806 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 22:44:37.823  INFO 13806 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:44:37.966  INFO 13806 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132ms. Found 1 repository interfaces.
+2019-12-19 22:44:39.128  INFO 13806 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 22:44:39.162  INFO 13806 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:44:39.163  INFO 13806 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:44:39.313  INFO 13806 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:44:39.313  INFO 13806 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2827 ms
+2019-12-19 22:44:39.919  INFO 13806 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:44:39.920  INFO 13806 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:44:40.050  INFO 13806 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-19 22:44:40.065  INFO 13806 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6381644}
+2019-12-19 22:44:40.070  INFO 13806 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:44:40.183  WARN 13806 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:44:40.183  WARN 13806 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:44:40.298  WARN 13806 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:44:40.301  WARN 13806 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:44:41.057  INFO 13806 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:44:41.470  INFO 13806 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-12-19 22:44:41.475  INFO 13806 --- [           main] Camarero.app                             : Started app in 5.844 seconds (JVM running for 6.395)
+2019-12-19 22:44:45.833  INFO 13806 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:44:45.833  INFO 13806 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:44:45.841  INFO 13806 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-12-19 22:44:45.991  INFO 13806 --- [nio-8082-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2019-12-19 22:45:30.094  INFO 13806 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+2019-12-19 22:45:40.101  INFO 13806 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:4}] to localhost:27017
+2019-12-19 22:45:40.104  INFO 13806 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1932188}
+2019-12-19 22:46:10.111  INFO 13806 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:51:06.642  INFO 14864 --- [           main] API.app                                  : Starting app on antmordhar-PE70-2QE with PID 14864 (/home/antmordhar/Practicas/ProyectoCC/APIService/target/RestauranProjectAPI-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:51:06.648  INFO 14864 --- [           main] API.app                                  : No active profile set, falling back to default profiles: default
+2019-12-19 22:51:06.832  INFO 14862 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 14862 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:51:06.842  INFO 14862 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 22:51:08.050  INFO 14862 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:51:08.153  INFO 14862 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 1 repository interfaces.
+2019-12-19 22:51:08.677  INFO 14864 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8069 (http)
+2019-12-19 22:51:08.709  INFO 14864 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:51:08.714  INFO 14864 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:51:08.818  INFO 14864 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:51:08.819  INFO 14864 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2023 ms
+2019-12-19 22:51:09.254  INFO 14864 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:51:09.345  INFO 14862 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 22:51:09.364  INFO 14862 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:51:09.365  INFO 14862 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:51:09.469  INFO 14862 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:51:09.469  INFO 14862 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2522 ms
+2019-12-19 22:51:09.585  INFO 14864 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8069 (http) with context path ''
+2019-12-19 22:51:09.591  INFO 14864 --- [           main] API.app                                  : Started app in 3.898 seconds (JVM running for 4.758)
+2019-12-19 22:51:09.824  INFO 14862 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:51:09.824  INFO 14862 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:51:09.867  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+2019-12-19 22:51:09.954  WARN 14862 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:51:09.954  WARN 14862 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:51:10.022  WARN 14862 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:51:10.022  WARN 14862 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:51:10.471  INFO 14862 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:51:10.703  INFO 14862 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-12-19 22:51:10.707  INFO 14862 --- [           main] Camarero.app                             : Started app in 4.943 seconds (JVM running for 5.874)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:53:26.193  INFO 15528 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 15528 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:53:26.198  INFO 15528 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 22:53:27.514  INFO 15528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:53:27.664  INFO 15528 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139ms. Found 1 repository interfaces.
+2019-12-19 22:53:28.942  INFO 15528 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 22:53:28.976  INFO 15528 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:53:28.976  INFO 15528 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:53:29.119  INFO 15528 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:53:29.132  INFO 15528 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2835 ms
+2019-12-19 22:53:29.664  INFO 15528 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:53:29.664  INFO 15528 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:53:29.835  INFO 15528 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:53:29.863  INFO 15528 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=21877409}
+2019-12-19 22:53:29.867  INFO 15528 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:53:29.949  INFO 14862 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:15, serverValue:2}] to localhost:27017
+2019-12-19 22:53:29.963  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7476476}
+2019-12-19 22:53:29.964  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:53:29.996  WARN 15528 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:53:29.996  WARN 15528 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:53:30.123  WARN 15528 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:53:30.124  WARN 15528 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:53:30.889  INFO 15528 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:53:31.204  INFO 15528 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 22:53:31.209  INFO 15528 --- [           main] Cocina.app                               : Started app in 5.799 seconds (JVM running for 6.342)
+2019-12-19 22:53:36.252  INFO 15528 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:53:36.252  INFO 15528 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:53:36.264  INFO 15528 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-19 22:53:36.478  INFO 15528 --- [nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2019-12-19 22:53:49.883  INFO 15528 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+2019-12-19 22:53:49.971  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 22:54:12.863  INFO 15944 --- [           main] Camarero.app                             : Starting app on antmordhar-PE70-2QE with PID 15944 (/home/antmordhar/Practicas/ProyectoCC/Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 22:54:12.869  INFO 15944 --- [           main] Camarero.app                             : No active profile set, falling back to default profiles: default
+2019-12-19 22:54:14.163  INFO 15944 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 22:54:14.309  INFO 15944 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133ms. Found 1 repository interfaces.
+2019-12-19 22:54:15.490  INFO 15944 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-19 22:54:15.509  INFO 15944 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 22:54:15.510  INFO 15944 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 22:54:15.628  INFO 15944 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 22:54:15.628  INFO 15944 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2669 ms
+2019-12-19 22:54:16.456  INFO 15944 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 22:54:16.456  INFO 15944 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 22:54:16.572  INFO 15944 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 22:54:16.580  INFO 15944 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4634263}
+2019-12-19 22:54:16.581  INFO 15944 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 22:54:16.700  WARN 15944 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:54:16.701  WARN 15944 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:54:16.823  WARN 15944 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:54:16.824  WARN 15944 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 22:54:17.689  INFO 15944 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:54:18.260  INFO 15944 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 22:54:18.287  INFO 15944 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-19 22:54:18.292 ERROR 15944 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-12-19 22:54:18.298  INFO 15944 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 22:54:19.978  INFO 14862 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:19, serverValue:2}] to localhost:27017
+2019-12-19 22:54:19.981  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1676737}
+2019-12-19 22:54:22.832  INFO 14862 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 22:54:22.832  INFO 14862 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 22:54:22.841  INFO 14862 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-12-19 22:54:23.017  INFO 14862 --- [nio-8082-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:20, serverValue:5}] to localhost:27017
+2019-12-19 22:54:39.986  INFO 14862 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
+Error: Unable to access jarfile ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+Error: Unable to access jarfile ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 23:03:57.493  INFO 19366 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 19366 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 23:03:57.496  INFO 19366 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 23:03:58.228  INFO 19366 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 23:03:58.299  INFO 19366 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64ms. Found 1 repository interfaces.
+2019-12-19 23:03:58.964  INFO 19366 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 23:03:58.975  INFO 19366 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 23:03:58.975  INFO 19366 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 23:03:59.031  INFO 19366 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 23:03:59.031  INFO 19366 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1455 ms
+2019-12-19 23:03:59.368  INFO 19366 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 23:03:59.368  INFO 19366 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 23:03:59.441  INFO 19366 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 23:03:59.449  INFO 19366 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5079044}
+2019-12-19 23:03:59.451  INFO 19366 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 23:03:59.522  WARN 19366 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:03:59.523  WARN 19366 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:03:59.592  WARN 19366 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:03:59.592  WARN 19366 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:03:59.947  INFO 19366 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 23:04:00.158  INFO 19366 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 23:04:00.162  INFO 19366 --- [           main] Cocina.app                               : Started app in 3.117 seconds (JVM running for 3.511)
+2019-12-19 23:04:47.377  INFO 19366 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-19 23:06:30.939  INFO 19599 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 19599 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-19 23:06:30.943  INFO 19599 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-19 23:06:32.173  INFO 19599 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-19 23:06:32.323  INFO 19599 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139ms. Found 1 repository interfaces.
+2019-12-19 23:06:33.482  INFO 19599 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-19 23:06:33.515  INFO 19599 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 23:06:33.518  INFO 19599 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-19 23:06:33.676  INFO 19599 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 23:06:33.677  INFO 19599 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2649 ms
+2019-12-19 23:06:34.425  INFO 19599 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-19 23:06:34.428  INFO 19599 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-19 23:06:34.589  INFO 19599 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2019-12-19 23:06:34.601  INFO 19599 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4626384}
+2019-12-19 23:06:34.606  INFO 19599 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-19 23:06:34.718  WARN 19599 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:06:34.718  WARN 19599 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:06:34.822  WARN 19599 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:06:34.824  WARN 19599 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-19 23:06:35.521  INFO 19599 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 23:06:36.025  INFO 19599 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-12-19 23:06:36.033  INFO 19599 --- [           main] Cocina.app                               : Started app in 5.777 seconds (JVM running for 6.328)
+2019-12-19 23:06:40.574  INFO 19599 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 23:06:40.575  INFO 19599 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 23:06:40.586  INFO 19599 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-12-19 23:06:40.867  INFO 19599 --- [nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2019-12-19 23:06:54.616  INFO 19599 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
+	... 3 common frames omitted
+
