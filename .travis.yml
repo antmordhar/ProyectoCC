@@ -7,6 +7,9 @@ jdk:
 dist: trusty
 #No hacer el proceso con sudo
 sudo: false
+#Variables de entorno
+env:
+  - HOST=localhost
 #Le indicamos que usaremos mongo
 services:
   - mongodb
