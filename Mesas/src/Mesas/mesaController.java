@@ -68,7 +68,7 @@ public class mesaController {
         for(plato plato:pedido){
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + port + "/cocina/post",request,String.class);
         }  
         return "OK"; 
     }

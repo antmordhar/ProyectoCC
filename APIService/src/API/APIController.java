@@ -32,7 +32,7 @@ public class APIController {
     //Funciones de Mesas
     @GetMapping(value = "restaurant/pedido/get/{id}")
     public String getPedido(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + portmesas + "/pedido/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/get/"+id,String.class);
     }
 
     @PostMapping(value = "restaurant/pedido/post")
@@ -42,12 +42,12 @@ public class APIController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + portmesas + "/pedido/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/post",request,String.class);
     }
 
     @DeleteMapping(value= "restaurant/pedido/delete/{id}")
     public void deletePedido(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + portmesas + "/pedido/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/delete/"+id);
     }
     
     @PostMapping(value= "restaurant/pedido/send/{id}")
@@ -55,12 +55,12 @@ public class APIController {
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + portmesas + "/pedido/send/"+id,request,String.class);    
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/send/"+id,request,String.class);    
     }
     //Funciones de Cocina
     @GetMapping(value = "restaurant/cocina/get/{id}")
     public String getCocina(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + portcocina + "/cocina/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/get/"+id,String.class);
     }
 
     @PostMapping(value = "restaurant/cocina/post")
@@ -70,12 +70,12 @@ public class APIController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + portcocina + "/cocina/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/post",request,String.class);
     }
 
     @DeleteMapping(value= "restaurant/cocina/delete/{id}")
     public void deleteCocina(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + portcocina + "/cocina/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/delete/"+id);
     }
 
     @PostMapping(value= "restaurant/cocina/send/{id}")
@@ -83,17 +83,17 @@ public class APIController {
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + portcocina + "/cocina/send/"+id,request,String.class);    
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/send/"+id,request,String.class);    
     }
     //Funciones de Camarero
     @GetMapping(value = "restaurant/camarero/get/{id}")
     public String getCamarero(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + portcamarero + "/camarero/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/get/"+id,String.class);
     }
 
     @GetMapping(value = "restaurant/camarero/price/{id}")
     public String priceCamarero(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + portcamarero + "/camarero/price/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/price/"+id,String.class);
     }
 
     @PostMapping(value = "restaurant/camarero/post")
@@ -103,12 +103,12 @@ public class APIController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + portcamarero + "/camarero/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/post",request,String.class);
     }
 
     @DeleteMapping(value= "restaurant/camarero/delete/{id}")
     public void deleteCamarero(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + portcamarero + "/camarero/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/delete/"+id);
     }
     
 }

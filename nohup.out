@@ -1190,3 +1190,50 @@ Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
 	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar!/:na]
 	... 3 common frames omitted
 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.1.RELEASE)
+
+2019-12-20 00:34:15.929  INFO 25394 --- [           main] Cocina.app                               : Starting app on antmordhar-PE70-2QE with PID 25394 (/home/antmordhar/Practicas/ProyectoCC/Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar started by antmordhar in /home/antmordhar/Practicas/ProyectoCC)
+2019-12-20 00:34:15.936  INFO 25394 --- [           main] Cocina.app                               : No active profile set, falling back to default profiles: default
+2019-12-20 00:34:17.132  INFO 25394 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-20 00:34:17.299  INFO 25394 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157ms. Found 1 repository interfaces.
+2019-12-20 00:34:18.656  INFO 25394 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-12-20 00:34:18.676  INFO 25394 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-20 00:34:18.677  INFO 25394 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-20 00:34:18.784  INFO 25394 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-20 00:34:18.785  INFO 25394 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2744 ms
+2019-12-20 00:34:19.439  INFO 25394 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-20 00:34:19.439  INFO 25394 --- [           main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2019-12-20 00:34:19.532  INFO 25394 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-12-20 00:34:19.539  INFO 25394 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4202358}
+2019-12-20 00:34:19.541  INFO 25394 --- [localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2019-12-20 00:34:19.599  WARN 25394 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-20 00:34:19.599  WARN 25394 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-20 00:34:19.668  WARN 25394 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-20 00:34:19.669  WARN 25394 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2019-12-20 00:34:20.261  INFO 25394 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-20 00:34:20.616  INFO 25394 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-20 00:34:20.644  INFO 25394 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-20 00:34:20.651 ERROR 25394 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2019-12-20 00:34:20.658  INFO 25394 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

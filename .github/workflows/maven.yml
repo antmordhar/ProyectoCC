@@ -32,6 +32,9 @@ jobs:
       uses: allenevans/set-env@v1.0.0
       with:
           HOST: 'localhost'
+          HOST_MESAS: 'localhost'
+          HOST_COCINA: 'localhost'
+          HOST_CAMARERO: 'localhost'
       #Le indicamos el nombre del paso
     - name: Build with Maven
       #Va a proyecto
