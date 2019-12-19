@@ -35,7 +35,14 @@ jobs:
       #Se corren los tests
       #Se corren los test de covertura
       run: |
-       cd ./Proyecto;
-       mvn clean package --file pom.xml;
-       mvn test --file pom.xml;
-       mvn cobertura:cobertura --file pom.xml;
+       cd ./Mesas;
+       mvn clean package cobertura:cobertura --file pom.xml;
+       cd ..
+       cd ./Cocina;
+       mvn clean package cobertura:cobertura --file pom.xml;
+       cd ..
+       cd ./Camarero;
+       mvn clean package cobertura:cobertura --file pom.xml;
+       cd ..
+       cd ./APIService;
+       mvn clean package cobertura:cobertura --file pom.xml;

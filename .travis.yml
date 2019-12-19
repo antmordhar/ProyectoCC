@@ -10,14 +10,18 @@ sudo: false
 #Le indicamos que usaremos mongo
 services:
   - mongodb
-#Antes de correr los proyectos va a la carpeta Proyecto que es donde se encuentra el pom.xml
-before_install: "cd Proyecto"
 #Script a realizar
 #Limpia los archivos de builds anteriores y reempaqueta
 #Despues corre los test de cobertura
 script: 
-  - "mvn clean package"
-  - "mvn cobertura:cobertura"
-#Despues de correr los scripts enviarlos a codecov
-after_success: 
+  - "cd ./Mesas && mvn clean package cobertura:cobertura"
+  - "bash <(curl -s https://codecov.io/bash)"
+  - "cd .."
+  - "cd ./Cocina && mvn clean package cobertura:cobertura"
+  - "bash <(curl -s https://codecov.io/bash)"
+  - "cd .."
+  - "cd ./Camarero && mvn clean package cobertura:cobertura"
+  - "bash <(curl -s https://codecov.io/bash)"
+  - "cd .."
+  - "cd ./APIService && mvn clean package cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
