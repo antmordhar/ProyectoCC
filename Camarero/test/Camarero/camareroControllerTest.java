@@ -23,11 +23,11 @@ import static org.hamcrest.CoreMatchers.*;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class camareroControllerTest {
 
-    // El puerto en el que corre nuestra test
+    // El puerto en el que corre nuestra test lo autasignara spring
     @LocalServerPort
     private int port;
 
-    // Variable para poder hacer peticiones REST
+    // Variable para poder hacer peticiones REST, se autoinstanciara al iniciar la clase
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -58,6 +58,7 @@ public class camareroControllerTest {
         
         //Prueba de PRICE------------------------------------------------------------------------------------------------------------------------------         
 
+        //Nos aseguramos que la salida es la adecuada
         assertThat(this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/price/69",String.class),is(not("0")));
         
         //Prueba de DELETE------------------------------------------------------------------------------------------------------------------------------

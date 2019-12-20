@@ -16,15 +16,16 @@ import static org.junit.Assert.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
+//Le decimos que al correr este test arranque la aplicacion para poder hacer las peticiones
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class APIControllerTest {
     
-    // El puerto en el que corre nuestra test
+    // El puerto en el que corre nuestra test lo autasignara spring
     @LocalServerPort
     private int port;
 
-    // Variable para poder hacer peticiones REST
+    // Variable para poder hacer peticiones REST, se autoinstanciara al iniciar la clase
     @Autowired
     private TestRestTemplate restTemplate;
 

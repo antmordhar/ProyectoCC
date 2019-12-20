@@ -8,6 +8,8 @@ public class plato{
     private double precio;
     private int cantidad;
 
+    //Constructor
+    //Document indica donde guardara este objeto mongo
     public plato(int idmesa,String nombre,double precio,int cantidad){
         this.idmesa=idmesa;
         this.nombre=nombre;
@@ -15,8 +17,10 @@ public class plato{
         this.cantidad=cantidad;
     }
 
+    //Constructor por defecto
     public plato(){}
 
+    //Geters
     public int getIDmesa(){
         return idmesa;
     }
@@ -30,6 +34,7 @@ public class plato{
         return this.cantidad;
     }
 
+    //Seters
     public void setIDmesa(int idmesa){
         this.idmesa=idmesa;
     }
@@ -43,15 +48,14 @@ public class plato{
         this.cantidad=cantidad;
     }
 
+    //Metodo to string
     @Override
     public String toString(){
         String r = "";
-        
         r +="idmesa: " + this.idmesa +
             " Nombre: " + this.nombre +
             " precio: " + this.precio + 
             " cantidad: " + this.cantidad ;
-
         return r ;
     }
 }

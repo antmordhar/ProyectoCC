@@ -103,7 +103,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--Plugin para hacer los test de cobertura, uso: cobertura:cobertura-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>

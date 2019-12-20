@@ -18,16 +18,16 @@ import static org.junit.Assert.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
-//Le decimos que al correr este tes arranque la aplicacion para poder hacer las consultas
+//Le decimos que al correr este test arranque la aplicacion para poder hacer las peticiones
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class mesaControllerTest {
 
-    // El puerto en el que corre nuestra test
+    // El puerto en el que corre nuestra test lo autasignara spring
     @LocalServerPort
     private int port;
 
-    // Variable para poder hacer peticiones REST
+    // Variable para poder hacer peticiones REST, se autoinstanciara al iniciar la clase
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -61,7 +61,8 @@ public class mesaControllerTest {
         request = 
         new HttpEntity<String>("", headers);
 
-        //Realizamos el post y comprobamos que la salida es la correcta
+        //Realizamos el send y comprobamos que la salida es la correcta
+        //Para esto necesitamos que el otro servicio este arrancado
          assertThat("Sendea Correctamente",this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/pedido/send/69",request,
              String.class),is("OK"));
         

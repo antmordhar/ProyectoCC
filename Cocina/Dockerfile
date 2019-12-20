@@ -19,6 +19,7 @@ ENV HOST_CAMARERO=camarero
 #Heroku tiene por defecto una variable de entrono $PORT
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
 #Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor.
+#-Dspring.data.mongodb.uri establece la url que tendra nuestra bases de datos en mongo
 CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=8081 -Dspring.data.mongodb.uri=mongodb://mongococina/cocina -Djava.security.egd=file:/dev/./urandom -jar ./app.jar" ]
 
 #Información sacada de https://docs.docker.com/get-started/

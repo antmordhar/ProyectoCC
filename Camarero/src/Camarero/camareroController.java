@@ -17,7 +17,9 @@ import Camarero.plato;
 @RestController
 public class camareroController {
 
-    //Aquí se realiza la inyección de dependencias
+    // Aquí se realiza la inyección de dependencias
+    //Se autoinstancia al arrancar el servicio
+    //Para mas informacion de como funciona visita la clase correspondiente
     @Autowired
     private platoRepository repository;
 
@@ -29,6 +31,7 @@ public class camareroController {
 
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
+    // Devuelve una lista de platos
     @GetMapping(value = "/camarero/get/{id}")
     public String getCamarero(@PathVariable(value = "id") final int id) {
         return repository.findByIdmesa(id).toString();
@@ -37,6 +40,7 @@ public class camareroController {
     // Le especificamos que path llamara a esta funcion
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
+    // Guarda las mesas en la base de datos
     @PostMapping(value = "/camarero/post")
     public void postCamarero(@RequestBody final plato pedido) throws JSONException {
         repository.save(pedido);
@@ -44,6 +48,7 @@ public class camareroController {
 
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
+    //Borra las mesas de la base de datos que contengan el id pasado
     @DeleteMapping(value= "/camarero/delete/{id}")
     public void deleteCamarero(@PathVariable(value= "id") final int id){
         repository.deletePlatoByIdmesa(id);
@@ -51,6 +56,7 @@ public class camareroController {
 
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
+    //Devuelve el precio total de todos los platos de una mesa
     @GetMapping(value= "/camarero/price/{id}")
     public double priceCamarero(@PathVariable(value= "id") final int id){
         List<plato> pedido=repository.findByIdmesa(id);

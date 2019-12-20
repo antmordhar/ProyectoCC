@@ -13,7 +13,7 @@ public class platoTest {
 	public void setup(){
 		platotest=new plato(0,"PolloFrito",1.4, 1);
 	}
-
+	//Test del constructor
 	@Test
 	public void testplato() {
 		assertThat("ID mesa Correcto",0,is(platotest.getIDmesa()));
@@ -21,6 +21,7 @@ public class platoTest {
         assertThat("Precio Correcto",1.4,is(platotest.getPrecio()));
         assertThat("Cantidad Correcta",1,is(platotest.getCantidad()));
 	}
+	//Tests de los gets
 	@Test
 	public void testGetIDmesa() {
 		assertThat("getID Correcto",0,is(platotest.getIDmesa()));
@@ -36,7 +37,8 @@ public class platoTest {
 	@Test
 	public void testGetCantidad() {
         assertThat("GetCantidad Correcta",1,is(platotest.getCantidad()));
-    }
+	}
+	//Tests de los sets
 	@Test
 	public void testSetIDmesa() {
         platotest.setIDmesa(1);

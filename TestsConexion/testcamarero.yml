@@ -1,0 +1,38 @@
+execution:
+  #Con que herramienta se ejecutara
+- executor: jmeter
+  #Numero de usuarios concurrentes que habra
+  concurrency: 10
+  #Numero de iteraciones que repetira, no es compatible con hold-for
+  #iterations: 1000
+  #Los usuarios iran creciendo durante 10 segundos
+  ramp-up: 10
+  #Tiempo que aguantará a maximo de usuarios
+  hold-for: 50
+  #Nombre del test
+  scenario: LoadTest
+
+#Test se pasara
+#Nombre de nuestro test
+#request son las peticiones que le haremos al servicio.
+#url indica la url de la peticion en concreto
+#method acompaña a url y te permite establecer que tipo de HTTP request se hara
+#headers acompaña a url, te permite establecer que headers tendra la peticion, en nuestro caso hemos usado content-type aplication/json
+#body acompaña a url y te permite definir el cuerpo de la peticion que se va a realizar
+scenarios:
+  LoadTest:
+    requests:
+    #Camarero
+    - url: http://localhost:8082/camarero/post/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://localhost:8082/camarero/get/96
+      method: GET
+    - url: http://localhost:8082/camarero/price/96
+      method: GET
+    - url: http://localhost:8082/camarero/delete/96
+      method: DELETE
+
+
