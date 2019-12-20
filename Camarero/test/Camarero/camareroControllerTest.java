@@ -56,8 +56,7 @@ public class camareroControllerTest {
         assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/get/69",String.class)
         ,is(not("[]")));
         
-        //Prueba de SEND------------------------------------------------------------------------------------------------------------------------------         
-        //Mockeamos la respuesta
+        //Prueba de PRICE------------------------------------------------------------------------------------------------------------------------------         
 
         assertThat(this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/price/69",String.class),is(not("0")));
         

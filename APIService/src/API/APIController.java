@@ -51,11 +51,12 @@ public class APIController {
     }
     
     @PostMapping(value= "restaurant/pedido/send/{id}")
-    public void finishPedido(@PathVariable(value= "id") final int id){
+    public String finishPedido(@PathVariable(value= "id") final int id){
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/send/"+id,request,String.class);    
+        this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/send/"+id,request,String.class); 
+        return "OK";   
     }
     //Funciones de Cocina
     @GetMapping(value = "restaurant/cocina/get/{id}")
@@ -79,11 +80,12 @@ public class APIController {
     }
 
     @PostMapping(value= "restaurant/cocina/send/{id}")
-    public void sendCocina(@PathVariable(value= "id") final int id){
+    public String sendCocina(@PathVariable(value= "id") final int id){
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/send/"+id,request,String.class);    
+        this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/send/"+id,request,String.class); 
+        return "OK";   
     }
     //Funciones de Camarero
     @GetMapping(value = "restaurant/camarero/get/{id}")

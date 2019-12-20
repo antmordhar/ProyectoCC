@@ -25,13 +25,13 @@ install:
 
 testmesa:
 	mongod --fork --syslog
-	nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	export HOST_CAMARERO=localhost && nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
 	cd ./Mesas && export HOST=localhost && export HOST_COCINA=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
 	killall mongod
 	
 testcocina:
 	mongod --fork --syslog
-	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
+	localhost && java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
 	cd ./Cocina && export HOST=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
 	killall mongod
 testcamarero:
@@ -41,10 +41,10 @@ testcamarero:
 
 testapi:
 	mongod --fork --syslog
-	java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
-	java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	export HOST_COCINA=localhost && java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
+	export HOST_CAMARERO=localhost && java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
 	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
-	cd ./APIService  && export HOST=localhost && export HOST_MESAS=localhost && export HOST_COCINA=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
+	cd ./APIService && export HOST=localhost && export HOST_MESAS=localhost && export HOST_COCINA=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
 	killall mongod
 
 #Limpia archivos de builds anteriores
