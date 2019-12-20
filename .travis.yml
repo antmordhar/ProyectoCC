@@ -9,10 +9,11 @@ dist: trusty
 sudo: false
 #Variables de entorno
 env:
-  - HOST=localhost
-  - HOST_COCINA=localhost
-  - HOST_MESAS=localhost
-  - HOST_CAMARERO=localhost
+  global:
+    - HOST=localhost
+    - HOST_COCINA=localhost
+    - HOST_MESAS=localhost
+    - HOST_CAMARERO=localhost
 #Le indicamos que usaremos mongo
 services:
   - mongodb
