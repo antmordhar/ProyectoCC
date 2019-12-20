@@ -7,7 +7,16 @@
 
 ## Arquitectura
 La idea básica de este microservicio es ayudar a la gestión de las comandas en un restaurante.
-Para ello se van a crear 3 **microservicios**:
+Para ello se van a crear 4 **microservicios**:
+
+* **Mesas** 
+  * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/mesasService).
+* **Cocina** 
+  * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/cocinaService).
+* **Camareros** 
+  * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/camareroService).
+* **API**
+  * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/APIService).
 
 * **Mesas:**  Este servicio podrá ser usado a través de la ApiGateway y se le deberá pasar la comanda en forma de Json. Las mesas serán las encargadas de **enviar** esta comanda a **Cocina**. Además, también tendrán un **control de los pedidos** de los clientes en una base de datos.
 
@@ -18,6 +27,8 @@ Para ello se van a crear 3 **microservicios**:
     El servicio contara con una base de datos en la que se guardara el menú.
 
 * **Camareros:** Su objetivo es **recibir los avisos** de las comandas que salen de **Cocina**. Para avisar de que una comanda ya ha sido atendida se podrá usar la ApiGateway y **mandar un aviso** a todos los **camareros**.
+
+* **API:** Se encargara de redirigir todas las peticiones rest a su correspondiente servicio.
 
 Su **arquitectura** se correspondería con la siguiente **imagen**:
 
