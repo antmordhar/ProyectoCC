@@ -4,7 +4,7 @@ build:
   #Aqui le estamos especificando que se va a usar dockerfile 
   docker:
     #Especificamos la ruta del Dockerfile para crear el proceso de web
-    web: Dockerfile
+    web: docker-compose.yml
   #No hace falta comando run, se usara el CMD especificado en el Dockerfile
   #Tampoco hace falta procfile por la misma razon
 

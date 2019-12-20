@@ -1,0 +1,96 @@
+version: '3'
+services:
+    #Bases de Datos
+    mongomesas:
+        image: mongo
+        ports: 
+            - "27017:27017"
+        container_name: mongomesas
+        networks:
+            net:
+                aliases:
+                    - mongomesas
+    mongococina:
+        image: mongo
+        ports: 
+            - "27018:27017"
+        container_name: mongococina
+        networks:
+            net:
+                aliases:
+                    - mongococina
+    mongocamarero:
+        image: mongo
+        ports: 
+            - "27019:27017"
+        container_name: mongocamarero
+        networks:
+            net:
+                aliases:
+                    - mongocamarero
+    #Nuestros servicios
+    mesas:
+        build: ./Mesas
+        image: mesas:compose
+        container_name: mesas
+        ports: 
+            - "8080:8080"
+        networks:
+            net:
+                aliases:
+                    - mesas
+        depends_on :
+            - mongomesas
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            mode: replicated
+            replicas: 3
+    cocina:
+        build: ./Cocina
+        image: cocina:compose
+        container_name: cocina
+        ports: 
+            - "8081:8081"
+        networks:
+            net:
+                aliases:
+                    - cocina
+        depends_on :
+            - mongococina
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            mode: replicated
+            replicas: 3
+    camarero:
+        build: ./Camarero
+        image: camarero:compose
+        container_name: camarero
+        ports: 
+            - "8082:8082"
+        networks:
+            net:
+                aliases:
+                    - camarero
+        depends_on :
+            - mongocamarero
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            mode: replicated
+            replicas: 3
+    api:
+        build: ./APIService
+        image: api:compose
+        container_name: api
+        ports: 
+            - "8069:8069"
+        networks:
+            net:
+                aliases:
+                    - api
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            mode: replicated
+            replicas: 3
+#Red en la que trabajaran nuestras imagenes
+networks:
+    net:
