@@ -7,7 +7,7 @@ jdk:
 dist: trusty
 #No hacer el proceso con sudo
 sudo: false
-#Variables de entorno
+#Variables de entorno que necesitaran nuestros servicios
 env:
   global:
     - HOST=localhost
@@ -18,8 +18,8 @@ env:
 services:
   - mongodb
 #Script a realizar
-#Limpia los archivos de builds anteriores y reempaqueta
-#Despues corre los test de cobertura
+#Levanta los servicios necesarios para cada test y despues los elimina
+#Manda los resultados del coverage a codecov
 script: 
   #Hacemos los JAR
   - "make install"

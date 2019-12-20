@@ -1,96 +1,160 @@
+#Usamos la version 3 del docker compose
 version: '3'
+#Aqui declararemos los sericios
 services:
     #Bases de Datos
+    #Base de Datos para las mesas
     mongomesas:
+        #Usara la imagen base de mongo
         image: mongo
+        #Puerto externo e interno que usará
         ports: 
             - "27017:27017"
+        #Nombre base que le daremos al contenedor
         container_name: mongomesas
+        #Red de la que forma base la imagen
         networks:
+            #Nombre de la red
             net:
+                #Nombre de la imagen dentro de la red
                 aliases:
                     - mongomesas
+    #Base de Datos para la cocina
     mongococina:
+        #Usara la imagen base de mongo
         image: mongo
+        #Puerto externo e interno que usará
         ports: 
             - "27018:27017"
+        #Nombre base que le daremos al contenedor
         container_name: mongococina
+        #Red de la que forma base la imagen
         networks:
+            #Nombre de la red
             net:
+                #Nombre de la imagen dentro de la red
                 aliases:
                     - mongococina
+    #Base de Datos para los camareros
     mongocamarero:
+        #Usara la imagen base de mongo
         image: mongo
+        #Puerto externo e interno que usará
         ports: 
             - "27019:27017"
+        #Nombre base que le daremos al contenedor
         container_name: mongocamarero
+        #Red de la que forma base la imagen
         networks:
+            #Nombre de la red
             net:
+                #Nombre de la imagen dentro de la red
                 aliases:
                     - mongocamarero
     #Nuestros servicios
+    #Servicio de mesas
     mesas:
+        #Buscara el dockerfile en el siguiente path
         build: ./Mesas
+        #Le asignara este nombre a la imagen
         image: mesas:compose
+        #Se le asignara este nombre al contenedor
         container_name: mesas
+        #Puerto externo e interno que usará
         ports: 
             - "8080:8080"
         networks:
+            #Nombre de la red
             net:
+                #Nombre de la imagen dentro de la red
                 aliases:
                     - mesas
+        #Arrancará antes la base de datos de mesas que el servicio
         depends_on :
             - mongomesas
         #Solo se activa al realizar docker stack deploy
         deploy:
+            #Se le dice que sera replicado
             mode: replicated
+            #Se establece el numero de replicas
             replicas: 3
+    #Servicio de cocina
     cocina:
+        #Buscará el dockerfile en el siguiente path
         build: ./Cocina
+        #Nombre de la imagen que creara
         image: cocina:compose
+        #Nombre del contenedor que se creara
         container_name: cocina
+        #Puertos externo e interno que usará
         ports: 
             - "8081:8081"
+        #Red de la que forma base la imagen
         networks:
+            #Nombre de la red
             net:
+                #Nombre del servicio en esa red
                 aliases:
                     - cocina
+        #Se ejecutara despues de ejecutar la base de datos de cocina
         depends_on :
             - mongococina
         #Solo se activa al realizar docker stack deploy
         deploy:
+            #Se estable el modo de despligue
             mode: replicated
+            #Se establece el numero de réplicas del servicio
             replicas: 3
+    #Servicio del camarero
     camarero:
+        #Buscara la imagen en el siguiente path
         build: ./Camarero
+        #la imagen se llamara de la siguiente forma
         image: camarero:compose
+        #El contenedor creado se llamara de la siguiente forma
         container_name: camarero
+        #Puertos externo e interno de nuestro servicio
         ports: 
             - "8082:8082"
+        #Red de la que formará parte nuestro servicio
         networks:
+            #Nombre de la red
             net:
+                #Nombre que nuestro servicio tendra en la red
                 aliases:
                     - camarero
+        #Se levantara antes la base de datos que nuestro servicio
         depends_on :
             - mongocamarero
         #Solo se activa al realizar docker stack deploy
         deploy:
             mode: replicated
             replicas: 3
+    #Servicio que funcionara como api
     api:
+        #Cogera el dockerfile del siguiente path
         build: ./APIService
+        #Se le otorgara el siguiente nombre
         image: api:compose
+        #El contenedor creado se llamará de la siguiente manter
         container_name: api
+        #Puertos externos e internos en los que trabajara nuestra imagen
         ports: 
             - "8069:8069"
+        #Red de la que forma parte nuestro servicio
         networks:
+            #Nombre de la red
             net:
+                #Nombre de nuestro servicio en esa red
                 aliases:
                     - api
         #Solo se activa al realizar docker stack deploy
         deploy:
+            #Modo en el que se desplegara
             mode: replicated
+            #Numero de replicas que se crearaán
             replicas: 3
 #Red en la que trabajaran nuestras imagenes
 networks:
+    #Nombre de nuestra red
     net:
