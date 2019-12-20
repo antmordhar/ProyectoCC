@@ -5,3 +5,6 @@ bin/
 .project
 .settings/
 target/
+jmeter.log
+nohup.out
+2019*/

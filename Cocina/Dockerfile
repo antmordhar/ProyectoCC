@@ -11,6 +11,8 @@ COPY /src /Cocina/src
 COPY /pom.xml /Cocina
 #Ejecutamos el comando para empaquetar nuestro Cocina y generar el jar y borra los archivos no necesarios
 RUN cd Cocina && mvn clean package -DskipTests && cd .. && cp ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar ./app.jar &&  rm -rf ./Cocina
+#Variables de entorno para resolver las peticiones
+ENV HOST_CAMARERO=camarero
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
 #Se debe especificar -Dserver.port=$PORT para que heroku asigne el puerto.

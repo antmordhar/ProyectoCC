@@ -11,6 +11,10 @@ COPY /src /API/src
 COPY /pom.xml /API
 #Ejecutamos el comando para empaquetar nuestro API y generar el jar y borra los archivos no necesarios
 RUN cd API && mvn clean package -DskipTests && cd .. && cp ./API/target/RestauranProjectAPI-0.0.1-SNAPSHOT.jar ./app.jar &&  rm -rf ./API
+#Variables de entorno para resolver las peticiones
+ENV HOST_MESAS=mesas
+ENV HOST_COCINA=cocina
+ENV HOST_CAMARERO=camarero
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
 #Se debe especificar -Dserver.port=$PORT para que heroku asigne el puerto.

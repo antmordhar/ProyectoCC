@@ -1,6 +1,6 @@
 execution:
     - executor: jmeter
-      #concurrency: 30
+      concurrency: 10
       #iterations: 1000
       ramp-up: 10
       hold-for: 50
