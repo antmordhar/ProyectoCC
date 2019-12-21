@@ -14,7 +14,7 @@ Pese a estar usando **Maven** como herramienta de construcción principal se ha 
 make firstinstall
 ~~~
 
-* Este comando instalará maven,openjdk-8-jdk,docker y las dependencias del proyecto. También descargara la imagen de mongodb.
+* Este comando instalará maven,openjdk-8-jdk,mongodb y las dependencias del proyecto.
 
 ~~~shell
 make install
@@ -69,11 +69,14 @@ make parardocker
 
 ~~~shell
 make testcarga
+make testcargamesas
+make testcargacocina
+make testcargacamarero
 ~~~
 
 * Corre un script con taurus que comprueba la carga que nuestro servidor puede aguantar.
 * Los servicios necesitan estar arrancados y con las bases de datos conectadas correctamente.
-* Como base pasará el test que comprueba todos los servicios a la vez. Sin embargo tambien existen test especificos para cada servicio por separado.
+
 * Para ver que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml)
 
 Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/blob/master/Makefile)

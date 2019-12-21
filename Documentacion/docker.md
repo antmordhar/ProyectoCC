@@ -20,14 +20,17 @@ Contenedor: https://hub.docker.com/r/antmordhar/projectcccocina .
 Contenedor: https://hub.docker.com/r/antmordhar/projectcccamarero .
 Contenedor: https://hub.docker.com/r/antmordhar/projectccapi .
 
-Se ha creado la arquitectura de nuestro sistema usando un docker-compose. Para ver mas informacion sobre este pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/docker-compose.yml)
+Se ha creado la arquitectura de nuestro proyecto usando un docker-compose. Para ver mas informacion sobre este pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/docker-compose.yml)
 
-Con los siguientes comandos se puede crear, arrancar y parar nuestro sistema:
+Con los siguientes comandos se puede crear, arrancar y parar nuestro proyecto:
+
 ~~~shel
 docker-compose build
 docker-compose up
 docker-compose down
 ~~~
+
+También se puede realizar con los comandos descritos en el buildtool Makefile.
 
 Como imagen base para la construcción de la imagen del servicio se ha usado: https://hub.docker.com/r/adoptopenjdk/maven-openjdk8/ . En esa imagen se encuentra Maven y OpenJDK8 que son necesarios para la construcción y ejecución del proyecto.
 
@@ -82,7 +85,7 @@ docker run --rm -name <name> -network <net> -p <puerto>:<puerto> -d <nombreImage
 
 > Los comandos anteriores necesitan ser adaptados dependiendo del servicio con el que se quiera trabajar.
 
-Además Docker Hub está configurado para que cada vez que se haga un push a nuestro repositorio, si pasa los tests de integración, se suba la imagen.
+Además Docker Hub está configurado para que cada vez que se haga un push a nuestro repositorio, si pasa los tests de integración, se suba la imagen a su dockerhub.
 
 
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)

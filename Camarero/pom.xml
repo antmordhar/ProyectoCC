@@ -38,15 +38,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.2.1.RELEASE</version>
             <exclusions>
-                <!-- Exclude the Tomcat dependency -->
+                <!--- Excluimos Tomcat -->
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
             </exclusions>
-            </dependency>
-            <!-- Use Jetty instead -->
-            <dependency>
+        </dependency>
+        <!--- Agregamos la dependencia de undertown -->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
             <version>2.2.1.RELEASE</version>

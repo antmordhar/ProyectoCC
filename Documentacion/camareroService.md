@@ -23,7 +23,7 @@ Se ha implementado un microservicio el cual tiene una API REST. Este servicio es
 
   * Añade el pedido a la base de datos
 * **GET: /camarero/price/{id}**
-  * Calcula el precio de todos los platos almacenados y devuelve el total
+  * Calcula el precio de todos los platos almacenados y devuelve el total.
   
 * **DELETE: /camarero/{id}**
   * Borra todos los pedidos de una mesa

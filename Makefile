@@ -7,8 +7,7 @@ firstinstall:
 	sudo apt update
 	sudo apt install maven
 	sudo apt install openjdk-8-jdk
-	sudo apt-get install docker-ce docker-ce-cli containerd.io
-	docker pull mongo
+	sudo apt install -y mongodb
 	
 #Instala las dependencias y genera los jar
 install:
@@ -80,6 +79,12 @@ parardocker:
 #Hay mas pruebas, se encuentran el la carpeta TestConexion
 testcarga:
 	bzt ./TestsConexion/test.yml -report
+testcargamesas:
+	bzt ./TestsConexion/testmesas.yml -report
+testcargacocina:
+	bzt ./TestsConexion/testcocina.yml -report
+testcargacamarero:
+	bzt ./TestsConexion/testcamarero.yml -report
 
 	
 	
