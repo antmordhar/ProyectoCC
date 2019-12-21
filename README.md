@@ -23,6 +23,7 @@ Para la medición de las prestaciones de nuestro sistema se ha usado [Taurus](ht
  
 En nuestro caso usaremos JMeter como herramienta para pasar los tests a nuestros servicios. Los ficheros yml creados para los tests son los siguientes:
  
+Prestaciones: testvacio.yml
 Prestaciones: ./TestsConexion/test.yml
 Prestaciones: ./TestsConexion/testcamarero.yml
 Prestaciones: ./TestsConexion/testcocina.yml
