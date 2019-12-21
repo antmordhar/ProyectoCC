@@ -29,7 +29,7 @@ Prestaciones: ./TestsConexion/testcocina.yml
 Prestaciones: ./TestsConexion/testmesas.yml
  
 ### 8.1 Estado inicial del Servicio Mesas
-[Volver al Index](https://antmordhar.github.io/ProyectoCC/)
+
 En la siguiente imagen podemos ver el resultado que el servicio mesas obtuvo al pasar el test que carga el servicio con peticiones de 10 usuarios durante 1 minuto con el servidor de **Tomcat7** embebido que proporciona Spring:
  
 ![Mesainicial](./Documentacion/pic/mesainicial.png)
@@ -82,7 +82,7 @@ El despliegue de las imágenes y, por tanto, pruebas de carga será realizado en
  * Mesas
 ![Test](./Documentacion/pic/mt10.png)
 ![Test](./Documentacion/pic/mt20.png)
-![Test](./Documenta[Volver al Index](https://antmordhar.github.io/ProyectoCC/)cion/pic/mt30.png)
+![Test](./Documentacion/pic/mt30.png)
  * Cocina
 ![Test](./Documentacion/pic/ct10.png)
 ![Test](./Documentacion/pic/ct20.png)
@@ -156,7 +156,7 @@ El despliegue de las imágenes y, por tanto, pruebas de carga será realizado en
  * Camarero
 ![Test](./Documentacion/pic/rcc10.png)
 ![Test](./Documentacion/pic/rcc20.png)
-![Test](./Documentacion/rcc30.png)
+![Test](./Documentacion/pic/rcc30.png)
  * Todos
 ![Test](./Documentacion/pic/ra10.png)
 ![Test](./Documentacion/pic/ra20.png)
@@ -176,25 +176,25 @@ Al hacer el test de carga a todos los servicios a la vez se puede ver una clara 
  
 Finalmente atendiendo a los resultados obtenidos:
 * Tomcat
- * Peticiones por segundo media 1286 Hits/s
- * Ancho de banda medio 225 KiB/s
- * Tiempo de respuesta medio 13 ms
- * Error medio 0%
+  * Peticiones por segundo media 1286 Hits/s
+  * Ancho de banda medio 225 KiB/s
+  * Tiempo de respuesta medio 13 ms
+  * Error medio 0%
 * Jetty
- * Peticiones por segundo media 1393 Hits/s
- * Ancho de banda medio 111 KiB/s
- * Tiempo de respuesta medio 13 ms
- * Error medio 0%
-* Undertow[Volver al Index](https://antmordhar.github.io/ProyectoCC/)
- * Peticiones por segundo media 1459 Hits/s
- * Ancho de banda medio 195 KiB/s
- * Tiempo de respuesta medio 13 ms
- * Error medio 0%
+  * Peticiones por segundo media 1393 Hits/s
+  * Ancho de banda medio 111 KiB/s
+  * Tiempo de respuesta medio 13 ms
+  * Error medio 0%
+* Undertow
+  * Peticiones por segundo media 1459 Hits/s
+  * Ancho de banda medio 195 KiB/s
+  * Tiempo de respuesta medio 13 ms
+  * Error medio 0%
 * Reactor Netty
- * Peticiones por segundo media 1428 Hits/s
- * Ancho de banda medio 119 KiB/s
- * Tiempo de respuesta medio 13 ms
- * Error medio 0%
+  * Peticiones por segundo media 1428 Hits/s
+  * Ancho de banda medio 119 KiB/s
+  * Tiempo de respuesta medio 13 ms
+  * Error medio 0%
  
 Podemos ver como. el tiempo de respuesta y la tasa de error que nos proporcionan todos los servidores es la misma.(Los decimales han sido omitidos). Por lo que para la elección del servidor se ha atendido a las peticiones por segundo aceptadas y a su rendimiento al hacer los test de carga de todo el sistema al conjunto. Teniendo esto en cuenta los principales competidores son Reactor Netty y Undertow. Sin embargo Undertow ha demostrado una mejor competencia a la hora del test de carga total, por lo que se ha elegido este finalmente.
  
@@ -225,13 +225,13 @@ Para más información:
 ### 10.1 Servicios:
  
 * Se han implementado 3 nuevos servicios:
- * **Cocina**
-   * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/cocinaService).
- * **Camareros**  
-   * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/camareroService).
- * **API**
-   * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/APIService).
- * Se ha eliminado el POM padre y se han establecido todos los servicios como proyectos independientes.
+  * **Cocina**
+    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/cocinaService).
+  * **Camareros**  
+    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/camareroService).
+  * **API**
+    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/APIService).
+* Se ha eliminado el POM padre y se han establecido todos los servicios como proyectos independientes.
 * Se ha hecho funcional el archivo application.properties de cada proyecto. En él se han establecido algunas configuraciones que se usarán cuando el servicio se ejecute en local, sin estar en una imagen.
 * Se han creado los tests unitarios para todas las clases creadas.
 * Se han adaptado los servicios para que puedan funcionar tanto en local como en imágenes de Docker mediante el uso de variables de entorno.

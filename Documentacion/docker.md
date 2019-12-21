@@ -16,8 +16,11 @@ Los micro servicios han sido containerizados con Dockerfiles. Para ver sus docke
 Sus contenedores son los siguientes:
 
 Contenedor: https://hub.docker.com/r/antmordhar/projectccmesas .
+
 Contenedor: https://hub.docker.com/r/antmordhar/projectcccocina .
+
 Contenedor: https://hub.docker.com/r/antmordhar/projectcccamarero .
+
 Contenedor: https://hub.docker.com/r/antmordhar/projectccapi .
 
 Se ha creado la arquitectura de nuestro proyecto usando un docker-compose. Para ver mas informacion sobre este pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/docker-compose.yml)
