@@ -37,7 +37,7 @@ El microservicio cuenta con 4 clases:
 
 El microservicio está estructurado por capas como podemos ver en la siguiente imagen:
 
-![Arquitectura](./camareroservice.png)
+![Arquitectura](./pic/camareroservice.png)
 
 La capa de la API rest es la encargada de recibir las peticiones al micro servicio y enviar las respuestas que correspondan al exterior.
 Por otro lado es la capa de la Lógica de Negocio la que se encarga se encarga de las operaciones con los datos, crearlos, almacenarlos, procesarlos, etc.

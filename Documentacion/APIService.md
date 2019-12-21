@@ -72,7 +72,7 @@ El microservicio cuenta con 3 clases:
 
 El microservicio está estructurado por capas como podemos ver en la siguiente imagen:
 
-![Arquitectura](./APIservice.png)
+![Arquitectura](./pic/APIservice.png)
 
 La capa de la API rest es la encargada de recibir las peticiones al micro servicio y enviar las respuestas que correspondan al exterior.
 Por último la capa de Modelo de Datos contiene las estructuras que tomarán como base las datos en nuestro servicio.

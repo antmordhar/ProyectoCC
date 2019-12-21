@@ -32,7 +32,7 @@ Para ello se van a crear 4 **microservicios**:
 
 Su **arquitectura** se correspondería con la siguiente **imagen**:
 
-![Arquitectura](./MicroservicesArchitecture.png)
+![Arquitectura](./pic/MicroservicesArchitecture.png)
 
 La arquitectura esta basada en una arquitectura **dirigida por eventos**. Los microservicios se comunicarán entre ellos a través del **EventStore** y con el exterior a traves del **ApiGateway**
 

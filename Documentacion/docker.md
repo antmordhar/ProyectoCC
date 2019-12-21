@@ -38,7 +38,7 @@ Frente a esta imagen se compararon 2 más:
 
 Los pesos de las imágenes son los siguientes:
 
-![Comparativa](./comparativa.png)
+![Comparativa](./pic/comparativa.png)
 
 Como se puede ver el peso de Maven es demasiado elevado. Esto es por que contiene varias versiones de los JDK. Por otro lado OpenJDK8 Apline es más liviana pero hay que instalarle Maven por lo que dificulta el proceso. Por lo que se decidió usar alguna de las imagenes con maven instalado. Para decidirse se ha usado la herramienta [Apache HTTP server benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir el rendimiento de estas imágenes. Los resultados fueron los siguientes:
 
@@ -56,7 +56,7 @@ Como se puede ver, a parte de ser más liviano, Maven-OpenJDK8 nos da mejores ti
 
 Finalmente la imagen del servicio pesa lo siguiente:
 
-![Project](./project.png)
+![Project](./pic/project.png)
 
 Para construir la imagen podemos usar uno de los siguientes comandos:
 
