@@ -272,6 +272,7 @@ Para más información:
   * Contenedor: https://hub.docker.com/r/antmordhar/projectcccamarero .
 
   * Contenedor: https://hub.docker.com/r/antmordhar/projectccapi .
+
 * Ahora se necesitan usar las variables de entorno del URI de la base de datos y de los nombres de host con los que se conecta cada servicio.
 * Se ha creado un docker-compose que nos crea y levanta todos los servicios y que crea una red para que los servicios puedan comunicarse.
 * Las bases de datos de mongo se ejecutan en imagenes y tambien son levantadas al ejecutar el docker-compose
