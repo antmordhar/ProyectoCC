@@ -253,6 +253,8 @@ Para más información:
  
 ### 10.3 Herramienta de construcción
  
+ buildtool: Makefile
+ 
 * Ahora se instala también mongo al realizar la primera instalación
 * Se ha eliminado los antiguos tests de conexión y se han sustituido por el test de carga.
 * Se ha cambiado la forma de creación, arranque y parada de las imágenes de Docker. Ahora se realizan con el docker compose.
