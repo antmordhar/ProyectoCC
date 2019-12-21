@@ -263,7 +263,15 @@ Para más información:
 ### 10.4 Docker
  
 * Se han contenerizado los servicios creados.
-* Se ha eliminado el Docker Hub anterior y se ha sustituido por uno para cada proyecto.
+* Se ha eliminado el Docker Hub anterior y se ha sustituido por uno para cada proyecto. Sus contenedores son los siguientes:
+
+  * Contenedor: https://hub.docker.com/r/antmordhar/projectccmesas .
+
+  * Contenedor: https://hub.docker.com/r/antmordhar/projectcccocina .
+
+  * Contenedor: https://hub.docker.com/r/antmordhar/projectcccamarero .
+
+  * Contenedor: https://hub.docker.com/r/antmordhar/projectccapi .
 * Ahora se necesitan usar las variables de entorno del URI de la base de datos y de los nombres de host con los que se conecta cada servicio.
 * Se ha creado un docker-compose que nos crea y levanta todos los servicios y que crea una red para que los servicios puedan comunicarse.
 * Las bases de datos de mongo se ejecutan en imagenes y tambien son levantadas al ejecutar el docker-compose
