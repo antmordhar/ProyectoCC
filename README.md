@@ -210,7 +210,7 @@ Como bases de datos para los microservicios se ha usado **MongoDB**.
  
 Para la inyección de dependencias se ha usado una interfaz que extiende  **Spring Data Mongo Repository**. Esto proporciona todas los métodos CRUD para trabajar con nuestro modelo *plato*. Además "auto implementa" los métodos que declares en la interfaz en dependencia de su nombre y el objeto que devuelvan. Para realizar esto se parsea el nombre del método que declaremos buscando el nombre de las variables de nuestro modelo y de un conjunto de reglas que forman las queries.
  
-Para trabajar con el repositorio solo hace falta realizar la inyección de dependencias en la clase que lo necesite. Esto se lleva a cabo con la anotación **@Autowired** que instanciará el repositorio al arrancar el servicio. Para realizar la comunicación con la base de datos tenemos que llamar a los métodos que hayamos declarado en el repositorio o a los que ya vienen implementados por defecto.
+Para trabajar con el repositorio solo hace falta realizar la inyección de dependencias en la clase que lo necesite. Esto se lleva a cabo con la anotación **@Autowired** que instanciará el repositorio al arrancar el servicio. Para realizar la comunicación con la base de datos tenemos que llamar a los métodos que hayamos declarado en el repositorio o a los que ya vienen implementados por defecto. 
  
 Para más información:
  
