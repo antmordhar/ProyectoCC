@@ -48,10 +48,10 @@ public class cocinaControllerTest {
                 new HttpEntity<String>("{\"idmesa\":69,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
         //Realizamos el post y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/post",request,
+        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina",request,
             String.class);
 
-        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/get/69",String.class)
+        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/69",String.class)
         ,is(not("[]")));
         
         //Prueba de SEND------------------------------------------------------------------------------------------------------------------------------
@@ -61,16 +61,16 @@ public class cocinaControllerTest {
         
         //Realizamos el send y comprobamos que la salida es la correcta
         //Para esto necesitamos que el otro servicio este arrancado
-         assertThat("Sendea Correctamente",this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/send/69",request,
+         assertThat("Sendea Correctamente",this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/69",request,
              String.class),is("OK"));
 
         //Prueba de DELETE------------------------------------------------------------------------------------------------------------------------------
         //Creamos el request
                 request = new HttpEntity<String>("", headers);
         //Hacemos el delete y comprobamos que la salida es correcta
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/cocina/delete/69");
+        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/cocina/69");
         
-        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/get/69",String.class)
+        assertThat("Borra el pedido por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/cocina/69",String.class)
         ,is("[]"));
         
         //Prueba de HELLO------------------------------------------------------------------------------------------------------------------------------

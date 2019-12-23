@@ -22,7 +22,7 @@ Se ha implementado un microservicio el cual tiene una API REST. Este servicio es
   ~~~
 
   * Añade el pedido a la base de datos
-* **POST: /cocina/send/{id}**
+* **POST: /cocina/{id}**
   * Envia una peticion a camarero por cada pedido que se encuentre guardado en una id. Camarero después se encargara de guardar los pedidos
   
 * **DELETE: /cocina/{id}**

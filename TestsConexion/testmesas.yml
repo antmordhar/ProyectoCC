@@ -2,7 +2,7 @@ execution:
   #Con que herramienta se ejecutara
 - executor: jmeter
   #Numero de usuarios concurrentes que habra
-  concurrency: 30
+  concurrency: 10
   #Numero de iteraciones que repetira, no es compatible con hold-for
   #iterations: 1000
   #Los usuarios iran creciendo durante 10 segundos
@@ -23,15 +23,15 @@ scenarios:
   LoadTest:
     requests:
       #Mesas
-    - url: http://localhost:8080/pedido/post/
+    - url: http://localhost:8080/pedido/
       method: POST
       headers:
           Content-Type: application/json
       body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
-    - url: http://localhost:8080/pedido/get/96
+    - url: http://localhost:8080/pedido/96
       method: GET
-    - url: http://localhost:8080/pedido/send/96
+    - url: http://localhost:8080/pedido/96
       method: POST
-    - url: http://localhost:8080/pedido/delete/96
+    - url: http://localhost:8080/pedido/96
       method: DELETE
 

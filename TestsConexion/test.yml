@@ -2,7 +2,7 @@ execution:
   #Con que herramienta se ejecutara
 - executor: jmeter
   #Numero de usuarios concurrentes que habra
-  concurrency: 30
+  concurrency: 10
   #Numero de iteraciones que repetira, no es compatible con hold-for
   #iterations: 1000
   #Los usuarios iran creciendo durante 10 segundos
@@ -23,40 +23,40 @@ scenarios:
   LoadTest:
     requests:
       #Mesas
-    - url: http://localhost:8069/restaurant/pedido/post/
+    - url: http://localhost:8069/restaurant/pedido/
       method: POST
       headers:
           Content-Type: application/json
       body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
-    - url: http://localhost:8069/restaurant/pedido/get/96
+    - url: http://localhost:8069/restaurant/pedido/96
       method: GET
-    - url: http://localhost:8069/restaurant/pedido/send/96
+    - url: http://localhost:8069/restaurant/pedido/96
       method: POST
-    - url: http://localhost:8069/restaurant/pedido/delete/96
+    - url: http://localhost:8069/restaurant/pedido/96
       method: DELETE
     #Cocina
-    - url: http://localhost:8069/restaurant/cocina/post/
+    - url: http://localhost:8069/restaurant/cocina/
       method: POST
       headers:
           Content-Type: application/json
       body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
-    - url: http://localhost:8069/restaurant/cocina/get/96
+    - url: http://localhost:8069/restaurant/cocina/96
       method: GET
-    - url: http://localhost:8069/restaurant/cocina/send/96
+    - url: http://localhost:8069/restaurant/cocina/96
       method: POST
-    - url: http://localhost:8069/restaurant/cocina/delete/96
+    - url: http://localhost:8069/restaurant/cocina/96
       method: DELETE
     #Camarero
-    - url: http://localhost:8069/restaurant/camarero/post/
+    - url: http://localhost:8069/restaurant/camarero/
       method: POST
       headers:
           Content-Type: application/json
       body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
-    - url: http://localhost:8069/restaurant/camarero/get/96
+    - url: http://localhost:8069/restaurant/camarero/96
       method: GET
     - url: http://localhost:8069/restaurant/camarero/price/96
       method: GET
-    - url: http://localhost:8069/restaurant/camarero/delete/96
+    - url: http://localhost:8069/restaurant/camarero/96
       method: DELETE
 
 

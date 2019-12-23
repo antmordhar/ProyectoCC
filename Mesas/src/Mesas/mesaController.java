@@ -42,7 +42,7 @@ public class mesaController {
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
     // Devuelve una lista de platos
-    @GetMapping(value = "/pedido/get/{id}")
+    @GetMapping(value = "/pedido/{id}")
     public String getPedido(@PathVariable(value = "id") final int id) {
         return repository.findByIdmesa(id).toString();
     }
@@ -51,7 +51,7 @@ public class mesaController {
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
     // Guarda las mesas en la base de datos
-    @PostMapping(value = "/pedido/post")
+    @PostMapping(value = "/pedido")
     public void postPedido(@RequestBody final plato pedido) throws JSONException {
         repository.save(pedido);
     }
@@ -59,7 +59,7 @@ public class mesaController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     //Borra las mesas de la base de datos que contengan el id pasado
-    @DeleteMapping(value= "/pedido/delete/{id}")
+    @DeleteMapping(value= "/pedido/{id}")
     public void deletePedido(@PathVariable(value= "id") final int id){
         repository.deletePlatoByIdmesa(id);
     }
@@ -67,7 +67,7 @@ public class mesaController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     //Esta funcion sera llamada cuando la mesa mande el pedido
-    @PostMapping(value= "/pedido/send/{id}")
+    @PostMapping(value= "/pedido/{id}")
     public String finishPedido(@PathVariable(value= "id") final int id){
         //creamos una request
         HttpEntity<String> request;
@@ -80,7 +80,7 @@ public class mesaController {
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
             //System.getev busca una variable con el nombre dado
-            this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + port + "/cocina/post",request,String.class);
+            this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + port + "/cocina",request,String.class);
         }  
         return "OK"; 
     }

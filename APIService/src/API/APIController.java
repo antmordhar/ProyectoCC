@@ -32,77 +32,77 @@ public class APIController {
         return "Hello World!";
     }
     //Funciones de Mesas-----------------------------------------------------------------------------------------------------------------------------------------
-    @GetMapping(value = "restaurant/pedido/get/{id}")
+    @GetMapping(value = "restaurant/pedido/{id}")
     public String getPedido(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/"+id,String.class);
     }
-    @PostMapping(value = "restaurant/pedido/post")
+    @PostMapping(value = "restaurant/pedido")
     public void postPedido(@RequestBody final plato pedido) throws JSONException {
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido",request,String.class);
     }
-    @DeleteMapping(value= "restaurant/pedido/delete/{id}")
+    @DeleteMapping(value= "restaurant/pedido/{id}")
     public void deletePedido(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/"+id);
     }
-    @PostMapping(value= "restaurant/pedido/send/{id}")
+    @PostMapping(value= "restaurant/pedido/{id}")
     public String finishPedido(@PathVariable(value= "id") final int id){
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-        this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/send/"+id,request,String.class); 
+        this.restTemplate.postForObject("http://"+System.getenv("HOST_MESAS")+":" + portmesas + "/pedido/"+id,request,String.class); 
         return "OK";   
     }
     //Funciones de Cocina-----------------------------------------------------------------------------------------------------------------------------------------
-    @GetMapping(value = "restaurant/cocina/get/{id}")
+    @GetMapping(value = "restaurant/cocina/{id}")
     public String getCocina(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/"+id,String.class);
     }
-    @PostMapping(value = "restaurant/cocina/post")
+    @PostMapping(value = "restaurant/cocina")
     public void postCocina(@RequestBody final plato pedido) throws JSONException {
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina",request,String.class);
     }
-    @DeleteMapping(value= "restaurant/cocina/delete/{id}")
+    @DeleteMapping(value= "restaurant/cocina/{id}")
     public void deleteCocina(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/"+id);
     }
-    @PostMapping(value= "restaurant/cocina/send/{id}")
+    @PostMapping(value= "restaurant/cocina/{id}")
     public String sendCocina(@PathVariable(value= "id") final int id){
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         request = new HttpEntity<String>("", headers);
-        this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/send/"+id,request,String.class); 
+        this.restTemplate.postForObject("http://"+System.getenv("HOST_COCINA")+":" + portcocina + "/cocina/"+id,request,String.class); 
         return "OK";   
     }
     //Funciones de Camarero-----------------------------------------------------------------------------------------------------------------------------------------
-    @GetMapping(value = "restaurant/camarero/get/{id}")
+    @GetMapping(value = "restaurant/camarero/{id}")
     public String getCamarero(@PathVariable(value = "id") final int id) {
-        return this.restTemplate.getForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/get/"+id,String.class);
+        return this.restTemplate.getForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/"+id,String.class);
     }
     @GetMapping(value = "restaurant/camarero/price/{id}")
     public String priceCamarero(@PathVariable(value = "id") final int id) {
         return this.restTemplate.getForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/price/"+id,String.class);
     }
-    @PostMapping(value = "restaurant/camarero/post")
+    @PostMapping(value = "restaurant/camarero")
     public void postCamarero(@RequestBody final plato pedido) throws JSONException {
         HttpEntity<String> request;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         request = 
             new HttpEntity<String>("{\"idmesa\":"+pedido.getIDmesa()+",\"nombre\":\""+pedido.getNombre()+"\", \"precio\":"+pedido.getPrecio()+", \"cantidad\":"+pedido.getPrecio()+"}", headers);
-         this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/post",request,String.class);
+         this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero",request,String.class);
     }
-    @DeleteMapping(value= "restaurant/camarero/delete/{id}")
+    @DeleteMapping(value= "restaurant/camarero/{id}")
     public void deleteCamarero(@PathVariable(value= "id") final int id){
-        this.restTemplate.delete("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/delete/"+id);
+        this.restTemplate.delete("http://"+System.getenv("HOST_CAMARERO")+":" + portcamarero + "/camarero/"+id);
     }
 }

@@ -32,7 +32,7 @@ public class camareroController {
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
     // Devuelve una lista de platos
-    @GetMapping(value = "/camarero/get/{id}")
+    @GetMapping(value = "/camarero/{id}")
     public String getCamarero(@PathVariable(value = "id") final int id) {
         return repository.findByIdmesa(id).toString();
     }
@@ -41,7 +41,7 @@ public class camareroController {
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
     // Guarda las mesas en la base de datos
-    @PostMapping(value = "/camarero/post")
+    @PostMapping(value = "/camarero")
     public void postCamarero(@RequestBody final plato pedido) throws JSONException {
         repository.save(pedido);
     }
@@ -49,7 +49,7 @@ public class camareroController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     //Borra las mesas de la base de datos que contengan el id pasado
-    @DeleteMapping(value= "/camarero/delete/{id}")
+    @DeleteMapping(value= "/camarero/{id}")
     public void deleteCamarero(@PathVariable(value= "id") final int id){
         repository.deletePlatoByIdmesa(id);
     }

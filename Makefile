@@ -21,9 +21,11 @@ install:
 #Ejecuta los servicios necesarios para pasar los tests
 #Ejecuta los test del microservicio
 #Para la base de datos
+#ATENCION: Asegurarse de que los servicios no estan escuchando en el puerto antes de ejecutar otro test.
+#ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testmesa:
 	mongod --fork --syslog
-	export HOST_CAMARERO=localhost && nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	export HOST_COCINA=localhost && nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
 	cd ./Mesas && export HOST=localhost && export HOST_COCINA=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
 	killall mongod
 #Arranca la base de datos
@@ -31,9 +33,11 @@ testmesa:
 #Ejecuta los servicios necesarios para pasar los tests
 #Ejecuta los test del microservicio
 #Para la base de datos
+#ATENCION: Asegurarse de que los servicios no estan escuchando en el puerto antes de ejecutar otro test.
+#ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testcocina:
 	mongod --fork --syslog
-	localhost && java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
+	export HOST_CAMARERO=localhost && java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
 	cd ./Cocina && export HOST=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
 	killall mongod
 #Arranca la base de datos
@@ -41,6 +45,8 @@ testcocina:
 #Ejecuta los servicios necesarios para pasar los tests
 #Ejecuta los test del microservicio
 #Para la base de datos
+#ATENCION: Asegurarse de que los servicios no estan escuchando en el puerto antes de ejecutar otro test.
+#ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testcamarero:
 	mongod --fork --syslog
 	cd ./Camarero  && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
@@ -50,6 +56,8 @@ testcamarero:
 #Ejecuta los servicios necesarios para pasar los tests
 #Ejecuta los test del microservicio
 #Para la base de datos
+#ATENCION: Asegurarse de que los servicios no estan escuchando en el puerto antes de ejecutar otro test.
+#ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testapi:
 	mongod --fork --syslog
 	export HOST_COCINA=localhost && java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
@@ -69,6 +77,8 @@ clean:
 creardocker:
 	docker-compose build
 #Corre el docker con docker compose
+#ATENCION: Asegurarse de que los servicios no estan escuchando en el puerto antes de ejecutar otro test.
+#ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 correrdocker:
 	docker-compose up
 #Para el docker con el docker compose

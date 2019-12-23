@@ -42,7 +42,7 @@ public class cocinaController {
     // Le especificamos que path llamara a esta funcion
     // Value id quiere decir que leera esa variable de la url
     // Devuelve una lista de platos
-    @GetMapping(value = "/cocina/get/{id}")
+    @GetMapping(value = "/cocina/{id}")
     public String getCocina(@PathVariable(value = "id") final int id) {
         return repository.findByIdmesa(id).toString();
     }
@@ -51,7 +51,7 @@ public class cocinaController {
     // Request body hara que busque como cuerpo de la peticion un JSON con las
     // variables que tenga la clase plato
     // Guarda las mesas en la base de datos
-    @PostMapping(value = "/cocina/post")
+    @PostMapping(value = "/cocina")
     public void postCocina(@RequestBody final plato pedido) throws JSONException {
         repository.save(pedido);
     }
@@ -59,7 +59,7 @@ public class cocinaController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     //Borra las mesas de la base de datos que contengan el id pasado
-    @DeleteMapping(value= "/cocina/delete/{id}")
+    @DeleteMapping(value= "/cocina/{id}")
     public void deleteCocina(@PathVariable(value= "id") final int id){
         repository.deletePlatoByIdmesa(id);
     }
@@ -67,7 +67,7 @@ public class cocinaController {
     //Le especificamos que path llamara a esta funcion
     //Value id quiere decir que leera esa variable de la url
     //esta funcioon sera llamada cuando los platos esten listos
-    @PostMapping(value= "/cocina/send/{id}")
+    @PostMapping(value= "/cocina/{id}")
     public String sentCocina(@PathVariable(value= "id") final int id){
         //creamos una request
         HttpEntity<String> request;
@@ -80,7 +80,7 @@ public class cocinaController {
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
             //System.getev busca una variable con el nombre dado
-            this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + port + "/camarero/post",request,String.class);
+            this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + port + "/camarero",request,String.class);
         }  
         return "OK";  
     }

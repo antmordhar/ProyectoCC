@@ -50,10 +50,10 @@ public class camareroControllerTest {
                 new HttpEntity<String>("{\"idmesa\":69,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
         //Realizamos el post y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/post",request,
+        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/camarero",request,
             String.class);
 
-        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/get/69",String.class)
+        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/69",String.class)
         ,is(not("[]")));
         
         //Prueba de PRICE------------------------------------------------------------------------------------------------------------------------------         
@@ -65,9 +65,9 @@ public class camareroControllerTest {
         //Creamos el request
                 request = new HttpEntity<String>("", headers);
         //Hacemos el delete y comprobamos que la salida es correcta
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/camarero/delete/69");
+        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/camarero/69");
         
-        assertThat("Borra el camarero por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/get/69",String.class)
+        assertThat("Borra el camarero por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/69",String.class)
         ,is("[]"));
         
         //Prueba de HELLO------------------------------------------------------------------------------------------------------------------------------
