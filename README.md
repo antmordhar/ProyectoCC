@@ -17,6 +17,8 @@
  
 Recursos utilizados:
 * Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz
+* 8GB DDR3 1600MT/s Kingston MSI16D3LS1MNG/8G
+
 * Ubuntu 18.04.3 LTS
  
 Para la medición de las prestaciones de nuestro sistema se ha usado [Taurus](https://gettaurus.org/). Taurus es una herramienta open source que nos permite pasar tests con JMeter,Selenium y otras herramientas fácilmente. Para ello solo es necesario la creación de un fichero yml donde se encontrarán las instrucciones para la ejecución del test.
