@@ -9,8 +9,15 @@ execution:
   ramp-up: 10
   #Tiempo que aguantará a maximo de usuarios
   hold-for: 50
+  
   #Nombre del test
-  scenario: LoadTest
+  #Para correr los diferentes scenarios hay que descomentar el scenario que se quiera y comentar el anterior
+  #No se ha establecido una ejecución para cada scenario por que se ejecutan todos a la vez
+  #Esto hace que se realientice la maquina en la que se corren los test y salgan resultados erroneos
+  scenario: LoadTestAll
+  #scenario: LoadTestCamarero
+  #scenario: LoadTestCocina
+  #scenario: LoadTestMesas
 
 #Test se pasara
 #Nombre de nuestro test
@@ -20,7 +27,7 @@ execution:
 #headers acompaña a url, te permite establecer que headers tendra la peticion, en nuestro caso hemos usado content-type aplication/json
 #body acompaña a url y te permite definir el cuerpo de la peticion que se va a realizar
 scenarios:
-  LoadTest:
+  LoadTestAll:
     requests:
       #Mesas
     - url: http://localhost:8069/restaurant/pedido/
@@ -59,4 +66,48 @@ scenarios:
     - url: http://localhost:8069/restaurant/camarero/96
       method: DELETE
 
+  LoadTestCamarero:
+    requests:
+    #Camarero
+    - url: http://localhost:8082/camarero/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://localhost:8082/camarero/96
+      method: GET
+    - url: http://localhost:8082/camarero/price/96
+      method: GET
+    - url: http://localhost:8082/camarero/96
+      method: DELETE
+
+  LoadTestCocina:
+    requests:
+    #Cocina
+    - url: http://localhost:8081/cocina/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://localhost:8081/cocina/96
+      method: GET
+    - url: http://localhost:8081/cocina/96
+      method: POST
+    - url: http://localhost:8081/cocina/96
+      method: DELETE
+
+  LoadTestMesas:
+    requests:
+      #Mesas
+    - url: http://localhost:8080/pedido/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://localhost:8080/pedido/96
+      method: GET
+    - url: http://localhost:8080/pedido/96
+      method: POST
+    - url: http://localhost:8080/pedido/96
+      method: DELETE
 

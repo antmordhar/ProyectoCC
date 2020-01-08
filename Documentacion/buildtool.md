@@ -69,15 +69,13 @@ make parardocker
 
 ~~~shell
 make testcarga
-make testcargamesas
-make testcargacocina
-make testcargacamarero
 ~~~
 
 * Corre un script con taurus que comprueba la carga que nuestro servidor puede aguantar.
 * Los servicios necesitan estar arrancados y con las bases de datos conectadas correctamente.
-
 * Para ver que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml)
+> Para correr los test a un servicio en concreto se deberá modificar el apartado "scenario" del apartado "execution" dentro de test.yml. Los escenarios estan ya creados (LoadTestAll,LoadTestCamarero,LoadTestCocina,LoadTestMesas)
+
 
 Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/blob/master/Makefile)
 

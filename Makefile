@@ -89,12 +89,7 @@ parardocker:
 #Hay mas pruebas, se encuentran el la carpeta TestConexion
 testcarga:
 	bzt ./TestsConexion/test.yml -report
-testcargamesas:
-	bzt ./TestsConexion/testmesas.yml -report
-testcargacocina:
-	bzt ./TestsConexion/testcocina.yml -report
-testcargacamarero:
-	bzt ./TestsConexion/testcamarero.yml -report
+
 
 	
 	
