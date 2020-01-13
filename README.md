@@ -211,11 +211,11 @@ Finalmente en cuanto a la base de datos, Mongo, como hemos comentado anteriormen
 
 ![Test](./Documentacion/pic/FinalResult10.png)
 ![Test](./Documentacion/pic/FinalResult20.png)
-![Test](./Documentacion/pic/FInalResult30.png)
+![Test](./Documentacion/pic/FinalResult30.png)
 
-* Peticiones por segundo media 1020 Hits/s
-* Ancho de banda medio 3 MiB/s
-* Tiempo de respuesta medio 18 ms
+* Peticiones por segundo media 1425 Hits/s
+* Ancho de banda medio 279 KiB/s
+* Tiempo de respuesta medio 13 ms
 * Error medio 0%
 
 Con esto podemos concluir que el servidor efectivamente cumple los requisitos mínimos que se esperaban de el.

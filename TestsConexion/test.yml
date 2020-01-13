@@ -2,7 +2,7 @@ execution:
   #Con que herramienta se ejecutara
 - executor: jmeter
   #Numero de usuarios concurrentes que habra
-  concurrency: 10
+  concurrency: 30
   #Numero de iteraciones que repetira, no es compatible con hold-for
   #iterations: 1000
   #Los usuarios iran creciendo durante 10 segundos
@@ -60,7 +60,7 @@ scenarios:
     - once:
       - url: http://localhost:8069/restaurant/cocina/96
         method: POST
-    -once:
+    - once:
       - url: http://localhost:8069/restaurant/cocina/96
         method: DELETE
     - once:
@@ -91,7 +91,7 @@ scenarios:
       method: GET
     - url: http://localhost:8069/restaurant/camarero/price/96
       method: GET
-      
+
   LoadTestCamarero:
     requests:
     #Camarero
