@@ -262,14 +262,14 @@ Para más información:
 ### 10.2 Integración continua
  
 * Travis
- * Se han añadido los tests de los nuevos servicios a travis y su envío de la cobertura a codecov.
- * Ahora se levanta mongo al pasar los tests en travis.
- * Se han establecido las variables de entorno necesarias para el funcionamiento de los servicios.
- * Codecov juntara la cobertura total de los proyectos.
+  * Se han añadido los tests de los nuevos servicios a travis y su envío de la cobertura a codecov.
+  * Ahora se levanta mongo al pasar los tests en travis.
+  * Se han establecido las variables de entorno necesarias para el funcionamiento de los servicios.
+  * Codecov juntara la cobertura total de los proyectos.
 * GitHub Actions
- * Se han añadido los test de los nuevos servicio a GHA.
- * Ahora se levanta mongo al pasar los test de GHA.
- * Se ha eliminado los tests en MacOS y Windows por problemas de compatibilidad con mongo.
+  * Se han añadido los test de los nuevos servicio a GHA.
+  * Ahora se levanta mongo al pasar los test de GHA.
+  * Se ha eliminado los tests en MacOS y Windows por problemas de compatibilidad con mongo.
 * Para mas información consulte el enlace a los archivos de configuración que se mencionan en: [Integración continua](https://antmordhar.github.io/ProyectoCC/Documentacion/integracion)
  
 ### 10.3 Herramienta de construcción
