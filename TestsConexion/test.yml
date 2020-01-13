@@ -29,43 +29,69 @@ execution:
 scenarios:
   LoadTestAll:
     requests:
-      #Mesas
-    - url: http://localhost:8069/restaurant/pedido/
-      method: POST
-      headers:
-          Content-Type: application/json
-      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    #Mesas
+    - once: 
+      - url: http://localhost:8069/restaurant/pedido/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - once: 
+      - url: http://localhost:8069/restaurant/pedido/96
+        method: POST
+    - once:
+      - url: http://localhost:8069/restaurant/pedido/96
+        method: DELETE
+    - once: 
+      - url: http://localhost:8069/restaurant/pedido/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
     - url: http://localhost:8069/restaurant/pedido/96
       method: GET
-    - url: http://localhost:8069/restaurant/pedido/96
-      method: POST
-    - url: http://localhost:8069/restaurant/pedido/96
-      method: DELETE
-    Cocina
-    - url: http://localhost:8069/restaurant/cocina/
-      method: POST
-      headers:
-          Content-Type: application/json
-      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    #Cocina
+    # - once:
+    #   - url: http://localhost:8069/restaurant/cocina/
+    #     method: POST
+    #     headers:
+    #         Content-Type: application/json
+    #     body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - once:
+      - url: http://localhost:8069/restaurant/cocina/96
+        method: POST
+    -once:
+      - url: http://localhost:8069/restaurant/cocina/96
+        method: DELETE
+    - once:
+      - url: http://localhost:8069/restaurant/cocina/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
     - url: http://localhost:8069/restaurant/cocina/96
       method: GET
-    - url: http://localhost:8069/restaurant/cocina/96
-      method: POST
-    - url: http://localhost:8069/restaurant/cocina/96
-      method: DELETE
-    Camarero
-    - url: http://localhost:8069/restaurant/camarero/
-      method: POST
-      headers:
-          Content-Type: application/json
-      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    #Camarero
+    # - once:
+    #   - url: http://localhost:8069/restaurant/camarero/
+    #     method: POST
+    #     headers:
+    #         Content-Type: application/json
+    #     body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - once:
+      - url: http://localhost:8069/restaurant/camarero/96
+        method: DELETE
+    - once:
+      - url: http://localhost:8069/restaurant/camarero/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
     - url: http://localhost:8069/restaurant/camarero/96
       method: GET
     - url: http://localhost:8069/restaurant/camarero/price/96
       method: GET
-    - url: http://localhost:8069/restaurant/camarero/96
-      method: DELETE
-
+      
   LoadTestCamarero:
     requests:
     #Camarero

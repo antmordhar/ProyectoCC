@@ -65,6 +65,9 @@ services:
             - HOST_COCINA=${HOST_COCINA_DOCKER}
             - HOST_MESAS_PORT=${HOST_MESAS_PORT}
             - HOST_MESAS_DB=${HOST_MESAS_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - MESAS_DB_NAME=${MESAS_DB_NAME}
         #Puerto externo e interno que usará
         ports: 
             - "${HOST_MESAS_PORT}:${HOST_MESAS_PORT}"
@@ -96,6 +99,9 @@ services:
             - HOST_CAMARERO=${HOST_CAMARERO_DOCKER}
             - HOST_COCINA_PORT=${HOST_COCINA_PORT}
             - HOST_COCINA_DB=${HOST_COCINA_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - COCINA_DB_NAME=${COCINA_DB_NAME}
         #Puertos externo e interno que usará
         ports: 
             - "${HOST_COCINA_PORT}:${HOST_COCINA_PORT}"
@@ -127,6 +133,9 @@ services:
         environment:
             - HOST_CAMARERO_PORT=${HOST_CAMARERO_PORT}
             - HOST_CAMARERO_DB=${HOST_CAMARERO_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - CAMARERO_DB_NAME=${CAMARERO_DB_NAME}
         #Puertos externo e interno de nuestro servicio
         ports: 
             - "${HOST_CAMARERO_PORT}:${HOST_CAMARERO_PORT}"
