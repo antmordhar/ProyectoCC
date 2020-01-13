@@ -31,10 +31,10 @@ jobs:
     - name: set environment variables
       uses: allenevans/set-env@v1.0.0
       with:
-          HOST: 'localhost'
-          HOST_MESAS: 'localhost'
-          HOST_COCINA: 'localhost'
-          HOST_CAMARERO: 'localhost'
+          HOST: ${{ secrets.HOST }}
+          HOST_MESAS: ${{ secrets.HOST_MESAS }}
+          HOST_COCINA: ${{ secrets.HOST_COCINA }}
+          HOST_CAMARERO: ${{ secrets.HOST_CAMARERO }}
       #Le indicamos el nombre del paso
     - name: Build with Maven
       #Va a proyecto
@@ -45,19 +45,19 @@ jobs:
        make install
        java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
        cd ./Mesas
-       mvn clean package cobertura:cobertura 
+       mvn cobertura:cobertura 
        kill -9 $(sudo lsof -t -i:8081)
        cd ..
        java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
        cd ./Cocina
-       mvn clean package cobertura:cobertura 
+       mvn cobertura:cobertura 
        kill -9 $(sudo lsof -t -i:8082)
        cd ..
        cd ./Camarero
-       mvn clean package cobertura:cobertura 
+       mvn cobertura:cobertura 
        cd ..
        java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
        java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
        java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
        cd ./APIService
-       mvn clean package cobertura:cobertura 
+       mvn cobertura:cobertura 

@@ -7,13 +7,6 @@ jdk:
 dist: trusty
 #No hacer el proceso con sudo
 sudo: false
-#Variables de entorno que necesitaran nuestros servicios
-env:
-  global:
-    - HOST=localhost
-    - HOST_COCINA=localhost
-    - HOST_MESAS=localhost
-    - HOST_CAMARERO=localhost
 #Le indicamos que usaremos mongo
 services:
   - mongodb
@@ -25,23 +18,23 @@ script:
   - "make install"
   #Pruebo mesas
   - "java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &"
-  - "cd ./Mesas && mvn clean package cobertura:cobertura"
+  - "cd ./Mesas && mvn cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
   - "kill -9 $(sudo lsof -t -i:8081)"
   - "cd .."
   #Pruebo cocina
   - "java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &"
-  - "cd ./Cocina && mvn clean package cobertura:cobertura"
+  - "cd ./Cocina && mvn cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
   - "kill -9 $(sudo lsof -t -i:8082)"
   - "cd .."
   #Pruebo camarero
-  - "cd ./Camarero && mvn clean package cobertura:cobertura"
+  - "cd ./Camarero && mvn cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"
   - "cd .."
   #Pruebo Api
   - "java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &"
   - "java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &"
   - "java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &"
-  - "cd ./APIService && mvn clean package cobertura:cobertura"
+  - "cd ./APIService && mvn cobertura:cobertura"
   - "bash <(curl -s https://codecov.io/bash)"

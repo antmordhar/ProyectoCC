@@ -21,17 +21,17 @@ import Cocina.plato;
 @RestController
 public class cocinaController {
 
-    // Aquí se realiza la inyección de dependencias
-    //Se autoinstancia al arrancar el servicio
-    //Para mas informacion de como funciona visita la clase correspondiente
+    //Aquí se realiza la inyección de dependencias
+    //Al arrancar el servicio automaticamente se pondra en comunicacion el bean de repository
+    //con el bean del controller.
+    //las configuraciones necesarias se realizaran automaticamente gracias a la notación @autowired
+    //Para mas informacion de como se accede a los datos consulta la clase del repositorio
+    //o puede ser revisado en la propia documentación
     @Autowired
     private platoRepository repository;
     
     //Delcaramos un objeto para poder hacer las peticiones rest
     private RestTemplate restTemplate=new RestTemplate();
-
-    //puerto deñ servicio camarero al que haremos peticiones
-    private int port=8082;
     
     // Mensaje por defecto de la aplicación
     @GetMapping(value = "/")
@@ -80,7 +80,7 @@ public class cocinaController {
             request = 
             new HttpEntity<String>("{\"idmesa\":"+plato.getIDmesa()+",\"nombre\":\""+plato.getNombre()+"\", \"precio\":"+plato.getPrecio()+", \"cantidad\":"+plato.getPrecio()+"}", headers);
             //System.getev busca una variable con el nombre dado
-            this.restTemplate.postForObject("http://"+System.getenv("HOST_CAMARERO")+":" + port + "/camarero",request,String.class);
+            this.restTemplate.postForObject(System.getenv("HOST_CAMARERO") + "/camarero",request,String.class);
         }  
         return "OK";  
     }

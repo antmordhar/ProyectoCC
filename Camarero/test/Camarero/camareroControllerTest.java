@@ -50,28 +50,28 @@ public class camareroControllerTest {
                 new HttpEntity<String>("{\"idmesa\":69,\"nombre\":\"plato0\", \"precio\":1.4, \"cantidad\":1}", headers);
         
         //Realizamos el post y comprobamos que la salida es la correcta
-        this.restTemplate.postForObject("http://"+System.getenv("HOST")+":" + port + "/camarero",request,
+        this.restTemplate.postForObject(System.getenv("HOST")+ port + "/camarero",request,
             String.class);
 
-        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/69",String.class)
+        assertThat("Inserta el plato por HTTP",this.restTemplate.getForObject(System.getenv("HOST")+ port + "/camarero/69",String.class)
         ,is(not("[]")));
         
         //Prueba de PRICE------------------------------------------------------------------------------------------------------------------------------         
 
         //Nos aseguramos que la salida es la adecuada
-        assertThat(this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/price/69",String.class),is(not("0")));
+        assertThat(this.restTemplate.getForObject(System.getenv("HOST")+ port + "/camarero/price/69",String.class),is(not("0")));
         
         //Prueba de DELETE------------------------------------------------------------------------------------------------------------------------------
         //Creamos el request
                 request = new HttpEntity<String>("", headers);
         //Hacemos el delete y comprobamos que la salida es correcta
-        this.restTemplate.delete("http://"+System.getenv("HOST")+":" + port + "/camarero/69");
+        this.restTemplate.delete(System.getenv("HOST")+ port + "/camarero/69");
         
-        assertThat("Borra el camarero por HTTP",this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/camarero/69",String.class)
+        assertThat("Borra el camarero por HTTP",this.restTemplate.getForObject(System.getenv("HOST")+ port + "/camarero/69",String.class)
         ,is("[]"));
         
         //Prueba de HELLO------------------------------------------------------------------------------------------------------------------------------
-        assertThat(this.restTemplate.getForObject("http://"+System.getenv("HOST")+":" + port + "/",String.class)
+        assertThat(this.restTemplate.getForObject(System.getenv("HOST")+ port + "/",String.class)
         ,is("Hello World!"));
     }
 }

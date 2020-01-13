@@ -17,9 +17,12 @@ import Camarero.plato;
 @RestController
 public class camareroController {
 
-    // Aquí se realiza la inyección de dependencias
-    //Se autoinstancia al arrancar el servicio
-    //Para mas informacion de como funciona visita la clase correspondiente
+    //Aquí se realiza la inyección de dependencias
+    //Al arrancar el servicio automaticamente se pondra en comunicacion el bean de repository
+    //con el bean del controller.
+    //las configuraciones necesarias se realizaran automaticamente gracias a la notación @autowired
+    //Para mas informacion de como se accede a los datos consulta la clase del repositorio
+    //o puede ser revisado en la propia documentación
     @Autowired
     private platoRepository repository;
 

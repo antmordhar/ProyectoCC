@@ -9,9 +9,9 @@ services:
         image: mongo
         #Puerto externo e interno que usará
         ports: 
-            - "27017:27017"
+            - "${HOST_MESAS_DB_PORT}:${DEFAULT_DB_PORT}"
         #Nombre base que le daremos al contenedor
-        container_name: mongomesas
+        container_name: mongomesas       
         #Red de la que forma base la imagen
         networks:
             #Nombre de la red
@@ -25,7 +25,7 @@ services:
         image: mongo
         #Puerto externo e interno que usará
         ports: 
-            - "27018:27017"
+            - "${HOST_COCINA_DB_PORT}:${DEFAULT_DB_PORT}"
         #Nombre base que le daremos al contenedor
         container_name: mongococina
         #Red de la que forma base la imagen
@@ -41,7 +41,7 @@ services:
         image: mongo
         #Puerto externo e interno que usará
         ports: 
-            - "27019:27017"
+            - "${HOST_CAMARERO_DB_PORT}:${DEFAULT_DB_PORT}"
         #Nombre base que le daremos al contenedor
         container_name: mongocamarero
         #Red de la que forma base la imagen
@@ -60,9 +60,14 @@ services:
         image: mesas:compose
         #Se le asignara este nombre al contenedor
         container_name: mesas
+        #Variables de entorno que usara
+        environment:
+            - HOST_COCINA=${HOST_COCINA_DOCKER}
+            - HOST_MESAS_PORT=${HOST_MESAS_PORT}
+            - HOST_MESAS_DB=${HOST_MESAS_DB}
         #Puerto externo e interno que usará
         ports: 
-            - "8080:8080"
+            - "${HOST_MESAS_PORT}:${HOST_MESAS_PORT}"
         networks:
             #Nombre de la red
             net:
@@ -86,9 +91,14 @@ services:
         image: cocina:compose
         #Nombre del contenedor que se creara
         container_name: cocina
+        #Variables de entorno que usara
+        environment:
+            - HOST_CAMARERO=${HOST_CAMARERO_DOCKER}
+            - HOST_COCINA_PORT=${HOST_COCINA_PORT}
+            - HOST_COCINA_DB=${HOST_COCINA_DB}
         #Puertos externo e interno que usará
         ports: 
-            - "8081:8081"
+            - "${HOST_COCINA_PORT}:${HOST_COCINA_PORT}"
         #Red de la que forma base la imagen
         networks:
             #Nombre de la red
@@ -113,9 +123,13 @@ services:
         image: camarero:compose
         #El contenedor creado se llamara de la siguiente forma
         container_name: camarero
+        #Variables de entorno que usara
+        environment:
+            - HOST_CAMARERO_PORT=${HOST_CAMARERO_PORT}
+            - HOST_CAMARERO_DB=${HOST_CAMARERO_DB}
         #Puertos externo e interno de nuestro servicio
         ports: 
-            - "8082:8082"
+            - "${HOST_CAMARERO_PORT}:${HOST_CAMARERO_PORT}"
         #Red de la que formará parte nuestro servicio
         networks:
             #Nombre de la red
@@ -138,9 +152,15 @@ services:
         image: api:compose
         #El contenedor creado se llamará de la siguiente manter
         container_name: api
+        #Variables de entorno que usara
+        environment:
+            - HOST_MESAS=${HOST_MESAS_DOCKER}
+            - HOST_COCINA=${HOST_COCINA_DOCKER}
+            - HOST_CAMARERO=${HOST_CAMARERO_DOCKER}
+            - HOST_API_PORT=${HOST_API_PORT}
         #Puertos externos e internos en los que trabajara nuestra imagen
         ports: 
-            - "8069:8069"
+            - "${HOST_API_PORT}:${HOST_API_PORT}"
         #Red de la que forma parte nuestro servicio
         networks:
             #Nombre de la red

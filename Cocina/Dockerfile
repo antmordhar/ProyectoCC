@@ -11,8 +11,6 @@ COPY /src /Cocina/src
 COPY /pom.xml /Cocina
 #Ejecutamos el comando para empaquetar nuestro Cocina y generar el jar y borra los archivos no necesarios
 RUN cd Cocina && mvn clean package -DskipTests && cd .. && cp ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar ./app.jar &&  rm -rf ./Cocina
-#Variables de entorno para resolver las peticiones
-ENV HOST_CAMARERO=camarero
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
 #Se debe especificar -Dserver.port=$PORT para que heroku asigne el puerto.
@@ -20,7 +18,7 @@ ENV HOST_CAMARERO=camarero
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
 #Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor.
 #-Dspring.data.mongodb.uri establece la url que tendra nuestra bases de datos en mongo
-CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=8081 -Dspring.data.mongodb.uri=mongodb://mongococina/cocina -Djava.security.egd=file:/dev/./urandom -jar ./app.jar" ]
+CMD ["sh", "-c", "java $JAVA_OPTS -Dserver.port=$HOST_COCINA_PORT -Dspring.data.mongodb.uri=$HOST_COCINA_DB -Djava.security.egd=file:/dev/./urandom -jar ./app.jar"]
 
 #Información sacada de https://docs.docker.com/get-started/
 #Información sacada de https://docs.docker.com/engine/reference/builder/

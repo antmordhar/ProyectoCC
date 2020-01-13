@@ -6,7 +6,7 @@ execution:
   #Numero de iteraciones que repetira, no es compatible con hold-for
   #iterations: 1000
   #Los usuarios iran creciendo durante 10 segundos
-  ramp-up: 10
+  #ramp-up: 10
   #Tiempo que aguantará a maximo de usuarios
   hold-for: 50
   
@@ -41,7 +41,7 @@ scenarios:
       method: POST
     - url: http://localhost:8069/restaurant/pedido/96
       method: DELETE
-    #Cocina
+    Cocina
     - url: http://localhost:8069/restaurant/cocina/
       method: POST
       headers:
@@ -53,7 +53,7 @@ scenarios:
       method: POST
     - url: http://localhost:8069/restaurant/cocina/96
       method: DELETE
-    #Camarero
+    Camarero
     - url: http://localhost:8069/restaurant/camarero/
       method: POST
       headers:

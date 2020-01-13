@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 # Instala los requisitos del proyecto y lo testea
 # Instalar maven
 #Instalar OpenJDK8. Cambiar al 7 si se prefiere esta version
@@ -25,8 +26,8 @@ install:
 #ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testmesa:
 	mongod --fork --syslog
-	export HOST_COCINA=localhost && nohup java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
-	cd ./Mesas && export HOST=localhost && export HOST_COCINA=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
+	java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	cd ./Mesas && mvn cobertura:cobertura 
 	killall mongod
 #Arranca la base de datos
 #Exporta las variables de entorno
@@ -37,8 +38,8 @@ testmesa:
 #ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testcocina:
 	mongod --fork --syslog
-	export HOST_CAMARERO=localhost && java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
-	cd ./Cocina && export HOST=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && mvn test cobertura:cobertura 
+	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
+	cd ./Cocina && mvn cobertura:cobertura 
 	killall mongod
 #Arranca la base de datos
 #Exporta las variables de entorno
@@ -49,7 +50,7 @@ testcocina:
 #ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testcamarero:
 	mongod --fork --syslog
-	cd ./Camarero  && export HOST=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
+	cd ./Camarero  &&  mvn cobertura:cobertura 
 	killall mongod
 #Arranca la base de datos
 #Exporta las variables de entorno
@@ -60,10 +61,10 @@ testcamarero:
 #ATENCION: usar: kill -9 $(sudo lsof -t -i:80xx)
 testapi:
 	mongod --fork --syslog
-	export HOST_COCINA=localhost && java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
-	export HOST_CAMARERO=localhost && java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
+	java -jar ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar &
+	java -jar ./Cocina/target/RestauranProjectCocina-0.0.1-SNAPSHOT.jar &
 	java -jar ./Camarero/target/RestauranProjectCamarero-0.0.1-SNAPSHOT.jar &
-	cd ./APIService && export HOST=localhost && export HOST_MESAS=localhost && export HOST_COCINA=localhost && export HOST_CAMARERO=localhost && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 &&  mvn test cobertura:cobertura 
+	cd ./APIService &&  mvn cobertura:cobertura 
 	killall mongod
 
 #Limpia archivos de builds anteriores
@@ -84,12 +85,9 @@ correrdocker:
 #Para el docker con el docker compose
 parardocker:
 	docker-compose down
-
 #Ejecuta las pruebas de carga con taurus
-#Hay mas pruebas, se encuentran el la carpeta TestConexion
 testcarga:
 	bzt ./TestsConexion/test.yml -report
-
 
 	
 	

@@ -11,8 +11,6 @@ COPY /src /Mesas/src
 COPY /pom.xml /Mesas
 #Ejecutamos el comando para empaquetar nuestro Mesas y generar el jar y borra los archivos no necesarios
 RUN cd Mesas && mvn clean package -DskipTests && cd .. && cp ./Mesas/target/RestauranProject-0.0.1-SNAPSHOT.jar ./app.jar &&  rm -rf ./Mesas
-#Variables de entorno para resolver las peticiones
-ENV HOST_COCINA=cocina
 #Para finalizar corremos la aplicación
 #se realiza desde el CMD para que se use como comando run del heroku.yml
 #Se debe especificar -Dserver.port=$PORT para que heroku asigne el puerto.
@@ -20,7 +18,7 @@ ENV HOST_COCINA=cocina
 #java $JAVA_OPTS es una variable de entorno estandart que usan algunos servidores como, en nuestro caso, el tomcat que usa spring
 #Djava.security.egd=file:/dev/./urandom Acelera el arranque del servidor.
 #-Dspring.data.mongodb.uri establece la url que tendra nuestra bases de datos en mongo
-CMD [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=8080 -Dspring.data.mongodb.uri=mongodb://mongomesas/mesas -Djava.security.egd=file:/dev/./urandom -jar ./app.jar" ]
+CMD ["sh", "-c", "java $JAVA_OPTS -Dserver.port=$HOST_MESAS_PORT -Dspring.data.mongodb.uri=$HOST_MESAS_DB -Djava.security.egd=file:/dev/./urandom -jar ./app.jar"]
 
 #Información sacada de https://docs.docker.com/get-started/
 #Información sacada de https://docs.docker.com/engine/reference/builder/
