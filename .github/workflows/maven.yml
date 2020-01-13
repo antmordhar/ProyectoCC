@@ -35,6 +35,15 @@ jobs:
           HOST_MESAS: ${{ secrets.HOST_MESAS }}
           HOST_COCINA: ${{ secrets.HOST_COCINA }}
           HOST_CAMARERO: ${{ secrets.HOST_CAMARERO }}
+          DEFAULT_DB_PORT: ${{ secrets. DEFAULT_DB_PORT }}
+          HOST_LOCAL_NAME: ${{ secrets.HOST_LOCAL_NAME }}
+          MESAS_DB_NAME: ${{ secrets.MESAS_DB_NAME }}
+          COCINA_DB_NAME: ${{ secrets.COCINA_DB_NAME }}
+          CAMARERO_DB_NAME: ${{ secrets.CAMARERO_DB_NAME }}
+          HOST_API_PORT: ${{ secrets.HOST_API_PORT}}
+          HOST_MESAS_PORT: ${{ secrets.HOST_MESAS_PORT}}
+          HOST_CAMARERO_PORT: ${{ secrets.HOST_CAMARERO_PORT}}
+          HOST_COCINA_PORT: ${{ secrets.HOST_COCINA_PORT}}
       #Le indicamos el nombre del paso
     - name: Build with Maven
       #Va a proyecto
