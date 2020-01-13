@@ -8,3 +8,4 @@ target/
 jmeter.log
 nohup.out
 2019*/
+.env
