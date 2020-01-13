@@ -143,9 +143,9 @@ El despliegue de las imágenes y, por tanto, pruebas de carga será realizado en
 ![Test](./Documentacion/pic/au20.png)
 ![Test](./Documentacion/pic/au30.png)
  * Resultados
-   * Peticiones por segundo media 1459 Hits/s
-   * Ancho de banda medio 195 KiB/s
-   * Tiempo de respuesta medio 13 ms
+   * Peticiones por segundo media 1493 Hits/s
+   * Ancho de banda medio 229 KiB/s
+   * Tiempo de respuesta medio 12 ms
    * Error medio 0%
 * **Reactor Netty**
  * Mesas
@@ -170,7 +170,8 @@ El despliegue de las imágenes y, por tanto, pruebas de carga será realizado en
    * Tiempo de respuesta medio 13 ms
    * Error medio 0%
  
-* **Discusión**
+### Discusión
+
  Como podemos ver al usar la base de datos, los servidores, son hasta 6 veces más lentos de media que en las versiones previas.
  
 El servicio camarero es más rápido que los demás servicios debido a que este no necesita mandar peticiones a ningún otro servicio, es totalmente independiente. Por lo que es una buena muestra de la velocidad que tendría un servicio por sí solo en los diferentes servidores.
@@ -189,9 +190,9 @@ Finalmente atendiendo a los resultados obtenidos:
   * Tiempo de respuesta medio 13 ms
   * Error medio 0%
 * Undertow
-  * Peticiones por segundo media 1459 Hits/s
-  * Ancho de banda medio 195 KiB/s
-  * Tiempo de respuesta medio 13 ms
+  * Peticiones por segundo media 1493 Hits/s
+  * Ancho de banda medio 229 KiB/s
+  * Tiempo de respuesta medio 12 ms
   * Error medio 0%
 * Reactor Netty
   * Peticiones por segundo media 1428 Hits/s
@@ -199,21 +200,41 @@ Finalmente atendiendo a los resultados obtenidos:
   * Tiempo de respuesta medio 13 ms
   * Error medio 0%
  
-Podemos ver como. el tiempo de respuesta y la tasa de error que nos proporcionan todos los servidores es la misma.(Los decimales han sido omitidos). Por lo que para la elección del servidor se ha atendido a las peticiones por segundo aceptadas y a su rendimiento al hacer los test de carga de todo el sistema al conjunto. Teniendo esto en cuenta los principales competidores son Reactor Netty y Undertow. Sin embargo Undertow ha demostrado una mejor competencia a la hora del test de carga total, por lo que se ha elegido este finalmente.
+Podemos ver como. el tiempo de respuesta y la tasa de error que nos proporcionan todos los servidores es la misma.(Los decimales han sido omitidos). Por lo que para la elección del servidor se ha atendido a las peticiones por segundo aceptadas y a su rendimiento al hacer los test de carga de todo el sistema al conjunto. Teniendo esto en cuenta los principales competidores son Reactor Netty y Undertow. Sin embargo **Undertow** ha demostrado una mejor competencia a la hora del test de carga total, por lo que se ha elegido este finalmente.
  
 Java, al ser un lenguaje compilado, proporciona una mayor velocidad que los lenguajes interpretados. Además los servidores embebidos que proporciona Spring Boot están configurados por defecto para sacar un buen partido del servidor. Por ejemplo en nuestra elección final, Undertow, está configurado para que use todos los procesadores que estén disponibles y use 8 *workers threads* por cada procesador. Además usará toda la memoria que esté disponible para la Java Virtual Machine.
  
 Finalmente en cuanto a la base de datos, Mongo, como hemos comentado anteriormente, se desplegó 3 veces, para que haya una base de datos para cada servicio. Cosa que, consecuentemente, aceleró la respuesta de peticiones del sistema.
- 
+
+### **Test Finales**
+ Para finalizar el testeo de los servicios. Se han realizado unas ultimas pruebas de estos sobre el servidor escogido, **Undertow**. En ellas se ha limitado el numero de peticiones post y delete que se le hacian a los servicios. Esto imita mejor un entorno de ejecución estandar donde las consultas sobre datos son mucho mas frecuentes que la inserción o borrado de estos. Los resultados obtenidos son los siguientes:
+
+![Test](./Documentacion/pic/FinalResult10.png)
+![Test](./Documentacion/pic/FinalResult20.png)
+![Test](./Documentacion/pic/FInalResult30.png)
+
+* Peticiones por segundo media 1020 Hits/s
+* Ancho de banda medio 3 MiB/s
+* Tiempo de respuesta medio 18 ms
+* Error medio 0%
+
+Con esto podemos concluir que el servidor efectivamente cumple los requisitos mínimos que se esperaban de el.
+
 ---
  
-## 9. Base de Datos
+## 9. Base de Datos/Inyeccion de Dependencias
  
 Como bases de datos para los microservicios se ha usado **MongoDB**.
  
-Para la inyección de dependencias se ha usado una interfaz que extiende  **Spring Data Mongo Repository**. Esto proporciona todas los métodos CRUD para trabajar con nuestro modelo *plato*. Además "auto implementa" los métodos que declares en la interfaz en dependencia de su nombre y el objeto que devuelvan. Para realizar esto se parsea el nombre del método que declaremos buscando el nombre de las variables de nuestro modelo y de un conjunto de reglas que forman las queries.
+Para la **inyección de dependencias** se ha usado una interfaz que extiende  **Spring Data Mongo Repository**. Esto proporciona todas los métodos CRUD para trabajar con nuestro modelo *plato*. Además "auto implementa" los métodos que declares en la interfaz en dependencia de su nombre y el objeto que devuelvan. Para realizar esto se parsea el nombre del método que declaremos buscando el nombre de las variables de nuestro modelo y de un conjunto de reglas que forman las queries.
+
+El **acceso a la base de datos** se hace desde **Spring Data Mongo Repository**. Esta clase, como se ha explicado antes, tiene implementado todos los metodos CRUD de acceso a la base de datos. Ademas facilita la implementación de nuevos metodos de manera que el usuario no tenga que hacer las consultas a manos en el código.
  
-Para trabajar con el repositorio solo hace falta realizar la inyección de dependencias en la clase que lo necesite. Esto se lleva a cabo con la anotación **@Autowired** que instanciará el repositorio al arrancar el servicio. Para realizar la comunicación con la base de datos tenemos que llamar a los métodos que hayamos declarado en el repositorio o a los que ya vienen implementados por defecto.
+Para trabajar con el repositorio solo hace falta realizar la **inyección de dependencias** en la clase que lo necesite. Esto se lleva a cabo con la anotación **@Autowired** que realizara automaticamente el wire entre el bean de nuestro servicio y el bean del repositorio.
+
+Hacer **Wire** es el acto de combinar y comunicar bean dentro del contenedor propio que proporciona **Spring**. Los **Beans** son objetos que son instanciados, montados y gestionados por el **contenedor IoC de Spring**. 
+
+Finalmente podemos hacer uso de esta tecnologia llamando a los métodos que hayamos declarado en el repositorio o a los que ya vienen implementados por defecto.
  
 Para más información:
  
