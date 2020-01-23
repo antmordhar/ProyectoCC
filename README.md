@@ -190,7 +190,7 @@ Finalmente, en este apartado, Hacemos un pequeño test de carga sobre nuestra ma
 * **Todos**
 ![Test](./Documentacion/pic/azuretodos.png)
 
-Como podemos ver la velocidad a caido de manera drastica. Esto se puede deber a la distancia del servidor y/o a las caracteristicas de la maquina. La hipotesi que manejo es que el servidor esta capado para evitar ataques de denegación de servicio. Para ver los resultados del test de la maquina virtual vea el **apartado 12**.
+Como podemos ver la velocidad a caido de manera drastica. Esto se puede deber a la distancia del servidor y/o a las caracteristicas de la maquina. La hipotesi que manejo es que el servidor esta capado para evitar ataques de denegación de servicio. Para ver los resultados del test de la maquina virtual vea el **apartado 12**. 
 
 ## Anexo: Cambios en el proyecto:
 
