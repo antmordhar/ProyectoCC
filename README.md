@@ -70,7 +70,7 @@ vagrant destroy
 
  ## 12. Test de Prestaciones de Las Máquinas virtuales
 
- Prestaciones: https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml
+ Prestaciones: testvacio.yml
 
  En este apartado intentaremos mejorar todo lo posible el rendimiento en las máquinas virtuales, para ello aplicaremos los test de cargas del [Test de Prestaciones](https://antmordhar.github.io/ProyectoCC/Documentacion/TestdePrestaciones) sobre ellas. 
 
