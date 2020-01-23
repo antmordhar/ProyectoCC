@@ -145,7 +145,7 @@ Pese a ello se ha intentado minimizar la perdida de rendimiento lo máximo posib
 
 ## 13 Despliegue en Azure
 
-URL:[restaurant.westeurope.cloudapp.azure.com](https://restaurant.westeurope.cloudapp.azure.com:8069)
+URL:[restaurant.westeurope.cloudapp.azure.com](http://restaurant.westeurope.cloudapp.azure.com:8069/)
 
 Para finalizar el proyecto se va a proceder al despliegue de la máquina virtual creada en Azure. Para ello comenzaremos creando una cuenta en azure. Después instalaremos el plugin vagran-azure para poder desplegar nuestra máquina virtual en azure:
 
