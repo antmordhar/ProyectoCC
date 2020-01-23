@@ -70,6 +70,8 @@ vagrant destroy
 
  ## 12. Test de Prestaciones de Las Máquinas virtuales
 
+ Prestaciones: https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml
+
  En este apartado intentaremos mejorar todo lo posible el rendimiento en las máquinas virtuales, para ello aplicaremos los test de cargas del [Test de Prestaciones](https://antmordhar.github.io/ProyectoCC/Documentacion/TestdePrestaciones) sobre ellas. 
 
  Se realizarán una serie de experimentos en local con 10 usuarios concurrentes. El escenario de Taurus que se usará será el de la prueba de todos los servicios ya que es la medida de las prestaciones más interesante sobre nuestros microservicios.
