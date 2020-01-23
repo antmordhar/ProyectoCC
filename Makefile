@@ -88,6 +88,11 @@ parardocker:
 #Ejecuta las pruebas de carga con taurus
 testcarga:
 	bzt ./TestsConexion/test.yml -report
-
+#Lanzar la maquina virtual y provisionarla en local
+vagrant:
+	vagrant up
+#Destruye la maquina virtual
+devagrant:
+	vagrant destroy
 	
 	

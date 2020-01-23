@@ -1,0 +1,183 @@
+#Este docker compose es una version especial para provisioning que descarga las imagenes directamente desde DockerHub
+
+#Usamos la version 3 del docker compose
+version: '3'
+#Aqui declararemos los sericios
+services:
+    #Bases de Datos
+    #Base de Datos para las mesas
+    mongomesas:
+        #Usara la imagen base de mongo
+        image: mongo
+        #Puerto externo e interno que usará
+        ports: 
+            - "${HOST_MESAS_DB_PORT}:${DEFAULT_DB_PORT}"
+        #Nombre base que le daremos al contenedor
+        container_name: mongomesas       
+        #Red de la que forma base la imagen
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre de la imagen dentro de la red
+                aliases:
+                    - mongomesas
+    #Base de Datos para la cocina
+    mongococina:
+        #Usara la imagen base de mongo
+        image: mongo
+        #Puerto externo e interno que usará
+        ports: 
+            - "${HOST_COCINA_DB_PORT}:${DEFAULT_DB_PORT}"
+        #Nombre base que le daremos al contenedor
+        container_name: mongococina
+        #Red de la que forma base la imagen
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre de la imagen dentro de la red
+                aliases:
+                    - mongococina
+    #Base de Datos para los camareros
+    mongocamarero:
+        #Usara la imagen base de mongo
+        image: mongo
+        #Puerto externo e interno que usará
+        ports: 
+            - "${HOST_CAMARERO_DB_PORT}:${DEFAULT_DB_PORT}"
+        #Nombre base que le daremos al contenedor
+        container_name: mongocamarero
+        #Red de la que forma base la imagen
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre de la imagen dentro de la red
+                aliases:
+                    - mongocamarero
+    #Nuestros servicios
+    #Servicio de mesas
+    mesas:
+        #Imagen que usara para este servicio
+        image: antmordhar/projectccmesas
+        #Se le asignara este nombre al contenedor
+        container_name: mesas
+        #Variables de entorno que usara
+        environment:
+            - HOST_COCINA=${HOST_COCINA_DOCKER}
+            - HOST_MESAS_PORT=${HOST_MESAS_PORT}
+            - HOST_MESAS_DB=${HOST_MESAS_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - MESAS_DB_NAME=${MESAS_DB_NAME}
+        #Puerto externo e interno que usará
+        ports: 
+            - "${HOST_MESAS_PORT}:${HOST_MESAS_PORT}"
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre de la imagen dentro de la red
+                aliases:
+                    - mesas
+        #Arrancará antes la base de datos de mesas que el servicio
+        depends_on :
+            - mongomesas
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            #Se le dice que sera replicado
+            mode: replicated
+            #Se establece el numero de replicas
+            replicas: 3
+    #Servicio de cocina
+    cocina:
+        #Imagen que usara para este servicio
+        image: antmordhar/projectcccocina
+        #Nombre del contenedor que se creara
+        container_name: cocina
+        #Variables de entorno que usara
+        environment:
+            - HOST_CAMARERO=${HOST_CAMARERO_DOCKER}
+            - HOST_COCINA_PORT=${HOST_COCINA_PORT}
+            - HOST_COCINA_DB=${HOST_COCINA_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - COCINA_DB_NAME=${COCINA_DB_NAME}
+        #Puertos externo e interno que usará
+        ports: 
+            - "${HOST_COCINA_PORT}:${HOST_COCINA_PORT}"
+        #Red de la que forma base la imagen
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre del servicio en esa red
+                aliases:
+                    - cocina
+        #Se ejecutara despues de ejecutar la base de datos de cocina
+        depends_on :
+            - mongococina
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            #Se estable el modo de despligue
+            mode: replicated
+            #Se establece el numero de réplicas del servicio
+            replicas: 3
+    #Servicio del camarero
+    camarero:
+        #Imagen que usara para este servicio
+        image: antmordhar/projectcccamarero
+        #El contenedor creado se llamara de la siguiente forma
+        container_name: camarero
+        #Variables de entorno que usara
+        environment:
+            - HOST_CAMARERO_PORT=${HOST_CAMARERO_PORT}
+            - HOST_CAMARERO_DB=${HOST_CAMARERO_DB}
+            - HOST_LOCAL_NAME=${HOST_LOCAL_NAME}
+            - DEFAULT_DB_PORT=${DEFAULT_DB_PORT}
+            - CAMARERO_DB_NAME=${CAMARERO_DB_NAME}
+        #Puertos externo e interno de nuestro servicio
+        ports: 
+            - "${HOST_CAMARERO_PORT}:${HOST_CAMARERO_PORT}"
+        #Red de la que formará parte nuestro servicio
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre que nuestro servicio tendra en la red
+                aliases:
+                    - camarero
+        #Se levantara antes la base de datos que nuestro servicio
+        depends_on :
+            - mongocamarero
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            mode: replicated
+            replicas: 3
+    #Servicio que funcionara como api
+    api:
+        #Imagen que usara para este servicio
+        image: antmordhar/projectccapi
+        #El contenedor creado se llamará de la siguiente manter
+        container_name: api
+        #Variables de entorno que usara
+        environment:
+            - HOST_MESAS=${HOST_MESAS_DOCKER}
+            - HOST_COCINA=${HOST_COCINA_DOCKER}
+            - HOST_CAMARERO=${HOST_CAMARERO_DOCKER}
+            - HOST_API_PORT=${HOST_API_PORT}
+        #Puertos externos e internos en los que trabajara nuestra imagen
+        ports: 
+            - "${HOST_API_PORT}:${HOST_API_PORT}"
+        #Red de la que forma parte nuestro servicio
+        networks:
+            #Nombre de la red
+            net:
+                #Nombre de nuestro servicio en esa red
+                aliases:
+                    - api
+        #Solo se activa al realizar docker stack deploy
+        deploy:
+            #Modo en el que se desplegara
+            mode: replicated
+            #Numero de replicas que se crearaán
+            replicas: 3
+#Red en la que trabajaran nuestras imagenes
+networks:
+    #Nombre de nuestra red
+    net:

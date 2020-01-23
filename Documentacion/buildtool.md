@@ -76,6 +76,18 @@ make testcarga
 * Para ver que hace el script pulse [aquí](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml)
 > Para correr los test a un servicio en concreto se deberá modificar el apartado "scenario" del apartado "execution" dentro de test.yml. Los escenarios estan ya creados (LoadTestAll,LoadTestCamarero,LoadTestCocina,LoadTestMesas)
 
+~~~shell
+make vagrant
+~~~
+
+* Crea la maquina virtual con vagrant y la provisiona.
+
+~~~shell
+make devagrant
+~~~
+
+* Destruye la maquina virtual.
+
 
 Para más información vea [Makefile](https://github.com/antmordhar/ProyectoCC/blob/master/Makefile)
 

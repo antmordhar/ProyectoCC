@@ -1,0 +1,33 @@
+#Este archivo se ejecutara cuando se levante la maquina con vagrant up.
+
+#Le especificamos el host con el que lo usaremos
+- hosts: all
+#Permitimos que cambie los permisos si fuera necesario
+  become: yes
+#Tareas que se lanzaran antes de instalar los roles
+#Actualizamos los repos del SO antes de lanzar los roles
+  pre_tasks: 
+    - name: Actualizar
+      shell:
+        cmd: apt update
+#Le decimos los roles que usaremos de la ansible-galaxy
+  roles: 
+    #Este rol nos instalará docker y docker compose
+    #https://github.com/nickjj/ansible-docker
+    - nickjj.docker
+#A continuación se listarant todas las tareas que se tendran que cumplir al lanzar el playbook.
+  tasks:
+#Copiamos el archivo docker-compose.yml creado para provisionamiento
+    - name: Copy docker-compose
+      copy:
+        src: ./docker-compose.yml
+        dest: ./docker-compose.yml
+    #Copiamos el archivo con las variables de entorno
+    - name: Copy enviroment
+      copy:
+        src: ./.env
+        dest: ./.env
+    #Arranca el Docker compose
+    - name: Compose Up
+      shell: "docker-compose up --detach" 
+

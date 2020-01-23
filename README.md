@@ -12,295 +12,193 @@
 ## 5. [Herramienta de construcción](https://antmordhar.github.io/ProyectoCC/Documentacion/buildtool)
 ## 6. [Docker](https://antmordhar.github.io/ProyectoCC/Documentacion/docker)
 ## 7. [Heroku](https://antmordhar.github.io/ProyectoCC/Documentacion/heroku)
+## 8. [Test de Prestaciones](https://antmordhar.github.io/ProyectoCC/Documentacion/TestdePrestaciones)
+## 9. [Base de Datos](https://antmordhar.github.io/ProyectoCC/Documentacion/BasedeDatos)
+
+## 10. Creación de la Máquina Virtual
+
+Para crear la maquina virtual en local, que se usará para pasar los tests de carga, se ha descargado VirtualBox con las siguientes ordenes de comandos:
+
+```
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install virtualbox
+
+```
+Depués de esto nos descargaremos [Vagrant](https://www.vagrantup.com/downloads.html) y lo instalaremos. Vagrant es una herramienta que nos permite construir y gestionar las maquinas virtuales facilmente.
+
+Ahora se crea un archivo [Vagrantfile](./Vagrantfile). Nosotros usaremos la Vagrant Box de [ubuntu/disco64](https://app.vagrantup.com/ubuntu/boxes/disco64) que  usa VirtualBox como base y el sistema operativo de Ubuntu Server 19.04. Para crear este archivo utilizaremos el siguiente comando:
+
+```
+vagrant init ubuntu/disco64
+```
+Tras esto modificaremos el archivo que se nos crea. Cabe decir que lo mas importante es el **mapeo de los puertos** de nuestro ordenador con los de la mauina virtual para poder acceder a nuestros servicios despues. Tambien se modificaran las **especificaciones bases de la Maquina de VirtuaBox** que servira de base que, en nuestro caso, tiene 2 nucleos y 2048 Mb de RAM. Este archivo se puede ver aquí: [Vagrantfile](./Vagrantfile)
+
+Finalmente para correr la maquina virtual realizamos el siguiente comando:
+
+```
+vagrant up
+```
+Para pararla usaremos:
+```
+vagrant destroy
+```
+
+ ## 11. Aprovisionamiento de la Máquina Virtual
+ Lo primero que se ha hecho es instalar Ansible con la siguiente orden:
+
+ ```
+ sudo apt install software-properties-common
+ sudo apt install ansible
+ ```
+
+ Ansible es una herramienta de automatización open source que se usa para tareas de IT como gestion de la configuracion, despliegue de aplicaciones, orquestacion y aprovisionamiento.
+
+ Despues en el [Vagrantfile](./Vagrantfile) le especificamos el archivo que tiene que usar para aprovisionarse al arrancar. Así como el archivo de [Inventario](./provisioning/hosts.ini) que va a usar nuestra maquina.
+
+ ```
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "./provisioning/provision.yml"
+    ansible.inventory_path="./provisioning/hosts.ini"
+  end
+ ```
+
+ Ahora, en [provision.yml](./provisioning/provision.yml), especificaremos todo lo quenecesita la maquina para arrancar nuestro servicio. Para ver lo que usa esta maquina como aprovisionamiento visite: [provision.yml](./provisioning/provision.yml). Los host con los que trabajará este archivo se encuentran en : [hosts.ini](./provisioning/host.ini).
+
+ >Resumen del archivo: Usa un rol de otro usuario para instala Docker y Docker Compose. Tras esto copia los archivos [docker-compose](./provisioning/docker-compose.yml) y [.env](./provisioning/.env) en ella. Finalmente lanza la orden Docker Compose Up Para lanzar los servicios dentro de la maquina virtual.
+
+ ## 12. Test de Prestaciones de Las Maquinas virtuales
+
+ En este apartado intentaremos mejorar todo lo posible el rendimiento en las maquinas virtuales, para ello aplicaremos los test de cargas del [Test de Prestaciones](https://antmordhar.github.io/ProyectoCC/Documentacion/TestdePrestaciones) sobre ellas. 
+
+ Se realizarán una serie de experimentos en local con 10 usuarios concurrentes. El escenario de Taurus que se usará será el de la prueba de todos los servicios ya que es la medida de las prestaciones mas interesante sobre nuestros microservicios.
  
-## 8 Test de Prestaciones
- 
-Recursos utilizados:
+ Estas pruebas se van a dividir en 2 modulos:
+
+ * En el **primer Módulo** se modificara el número de Cores y cantidad de memoria Ram de la maquina virtual y se decidirá una configuración.
+ * En el **segundo Módulo** se probarán diferentes SO sobre la configuración elegida para conseguir optimizar los Hits/s
+
+Las pruebas se realizarán sobre la siguiente arquitectura:
+
+![Mesainicial](./Documentacion/pic/estadoTests.png)
+
+## 12.1 Experimentos Con Cores y RAM
+Para los experimentos de esta seccion se han probado 3 configuraciones de la maquina virtual:
+* **1 Core 1024MB RAM**
+![Test](./Documentacion/pic/vagrant1core.png)
+* **2 Cores 2048MB RAM**
+![Test](./Documentacion/pic/vagrant2cores.png)
+* **4 Cores 4096MB RAM**
+![Test](./Documentacion/pic/vagrant4cores.png)
+
+Como hemos podido comprobar por las imagenes de arriba la mejor configuración para **la maquina virtual se alcanza con 2 Cores y 2048 MB**. La razon de esto es que con 1 solo core no hay hebras necesarias para levantar todos los microservicios y con 4 cores no hay mejora respecto de 2 cores y ademas realentiza la maquina que sirve como Host de la virtual.
+
+## 12.2 Experimentos Con Sistemas Operativos
+
+En este apartado probaremos diferentes SO en la maquina virtual para comprobar si se puede conseguir una mejora sustancial en comparación al actual(Ubuntu Server 19.04). Principalmente se probará sobre Imagenes de Ubuntu Server debido a que ofrecen la mayor compativilidad con las tecnologías que se estan usando. Las pruebas se realizaran contra la maquina virtual con la configuración elegida en el apartado anterior.
+
+* **Ubuntu Server 12.04**
+
+No compatible.
+* **Ubuntu Server 14.04**
+
+No compatible.
+* **Ubuntu Server 16.04**
+![Test](./Documentacion/pic/vagrantu16.png)
+* **Ubuntu Server 18.04**
+![Test](./Documentacion/pic/vagrantu18.png)
+* **Ubuntu Server 19.04**
+![Test](./Documentacion/pic/vagrant2cores.png)
+* **Ubuntu Server 19.10**
+
+No compatible.
+
+Aquí se han realizado pruebas con las diferentes versiones de Ubuntu Server. Las versiones mas antiguas y mas nuevas tienen problemas de compatibilidad con el Rol usado para instalar Docker y Docker Compose por lo que se han descartado. De las versiones funcionales, **la mas rapida es Ubuntu Server 16**. Por lo que se cambiara la Versión del SO de la maquina virtual a ubuntu/xenial64.
+
+## 12.3 Resultados Finales
+
+Las últimas pruebas se realizaran sobre todos los microservicios, tanto en conjunto como por separado. **La maquina virtual estará configurada con 2 Cores, 2048 MB de RAM y Con el SO de Ubuntu Server 16.**
+
+* **Mesas**
+![Test](./Documentacion/pic/vagrantfinalmesas.png)
+* **Cocina**
+![Test](./Documentacion/pic/vagrantfinalcocina.png)
+* **Camarero**
+![Test](./Documentacion/pic/vagrantfinalcamareo.png)
+* **Todos**
+![Test](./Documentacion/pic/vagrantu16.png)
+
+Como conclusión podemos comprobar como el hecho de haber virtualizado los microservicios dentro de una máquina virtual baja las prestaciones de las maquinas virtuales en torno a un 30% en local. 
+
+ * Peticiones por segundo media 695 Hits/s
+ * Ancho de banda medio 121 KiB/s
+ * Tiempo de respuesta medio 14 ms
+ * Error medio 0%
+
+Pese a ello se ha intentato minimizar la perdida de rendimiento lo maximo posible con los recursos que se tenian en la maquina host:
+
 * Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz
 * 8GB DDR3 1600MT/s Kingston MSI16D3LS1MNG/8G
 
-* Ubuntu 18.04.3 LTS
- 
-Para la medición de las prestaciones de nuestro sistema se ha usado [Taurus](https://gettaurus.org/). Taurus es una herramienta open source que nos permite pasar tests con JMeter,Selenium y otras herramientas fácilmente. Para ello solo es necesario la creación de un fichero yml donde se encontrarán las instrucciones para la ejecución del test.
- 
-En nuestro caso usaremos JMeter como herramienta para pasar los tests a nuestros servicios. Los ficheros yml creados para los tests son los siguientes:
- 
-Prestaciones: testvacio.yml
+## 13 Despliegue en Azure
 
-[Test](https://github.com/antmordhar/ProyectoCC/blob/master/TestsConexion/test.yml): ./TestsConexion/test.yml
- 
-### 8.1 Estado inicial del Servicio Mesas
+URL:[restaurant.westeurope.cloudapp.azure.com](https://restaurant.westeurope.cloudapp.azure.com:8069)
 
-En la siguiente imagen podemos ver el resultado que el servicio mesas obtuvo al pasar el test que carga el servicio con peticiones de 10 usuarios durante 1 minuto con el servidor de **Tomcat7** embebido que proporciona Spring:
- 
-![Mesainicial](./Documentacion/pic/mesainicial.png)
- 
-A continuación veremos como el ancho banda del servidor Tomcat capa a 1.1MB mas o menos.
- 
-* **Tomcat**
-![Mesaperdida](./Documentacion/pic/mesas20.png)
-![Mesaperdida](./Documentacion/pic/mesas30.png)
-![Mesaperdida](./Documentacion/pic/mesas40.png)
-![Mesaperdida](./Documentacion/pic/mesas50.png)
-![Mesaperdida](./Documentacion/pic/mesas100.png)
-![Mesaperdida](./Documentacion/pic/mesas200.png)
- 
-Para intentar conseguir una mejora de las prestaciones cambiaremos el servidor predeterminado de Spring, Tomcat7 por otros y veremos la carga que soportan:
- 
-* **Jetty**
-![Mesaperdida](./Documentacion/pic/jetty10.png)
-![Mesaperdida](./Documentacion/pic/jetty100.png)
-![Mesaperdida](./Documentacion/pic/jetty200.png)
- 
-Podemos ver como Jetty da un mejor rendimiento con altas cargas de trabajo, pero le cuesta más arrancar al principio.
- 
-* **Undertow**
-![Mesaperdida](./Documentacion/pic/under10.png)
-![Mesaperdida](./Documentacion/pic/under100.png)
-![Mesaperdida](./Documentacion/pic/under200.png)
- 
-Como podemos ver Undertow tiene un buen rendimiento en el arranque, sin embargo se ralentiza con cargas altas de usuarios
- 
-* **Reactor Netty**
-![Mesaperdida](./Documentacion/pic/flux10.png)
-![Mesaperdida](./Documentacion/pic/flux100.png)
-![Mesaperdida](./Documentacion/pic/flux200.png)
- 
-Reactor Netty tiene un alto rendimiento con cargas bajas de usuarios y un rendimiento alto con altas cargas. Sin embargo tarda algo más en llegar a su tope de ancho de banda.
- 
-Con estos resultados delante podríamos aventurarnos a decir que Reactor Netty es el mayor competidor de Tomcat en términos de velocidad y aguante de carga. Sin embargo estos resultados están en local y sin bases de datos. A continuación se procede a la realización de las mismas pruebas con el estado del proyecto actual.
- 
-### 8.2 Estado actual del proyecto
- 
-Para estas pruebas, los servicios han sido containerizados con Docker y se ha implementado la conexión con las base de datos, las cuales también se encuentran en un contenedor Docker. Además se ha establecido una conexión entre ellos mediante REST para poder simular con la máxima fidelidad, que podemos alcanzar actualmente, el proceso de trabajo que realizan entre ellos.
-El estado actual del proyecto se puede ver en la siguiente imagen:
- 
-![Estado](./Documentacion/pic/estadoTests.png)
- 
-El despliegue de las imágenes y, por tanto, pruebas de carga será realizado en local. Las pruebas se realizarán con 10, 20 y 30 usuarios respectivamente para cada servicio con cada servidor. Esto es debido a que la velocidad al usar las bases de datos se reduce. En un primer momento se usó una única base de datos para todos los servicio pero,  para ajustarnos más a la arquitectura inicial del sistema y aumentar la velocidad de éste, actualmente se usa una por servicio.
- 
-* **Tomcat**
- * Mesas
-![Test](./Documentacion/pic/mt10.png)
-![Test](./Documentacion/pic/mt20.png)
-![Test](./Documentacion/pic/mt30.png)
- * Cocina
-![Test](./Documentacion/pic/ct10.png)
-![Test](./Documentacion/pic/ct20.png)
-![Test](./Documentacion/pic/ct30.png)
- * Camarero
-![Test](./Documentacion/pic/cct10.png)
-![Test](./Documentacion/pic/cct20.png)
-![Test](./Documentacion/pic/cct30.png)
- * Todos
-![Test](./Documentacion/pic/at10.png)
-![Test](./Documentacion/pic/at20.png)
-![Test](./Documentacion/pic/at30.png)
- * Resultados
-   * Peticiones por segundo media 1286 Hits/s
-   * Ancho de banda medio 225 KiB/s
-   * Tiempo de respuesta medio 13 ms
-   * Error medio 0%
-* **Jetty**
- * Mesas
-![Test](./Documentacion/pic/mj10.png)
-![Test](./Documentacion/pic/mj20.png)
-![Test](./Documentacion/pic/mj30.png)
- * Cocina
-![Test](./Documentacion/pic/cj10.png)
-![Test](./Documentacion/pic/cj20.png)
-![Test](./Documentacion/pic/cj30.png)
- * Camarero
-![Test](./Documentacion/pic/ccj10.png)
-![Test](./Documentacion/pic/ccj20.png)
-![Test](./Documentacion/pic/ccj30.png)
- * Todos
-![Test](./Documentacion/pic/aj10.png)
-![Test](./Documentacion/pic/aj20.png)
-![Test](./Documentacion/pic/aj30.png)
- * Resultados
-   * Peticiones por segundo media 1393 Hits/s
-   * Ancho de banda medio 111 KiB/s
-   * Tiempo de respuesta medio 13 ms
-   * Error medio 0%
-* **Undertow**
- * Mesas
-![Test](./Documentacion/pic/mu10.png)
-![Test](./Documentacion/pic/mu20.png)
-![Test](./Documentacion/pic/mu30.png)
- * Cocina
-![Test](./Documentacion/pic/cu10.png)
-![Test](./Documentacion/pic/cu20.png)
-![Test](./Documentacion/pic/cu30.png)
- * Camarero
-![Test](./Documentacion/pic/ccu10.png)
-![Test](./Documentacion/pic/ccu20.png)
-![Test](./Documentacion/pic/ccu30.png)
- * Todos
-![Test](./Documentacion/pic/au10.png)
-![Test](./Documentacion/pic/au20.png)
-![Test](./Documentacion/pic/au30.png)
- * Resultados
-   * Peticiones por segundo media 1493 Hits/s
-   * Ancho de banda medio 229 KiB/s
-   * Tiempo de respuesta medio 12 ms
-   * Error medio 0%
-* **Reactor Netty**
- * Mesas
-![Test](./Documentacion/pic/rm10.png)
-![Test](./Documentacion/pic/rm20.png)
-![Test](./Documentacion/pic/rm30.png)
- * Cocina
-![Test](./Documentacion/pic/rc10.png)
-![Test](./Documentacion/pic/rc20.png)
-![Test](./Documentacion/pic/rc30.png)
- * Camarero
-![Test](./Documentacion/pic/rcc10.png)
-![Test](./Documentacion/pic/rcc20.png)
-![Test](./Documentacion/pic/rcc30.png)
- * Todos
-![Test](./Documentacion/pic/ra10.png)
-![Test](./Documentacion/pic/ra20.png)
-![Test](./Documentacion/pic/ra30.png)
- * Resultados
-   * Peticiones por segundo media 1428 Hits/s
-   * Ancho de banda medio 119 KiB/s
-   * Tiempo de respuesta medio 13 ms
-   * Error medio 0%
- 
-### Discusión
+Para finalizar el proyecto se va a proceder al despliegue de la maquina virtual creada en Azure. Para ello comenzaremos creando una cuenta en azure. Despues instalaremos el plugin vagran-azure para poder desplegar nuestra maquina virtual en azure:
 
- Como podemos ver al usar la base de datos, los servidores, son hasta 6 veces más lentos de media que en las versiones previas.
- 
-El servicio camarero es más rápido que los demás servicios debido a que este no necesita mandar peticiones a ningún otro servicio, es totalmente independiente. Por lo que es una buena muestra de la velocidad que tendría un servicio por sí solo en los diferentes servidores.
- 
-Al hacer el test de carga a todos los servicios a la vez se puede ver una clara disminución de la velocidad de respuesta del servidor tardando hast el doble por petición.
- 
-Finalmente atendiendo a los resultados obtenidos:
-* Tomcat
-  * Peticiones por segundo media 1286 Hits/s
-  * Ancho de banda medio 225 KiB/s
-  * Tiempo de respuesta medio 13 ms
-  * Error medio 0%
-* Jetty
-  * Peticiones por segundo media 1393 Hits/s
-  * Ancho de banda medio 111 KiB/s
-  * Tiempo de respuesta medio 13 ms
-  * Error medio 0%
-* Undertow
-  * Peticiones por segundo media 1493 Hits/s
-  * Ancho de banda medio 229 KiB/s
-  * Tiempo de respuesta medio 12 ms
-  * Error medio 0%
-* Reactor Netty
-  * Peticiones por segundo media 1428 Hits/s
-  * Ancho de banda medio 119 KiB/s
-  * Tiempo de respuesta medio 13 ms
-  * Error medio 0%
- 
-Podemos ver como. el tiempo de respuesta y la tasa de error que nos proporcionan todos los servidores es la misma.(Los decimales han sido omitidos). Por lo que para la elección del servidor se ha atendido a las peticiones por segundo aceptadas y a su rendimiento al hacer los test de carga de todo el sistema al conjunto. Teniendo esto en cuenta los principales competidores son Reactor Netty y Undertow. Sin embargo **Undertow** ha demostrado una mejor competencia a la hora del test de carga total, por lo que se ha elegido este finalmente.
- 
-Java, al ser un lenguaje compilado, proporciona una mayor velocidad que los lenguajes interpretados. Además los servidores embebidos que proporciona Spring Boot están configurados por defecto para sacar un buen partido del servidor. Por ejemplo en nuestra elección final, Undertow, está configurado para que use todos los procesadores que estén disponibles y use 8 *workers threads* por cada procesador. Además usará toda la memoria que esté disponible para la Java Virtual Machine.
- 
-Finalmente en cuanto a la base de datos, Mongo, como hemos comentado anteriormente, se desplegó 3 veces, para que haya una base de datos para cada servicio. Cosa que, consecuentemente, aceleró la respuesta de peticiones del sistema.
+```
+vagrant plugin install vagrant-azure
+```
 
-### **Test Finales**
- Para finalizar el testeo de los servicios. Se han realizado unas ultimas pruebas de estos sobre el servidor escogido, **Undertow**. En ellas se ha limitado el numero de peticiones post y delete que se le hacian a los servicios. Esto imita mejor un entorno de ejecución estandar donde las consultas sobre datos son mucho mas frecuentes que la inserción o borrado de estos. Los resultados obtenidos son los siguientes:
+Tras esto instalaremos Azure-CLI que nos permitira ejecutar la linea de comandos de Azure en nuestra maquina:
 
-![Test](./Documentacion/pic/FinalResult10.png)
-![Test](./Documentacion/pic/FinalResult20.png)
-![Test](./Documentacion/pic/FinalResult30.png)
+```
+sudo apt-get update
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+curl -sL https://packages.microsoft.com/keys/microsoft.asc | 
+    gpg --dearmor | 
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | 
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-get update
+sudo apt-get install azure-cli
+```
 
-* Peticiones por segundo media 1425 Hits/s
-* Ancho de banda medio 279 KiB/s
-* Tiempo de respuesta medio 13 ms
-* Error medio 0%
+Ahora necesitamos modificar el [Vagrantfile](./Vagrantfile) para que se conecte con azure. Para mas información se puede consultar el [Vagrantfile](./Vagrantfile).
 
-Con esto podemos concluir que el servidor efectivamente cumple los requisitos mínimos que se esperaban de el.
+> Resumen del archivo: Se han puesto todas las variables necesaria para conexion con Azure asi como la clave privada para conectarnos por SSH. Se ha expecificado que se use de imagen Ubuntu 16.04. Se ha establecido una maquina con 2 cores y 4Gb de RAM. De estas se han abierto los puertos del 8000 al 9000. Finalmente se aprovisiona con Ansible.
 
----
- 
-## 9. Base de Datos/Inyeccion de Dependencias
- 
-Como bases de datos para los microservicios se ha usado **MongoDB**.
- 
-Para la **inyección de dependencias** se ha usado una interfaz que extiende  **Spring Data Mongo Repository**. Esto proporciona todas los métodos CRUD para trabajar con nuestro modelo *plato*. Además "auto implementa" los métodos que declares en la interfaz en dependencia de su nombre y el objeto que devuelvan. Para realizar esto se parsea el nombre del método que declaremos buscando el nombre de las variables de nuestro modelo y de un conjunto de reglas que forman las queries.
+Para subir esta maquina a Azure solo hay que hacer:
 
-El **acceso a la base de datos** se hace desde **Spring Data Mongo Repository**. Esta clase, como se ha explicado antes, tiene implementado todos los metodos CRUD de acceso a la base de datos. Ademas facilita la implementación de nuevos metodos de manera que el usuario no tenga que hacer las consultas a manos en el código.
- 
-Para trabajar con el repositorio solo hace falta realizar la **inyección de dependencias** en la clase que lo necesite. Esto se lleva a cabo con la anotación **@Autowired** que realizara automaticamente el wire entre el bean de nuestro servicio y el bean del repositorio.
+```
+vagrant up
+```
+> Si se quisiera volver a la versión local solo se necesitaria comentar la versión de Azure y descomentar la local.
 
-Hacer **Wire** es el acto de combinar y comunicar bean dentro del contenedor propio que proporciona **Spring**. Los **Beans** son objetos que son instanciados, montados y gestionados por el **contenedor IoC de Spring**. 
+## 14 Test de Prestaciones de Azure
 
-Finalmente podemos hacer uso de esta tecnologia llamando a los métodos que hayamos declarado en el repositorio o a los que ya vienen implementados por defecto.
- 
-Para más información:
- 
-* [Documentación Spring Mongo Repository](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo.repositories)
-* [Repositorio para platos](https://github.com/antmordhar/ProyectoCC/blob/master/Mesas/src/Mesas/platoRepository.java)
-* [Clase con injección de dependencias](https://github.com/antmordhar/ProyectoCC/blob/master/Mesas/src/Mesas/mesaController.java)
- 
----
- 
-## 10. Cambios en el proyecto:
- 
-### 10.1 Servicios:
- 
-* Se han implementado 3 nuevos servicios:
-  * **Cocina**
-    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/cocinaService).
-  * **Camareros**  
-    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/camareroService).
-  * **API**
-    * Descripcion extendida [aquí](https://antmordhar.github.io/ProyectoCC/Documentacion/APIService).
-* Se ha eliminado el POM padre y se han establecido todos los servicios como proyectos independientes.
-* Se ha hecho funcional el archivo application.properties de cada proyecto. En él se han establecido algunas configuraciones que se usarán cuando el servicio se ejecute en local, sin estar en una imagen.
-* Se han creado los tests unitarios para todas las clases creadas.
-* Se han adaptado los servicios para que puedan funcionar tanto en local como en imágenes de Docker mediante el uso de variables de entorno.
-* Se ha cambiado el servidor embebido a Undertow. El razonamiento se puede ver en el apartado 8. Tests de prestaciones. El cambio se puede ver en el pom de cada proyecto. Por ejemplo [aquí](https://antmordhar.github.io/ProyectoCC/Mesas/pom.xml)
- 
-### 10.2 Integración continua
- 
-* Travis
-  * Se han añadido los tests de los nuevos servicios a travis y su envío de la cobertura a codecov.
-  * Ahora se levanta mongo al pasar los tests en travis.
-  * Se han establecido las variables de entorno necesarias para el funcionamiento de los servicios.
-  * Codecov juntara la cobertura total de los proyectos.
-* GitHub Actions
-  * Se han añadido los test de los nuevos servicio a GHA.
-  * Ahora se levanta mongo al pasar los test de GHA.
-  * Se ha eliminado los tests en MacOS y Windows por problemas de compatibilidad con mongo.
-* Para mas información consulte el enlace a los archivos de configuración que se mencionan en: [Integración continua](https://antmordhar.github.io/ProyectoCC/Documentacion/integracion)
- 
-### 10.3 Herramienta de construcción
- 
- buildtool: Makefile
- 
-* Ahora se instala también mongo al realizar la primera instalación
-* Se ha eliminado los antiguos tests de conexión y se han sustituido por el test de carga.
-* Se ha cambiado la forma de creación, arranque y parada de las imágenes de Docker. Ahora se realizan con el docker compose.
-* Se ha quitado el testeo de la regla de empaquetado del servicio.
-* Se han añadido el testeo de todos los servicios por separado. Además se levantarán y pararan bases de datos y otros servicios necesarios para los test unitarios.
-* Se ha adaptado todas las funcionalidades del make a la nueva estructura del proyecto.
-* Para mas información consulte: [Herramienta de construcción](https://antmordhar.github.io/ProyectoCC/Documentacion/buildtool)
- 
-### 10.4 Docker
- 
-* Se han contenerizado los servicios creados.
-* Se ha eliminado el Docker Hub anterior y se ha sustituido por uno para cada proyecto. Sus contenedores son los siguientes:
+Finalmente, en este apartado, Hacemos un pequeño test de carga sobre nuestra maquina virtual desplegada en azure. Estos tes se pasaran con 10 usuarios sobre la maquina especificada en el apartado anterior.
 
-  * Contenedor: https://hub.docker.com/r/antmordhar/projectccmesas .
+* **Mesas**
+![Test](./Documentacion/pic/azuremesas.png)
+* **Cocina**
+![Test](./Documentacion/pic/azurecocina.png)
+* **Camarero**
+![Test](./Documentacion/pic/azurecamarero.png)
+* **Todos**
+![Test](./Documentacion/pic/azuretodos.png)
 
-  * Contenedor: https://hub.docker.com/r/antmordhar/projectcccocina .
+Como podemos ver la velocidad a caido de manera drastica. Esto se puede deber a la distancia del servidor y/o a las caracteristicas de la maquina. La hipotesi que manejo es que el servidor esta capado para evitar ataques de denegación de servicio. Para ver los resultados del test de la maquina virtual vea el **apartado 12**.
 
-  * Contenedor: https://hub.docker.com/r/antmordhar/projectcccamarero .
+## Anexo: Cambios en el proyecto:
 
-  * Contenedor: https://hub.docker.com/r/antmordhar/projectccapi .
+### Anexo.5 Herramienta de Construcción
 
-* Ahora se necesitan usar las variables de entorno del URI de la base de datos y de los nombres de host con los que se conecta cada servicio.
-* Se ha creado un docker-compose que nos crea y levanta todos los servicios y que crea una red para que los servicios puedan comunicarse.
-* Las bases de datos de mongo se ejecutan en imagenes y tambien son levantadas al ejecutar el docker-compose
-* Para mas datos consulte: [Docker](https://antmordhar.github.io/ProyectoCC/Documentacion/docker)
+* Creada regla para arrancar la maquina virtual y provisionarla: 
+* make vagrant 
+* make devagrant
  
 [Volver al Index](https://antmordhar.github.io/ProyectoCC/)
  

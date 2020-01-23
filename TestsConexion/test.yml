@@ -2,22 +2,26 @@ execution:
   #Con que herramienta se ejecutara
 - executor: jmeter
   #Numero de usuarios concurrentes que habra
-  concurrency: 30
+  concurrency: 10
   #Numero de iteraciones que repetira, no es compatible con hold-for
   #iterations: 1000
   #Los usuarios iran creciendo durante 10 segundos
   #ramp-up: 10
   #Tiempo que aguantará a maximo de usuarios
-  hold-for: 50
+  hold-for: 60
   
   #Nombre del test
   #Para correr los diferentes scenarios hay que descomentar el scenario que se quiera y comentar el anterior
   #No se ha establecido una ejecución para cada scenario por que se ejecutan todos a la vez
   #Esto hace que se realientice la maquina en la que se corren los test y salgan resultados erroneos
-  scenario: LoadTestAll
+  #scenario: LoadTestAll
   #scenario: LoadTestCamarero
   #scenario: LoadTestCocina
   #scenario: LoadTestMesas
+  scenario: azureTestAll
+  #scenario: azureTestCamarero
+  #scenario: azureTestCocina
+  #scenario: azureTestMesas
 
 #Test se pasara
 #Nombre de nuestro test
@@ -42,6 +46,8 @@ scenarios:
     - once:
       - url: http://localhost:8069/restaurant/pedido/96
         method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
     - once: 
       - url: http://localhost:8069/restaurant/pedido/
         method: POST
@@ -51,18 +57,14 @@ scenarios:
     - url: http://localhost:8069/restaurant/pedido/96
       method: GET
     #Cocina
-    # - once:
-    #   - url: http://localhost:8069/restaurant/cocina/
-    #     method: POST
-    #     headers:
-    #         Content-Type: application/json
-    #     body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
     - once:
       - url: http://localhost:8069/restaurant/cocina/96
         method: POST
     - once:
       - url: http://localhost:8069/restaurant/cocina/96
         method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
     - once:
       - url: http://localhost:8069/restaurant/cocina/
         method: POST
@@ -72,15 +74,11 @@ scenarios:
     - url: http://localhost:8069/restaurant/cocina/96
       method: GET
     #Camarero
-    # - once:
-    #   - url: http://localhost:8069/restaurant/camarero/
-    #     method: POST
-    #     headers:
-    #         Content-Type: application/json
-    #     body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
     - once:
       - url: http://localhost:8069/restaurant/camarero/96
         method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
     - once:
       - url: http://localhost:8069/restaurant/camarero/
         method: POST
@@ -137,3 +135,106 @@ scenarios:
     - url: http://localhost:8080/pedido/96
       method: DELETE
 
+  azureTestAll:
+    requests:
+    #Mesas
+    - once: 
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/pedido/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - once: 
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/pedido/96
+        method: POST
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/pedido/96
+        method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
+    - once: 
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/pedido/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/pedido/96
+      method: GET
+    #Cocina
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/cocina/96
+        method: POST
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/cocina/96
+        method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/cocina/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/cocina/96
+      method: GET
+    #Camarero
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/camarero/96
+        method: DELETE
+    #El segundo Post es para asegurarnos que haya algo en la base de datos despues de hacer los deletes.
+    #Se parte de la premisa de que los comandos se ejecutan en orden
+    - once:
+      - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/camarero/
+        method: POST
+        headers:
+            Content-Type: application/json
+        body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/camarero/96
+      method: GET
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8069/restaurant/camarero/price/96
+      method: GET
+
+  azureTestCamarero:
+    requests:
+    #Camarero
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8082/camarero/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8082/camarero/96
+      method: GET
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8082/camarero/price/96
+      method: GET
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8082/camarero/96
+      method: DELETE
+
+  azureTestCocina:
+    requests:
+    #Cocina
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8081/cocina/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8081/cocina/96
+      method: GET
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8081/cocina/96
+      method: POST
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8081/cocina/96
+      method: DELETE
+
+  azureTestMesas:
+    requests:
+      #Mesas
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8080/pedido/
+      method: POST
+      headers:
+          Content-Type: application/json
+      body: '{"idmesa":96,"nombre":"plato0", "precio":1.4, "cantidad":1}'
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8080/pedido/96
+      method: GET
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8080/pedido/96
+      method: POST
+    - url: http://restaurant.westeurope.cloudapp.azure.com:8080/pedido/96
+      method: DELETE
